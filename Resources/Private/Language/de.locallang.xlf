@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-11-26T11:17:02Z" product-name="t3locations">
+		<header/>
+		<body>
+			<!-- Validation -->
+			<trans-unit id="validator.notempty.null" xml:space="preserve">
+				<source>This is a required field. Please fill in!</source>
+				<target>Dies ist ein Pflichtfeld. Bitte füllen Sie diese aus!</target>
+			</trans-unit>
+			<trans-unit id="validator.notempty.empty" xml:space="preserve">
+				<source>This is a required field. Please fill in!</source>
+				<target>Dies ist ein Pflichtfeld. Bitte füllen Sie diese aus!</target>
+			</trans-unit>
+			<trans-unit id="validator.list.notinlist" xml:space="preserve">
+				<source><![CDATA[The value provided must be one of the following: %s (submitted: %s)]]></source>
+				<target><![CDATA[Der übermittelte Wert muss einer der Folgenden sein: %s (angegeben: %s)]]></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

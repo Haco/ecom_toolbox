@@ -1,0 +1,15 @@
+
+plugin.tx_ecomtoolbox {
+	view {
+		templateRootPath = {$plugin.tx_ecomtoolbox.view.templateRootPath}
+		partialRootPath = {$plugin.tx_ecomtoolbox.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_ecomtoolbox.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_ecomtoolbox.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
