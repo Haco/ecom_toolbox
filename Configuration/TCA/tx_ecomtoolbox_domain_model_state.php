@@ -148,7 +148,7 @@ return array(
 			'label' => 'LLL:EXT:ecom_toolbox/Resources/Private/Language/locallang_db.xlf:tx_ecomtoolbox_domain_model_state.verified',
 			'config' => array(
 				'type' => 'check',
-				'default' => 0
+				'default' => 1
 			)
 		),
 		'country' => array(

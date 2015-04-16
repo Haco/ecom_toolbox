@@ -174,15 +174,6 @@ return array(
 				'eval' => 'trim,alpha,nospace,upper'
 			),
 		),
-		'verified' => array(
-			'l10n_mode' => 'exclude',
-			'exclude' => 1,
-			'label' => 'LLL:EXT:ecom_toolbox/Resources/Private/Language/locallang_db.xlf:tx_ecomtoolbox_domain_model_region.verified',
-			'config' => array(
-				'type' => 'check',
-				'default' => 1
-			)
-		),
 		'flag_icon_name' => array(
 			'l10n_mode' => 'exclude',
 			'exclude' => 1,
@@ -192,6 +183,15 @@ return array(
 				'size' => 20,
 				'eval' => 'trim'
 			),
+		),
+		'verified' => array(
+			'l10n_mode' => 'exclude',
+			'exclude' => 1,
+			'label' => 'LLL:EXT:ecom_toolbox/Resources/Private/Language/locallang_db.xlf:tx_ecomtoolbox_domain_model_region.verified',
+			'config' => array(
+				'type' => 'check',
+				'default' => 1
+			)
 		),
 		'countries' => array(
 			'l10n_mode' => 'exclude',
@@ -217,7 +217,6 @@ return array(
 		'territory' => array(
 			'l10n_mode' => 'exclude',
 			'exclude' => 0,
-			'exclude' => 1,
 			'label' => 'LLL:EXT:ecom_toolbox/Resources/Private/Language/locallang_db.xlf:tx_ecomtoolbox_domain_model_region.territory',
 			'config' => array(
 				'type' => 'select',

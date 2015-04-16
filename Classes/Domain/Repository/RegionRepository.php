@@ -54,7 +54,7 @@ class RegionRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractRepos
 	 * findByUidList - find and sort entities defined by list
 	 *
 	 * @param array   $list
-	 * @param integer $mode Current modes are 0=excludeList, default=addList
+	 * @param integer $mode Current modes are 0=excludeList, default=includeList
 	 *
 	 * @return null|\TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
@@ -77,6 +77,7 @@ class RegionRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractRepos
 				}
 			}
 		}
+
 		return $return;
 	}
 }

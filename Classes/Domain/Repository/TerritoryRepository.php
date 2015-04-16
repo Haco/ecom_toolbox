@@ -53,22 +53,28 @@ class TerritoryRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractRe
 	/**
 	 * findByUidList - find and sort entities defined by list
 	 *
-	 * @param array $list
+	 * @param array   $list
+	 * @param integer $mode Current modes are 0=excludeList, default=includeList
 	 *
 	 * @return null|\TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function findByUidList(array $list = array()) {
-		if ( count($list) === 0 ) {
-			return NULL;
-		}
-
+	public function findByUidList(array $list = array(), $mode = 1) {
 		/** In order to keep orderings as set in flexForm, we fetch record by record, storing them into an ObjectStorage */
 		$return = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		foreach ( $list as $uid ) {
+		if ( $mode === 0 ) {
 			/** @var \Ecom\EcomToolbox\Domain\Model\Territory $territory */
-			$territory = $this->findByUid($uid);
-			if ( $territory instanceof \Ecom\EcomToolbox\Domain\Model\Territory && $territory->isVerified() ) {
-				$return->attach($territory);
+			foreach ( $this->findAll() as $territory ) {
+				if ( $territory instanceof \Ecom\EcomToolbox\Domain\Model\Territory && $territory->isVerified() && !in_array($territory->getUid(), $list) ) {
+					$return->attach($territory);
+				}
+			}
+		} else {
+			foreach ( $list as $uid ) {
+				/** @var \Ecom\EcomToolbox\Domain\Model\Territory $territory */
+				$territory = $this->findByUid($uid);
+				if ( $territory instanceof \Ecom\EcomToolbox\Domain\Model\Territory && $territory->isVerified() ) {
+					$return->attach($territory);
+				}
 			}
 		}
 

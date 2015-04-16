@@ -4,13 +4,13 @@
 		<header/>
 		<body>
 			<trans-unit id="title.description">
-				<source>title</source>
+				<source>Language title to be displayed</source>
 			</trans-unit>
 			<trans-unit id="sys_language.description">
-				<source>sysLanguage</source>
+				<source>Linked sys_language_uid (TYPO3 Website Language)</source>
 			</trans-unit>
 			<trans-unit id="flag.description">
-				<source>flag</source>
+				<source>The flag representing language</source>
 			</trans-unit>
 		</body>
 	</file>
