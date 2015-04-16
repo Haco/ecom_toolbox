@@ -39,7 +39,7 @@ class NegateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 
 		/** For all PHP versions 5.5+ use the boolval() method */
 		if ( version_compare(PHP_VERSION, '5.5', '>=') ) {
-			return !boolval($value);
+			return !boolval( $value );
 		} else {
 			return !(bool) $value;
 		}

@@ -56,7 +56,16 @@ class BytesViewHelper extends AbstractViewHelper implements CompilableInterface 
 	 * @api
 	 */
 	public function render($value = NULL, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') {
-		return self::renderStatic(array('value' => $value, 'decimals' => $decimals, 'decimalSeparator' => $decimalSeparator, 'thousandsSeparator' => $thousandsSeparator), $this->buildRenderChildrenClosure(), $this->renderingContext);
+		return self::renderStatic(
+			array(
+				'value' => $value,
+				'decimals' => $decimals,
+				'decimalSeparator' => $decimalSeparator,
+				'thousandsSeparator' => $thousandsSeparator
+			),
+			$this->buildRenderChildrenClosure(),
+			$this->renderingContext
+		);
 	}
 
 	/**
@@ -68,27 +77,27 @@ class BytesViewHelper extends AbstractViewHelper implements CompilableInterface 
 	 * @return string
 	 */
 	static public function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext) {
-		$units = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode('|', \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('file_size_units', 'ecom_product_tools'), TRUE);
+		$units = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode('|', \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('file_size_units', 'ecom_toolbox'), TRUE);
 		$value = $arguments['value'];
-		if ($value === NULL) {
+		if ( $value === NULL ) {
 			$value = $renderChildrenClosure();
 		}
 
-		if (!is_integer($value) && !is_float($value)) {
-			if (is_numeric($value)) {
+		if ( !is_integer($value) && !is_float($value) ) {
+			if ( is_numeric($value) ) {
 				$value = (float)$value;
 			} else {
 				$value = 0;
 			}
 		}
-		$bytes = max($value, 0);
-		$pow = floor(($bytes ? log($bytes) : 0) / log(1024));
-		$pow = min($pow, count($units) - 1);
-		$bytes /= pow(2, (10 * $pow));
+		$bytes = max( $value, 0 );
+		$pow = floor( ($bytes ? log($bytes) : 0) / log(1024) );
+		$pow = min( $pow, count($units) - 1 );
+		$bytes /= pow( 2, (10 * $pow) );
 
 		return sprintf(
 			'%s %s',
-			number_format(round($bytes, 4 * $arguments['decimals']), $arguments['decimals'], $arguments['decimalSeparator'], $arguments['thousandsSeparator']),
+			number_format( round( $bytes, 4 * $arguments['decimals'] ), $arguments['decimals'], $arguments['decimalSeparator'], $arguments['thousandsSeparator'] ),
 			$units[$pow]
 		);
 	}

@@ -3,6 +3,9 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-14T11:47:17Z" product-name="ecom_toolbox">
 		<header/>
 		<body>
+			<trans-unit id="file_size_units" xml:space="preserve">
+				<source>Byte|KB|MB|GB|TB|PB|EB|ZB|YB</source>
+			</trans-unit>
 			<!-- Validation -->
 			<trans-unit id="validator.notempty.null" xml:space="preserve">
 				<source>This is a required field. Please fill in!</source>

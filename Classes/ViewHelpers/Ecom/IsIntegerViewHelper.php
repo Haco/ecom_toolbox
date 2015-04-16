@@ -26,16 +26,20 @@ namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-class InArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class IsIntegerViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
-	 * @param array $haystack
-	 * @param mixed $needle
-	 *
+	 * @param mixed $value
 	 * @return boolean
 	 */
-	public function render($haystack, $needle = NULL) {
-		return is_array($haystack) ? in_array($needle ?: $this->renderChildren(), $haystack) : FALSE;
+	public function render($value = '') {
+		if ( $value === NULL ) {
+			$value = $this->renderChildren();
+		}
+
+		return \TYPO3\CMS\Core\Utility\MathUtility::canBeInterpretedAsInteger($value);
 	}
 
 }
+
+?>
