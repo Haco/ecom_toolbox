@@ -44,7 +44,7 @@ class Territory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * verified
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $verified = FALSE;
 
@@ -70,29 +70,20 @@ class Territory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the verified
 	 *
-	 * @return boolean $verified
+	 * @return bool $verified
 	 */
-	public function getVerified() {
+	public function isVerified() {
 		return $this->verified;
 	}
 
 	/**
 	 * Sets the verified
 	 *
-	 * @param boolean $verified
+	 * @param bool $verified
 	 * @return void
 	 */
 	public function setVerified($verified) {
 		$this->verified = $verified;
-	}
-
-	/**
-	 * Returns the boolean state of verified
-	 *
-	 * @return boolean
-	 */
-	public function isVerified() {
-		return $this->verified;
 	}
 
 }

@@ -13,8 +13,10 @@
 				<target>Dies ist ein Pflichtfeld. Bitte füllen Sie diese aus!</target>
 			</trans-unit>
 			<trans-unit id="validator.list.notinlist" xml:space="preserve">
-				<source><![CDATA[The value provided must be one of the following: %s (submitted: %s)]]></source>
-				<target><![CDATA[Der übermittelte Wert muss einer der Folgenden sein: %s (angegeben: %s)]]></target>
+				<source><![CDATA[The value provided must be one of the following: %s
+(submitted: %s)]]></source>
+				<target><![CDATA[Der übermittelte Wert muss einer der Folgenden sein: %s
+(angegeben: %s)]]></target>
 			</trans-unit>
 		</body>
 	</file>

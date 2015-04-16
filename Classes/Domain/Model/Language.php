@@ -44,7 +44,7 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sysLanguage
 	 *
-	 * @var integer
+	 * @var int
 	 */
 	protected $sysLanguage = 0;
 
@@ -77,7 +77,7 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the sysLanguage
 	 *
-	 * @return integer $sysLanguage
+	 * @return int $sysLanguage
 	 */
 	public function getSysLanguage() {
 		return $this->sysLanguage;
@@ -86,7 +86,7 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the sysLanguage
 	 *
-	 * @param integer $sysLanguage
+	 * @param int $sysLanguage
 	 * @return void
 	 */
 	public function setSysLanguage($sysLanguage) {

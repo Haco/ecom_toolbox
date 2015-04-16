@@ -42,9 +42,11 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $title = '';
 
 	/**
-	 * type
+	 * define record type as follows:
+	 * 0 -> Country (default)
+	 * 1 -> Region
 	 *
-	 * @var integer
+	 * @var int
 	 * @validate $mode Ecom\EcomToolbox\Validation\Validator\InList(list="0,1")
 	 */
 	protected $type = 0;
@@ -66,7 +68,7 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * verified
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $verified = FALSE;
 
@@ -191,29 +193,20 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the verified
 	 *
-	 * @return boolean $verified
+	 * @return bool $verified
 	 */
-	public function getVerified() {
+	public function isVerified() {
 		return $this->verified;
 	}
 
 	/**
 	 * Sets the verified
 	 *
-	 * @param boolean $verified
+	 * @param bool $verified
 	 * @return void
 	 */
 	public function setVerified($verified) {
 		$this->verified = $verified;
-	}
-
-	/**
-	 * Returns the boolean state of verified
-	 *
-	 * @return boolean
-	 */
-	public function isVerified() {
-		return $this->verified;
 	}
 
 	/**
@@ -227,7 +220,10 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 			$db = $GLOBALS['TYPO3_DB'];
 			/** @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer $contentObjectRenderer */
 			$contentObjectRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer');
-			/** @var array $originalRecord */
+			/**
+			 * Fetch default translation, since fallback is not requested
+			 * @var array $originalRecord
+			 */
 			if ( $originalRecord = $db->exec_SELECTgetSingleRow('flag_icon_name,title', 'tx_ecomtoolbox_domain_model_region', 'uid=' . $this->uid . $contentObjectRenderer->enableFields('tx_ecomtoolbox_domain_model_region')) ) {
 				return $this->flagIconName ?: ($originalRecord['flag_icon_name'] ?: $originalRecord['title']);
 			}

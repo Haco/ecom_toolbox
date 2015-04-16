@@ -34,6 +34,8 @@ namespace Ecom\EcomToolbox\Domain\Repository;
 class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
+	 * Intended for Ajax requests
+	 *
 	 * @return \Ecom\EcomToolbox\Domain\Repository\AbstractRepository
 	 */
 	public function setExtQuerySettings() {
@@ -43,6 +45,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			->setRespectStoragePage(FALSE)  // Disable storage pid
 			->setRespectSysLanguage(FALSE); // Disable sys_language
 		$this->setDefaultQuerySettings($querySettings);
+
 		return $this;
 	}
 }

@@ -1,5 +1,5 @@
 <?php
-namespace TYPO3\CMS\Fluid\ViewHelpers\S3b0\Format;
+namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom\Format;
 
 /*                                                                        *
  * This script is backported from the TYPO3 Flow package "TYPO3.Fluid".   *

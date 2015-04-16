@@ -24,7 +24,7 @@ namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
 /**
  * Class NegateViewHelper
  *
- * @package TYPO3\CMS\Fluid\ViewHelpers\S3b0
+ * @package TYPO3\CMS\Fluid\ViewHelpers\Ecom
  */
 class NegateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
