@@ -37,7 +37,7 @@ class IsIntegerViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 			$value = $this->renderChildren();
 		}
 
-		return \TYPO3\CMS\Core\Utility\MathUtility::canBeInterpretedAsInteger($value);
+		return \TYPO3\CMS\Core\Utility\MathUtility::canBeInterpretedAsInteger( $value );
 	}
 
 }

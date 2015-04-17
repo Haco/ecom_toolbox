@@ -35,7 +35,7 @@ class InArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHel
 	 * @return boolean
 	 */
 	public function render($haystack, $needle = NULL) {
-		return is_array($haystack) ? in_array($needle ?: $this->renderChildren(), $haystack) : FALSE;
+		return is_array($haystack) ? in_array( $needle ?: $this->renderChildren(), $haystack ) : FALSE;
 	}
 
 }
