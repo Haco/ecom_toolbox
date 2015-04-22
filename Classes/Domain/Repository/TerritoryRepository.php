@@ -36,9 +36,9 @@ class TerritoryRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractRe
 	/**
 	 * @var array
 	 */
-	protected $defaultOrderings = array(
+	protected $defaultOrderings = [
 		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
-	);
+	];
 
 	/**
 	 * Set repository wide settings
@@ -58,7 +58,7 @@ class TerritoryRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractRe
 	 *
 	 * @return null|\TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function findByUidList(array $list = array(), $mode = 1) {
+	public function findByUidList(array $list = [], $mode = 1) {
 		/** In order to keep orderings as set in flexForm, we fetch record by record, storing them into an ObjectStorage */
 		$return = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		if ( $mode === 0 ) {

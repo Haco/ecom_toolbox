@@ -36,9 +36,9 @@ class LanguageRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractRep
 	/**
 	 * @var array
 	 */
-	protected $defaultOrderings = array(
+	protected $defaultOrderings = [
 		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
-	);
+	];
 
 	/**
 	 * Set repository wide settings

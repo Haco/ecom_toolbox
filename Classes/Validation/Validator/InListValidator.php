@@ -9,9 +9,9 @@ class InListValidator extends AbstractValidator {
 	/**
 	 * @var array
 	 */
-	protected $supportedOptions = array(
-		'list' => array('', 'Comma-separated list of accepted values.', 'string', TRUE),
-	);
+	protected $supportedOptions = [
+		'list' => [ '', 'Comma-separated list of accepted values.', 'string', TRUE ]
+	];
 
 	/**
 	 * The given value is valid if appearing in the specified list.
@@ -24,11 +24,11 @@ class InListValidator extends AbstractValidator {
 			$this->addError(nl2br($this->translateErrorMessage(
 				'validator.list.notinlist',
 				'ecomToolbox',
-				array(
+				[
 					$this->options['list'],
 					$value
-				)
-			)), 1423132575, array($this->options['list'], $value));
+				]
+			)), 1423132575, [ $this->options['list'], $value ]);
 		}
 	}
 }

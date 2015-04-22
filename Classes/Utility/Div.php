@@ -10,6 +10,46 @@ namespace Ecom\EcomToolbox\Utility;
 class Div {
 
 	/**
+	 * Converts an array into an objectStorage
+	 *
+	 * @param array $array
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+	 */
+	public static function arrayToObjectStorage(array $array = [ ]) {
+		$objectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+
+		foreach ( $array as $element ) {
+			$objectStorage->attach($element);
+		}
+
+		return $objectStorage;
+	}
+
+	/**
+	 * Returns a list generated from ObjectStorage
+	 * In best practice 'title' property should exist in target model.
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $objectStorage
+	 * @param string                                       $separator
+	 * @param string                                       $property
+	 *
+	 * @return string
+	 */
+	public static function generateStringListFromObjectStorage(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $objectStorage, $separator = ', ', $property = 'title') {
+		$list = [];
+
+		if ( $objectStorage->count() ) {
+			/** @var \TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $object */
+			foreach ( $objectStorage as $object ) {
+				$list[] = $object->_hasProperty($property) ? ucfirst($object->_getProperty($property)) : '';
+			}
+		}
+
+		return count($list) ? implode($separator, $list) : '';
+	}
+
+	/**
 	 * Convert a string to a sortable array key, might also be used for CSS class names
 	 *
 	 * @param string $value
@@ -62,7 +102,7 @@ class Div {
 	 *
 	 * @param $array
 	 */
-	public static function removeEmptyArrayElements(&$array) {
+	public static function removeEmptyArrayElements(array &$array) {
 		if ( is_array($array) ) {
 			$array = array_filter($array);
 		}

@@ -43,7 +43,7 @@ class BytesViewHelper extends AbstractViewHelper implements CompilableInterface 
 	/**
 	 * @var array
 	 */
-	static protected $units = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+	static protected $units = [ 'B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB' ];
 
 	/**
 	 * Render the supplied byte count as a human readable string.
@@ -57,12 +57,12 @@ class BytesViewHelper extends AbstractViewHelper implements CompilableInterface 
 	 */
 	public function render($value = NULL, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') {
 		return self::renderStatic(
-			array(
+			[
 				'value' => $value,
 				'decimals' => $decimals,
 				'decimalSeparator' => $decimalSeparator,
 				'thousandsSeparator' => $thousandsSeparator
-			),
+			],
 			$this->buildRenderChildrenClosure(),
 			$this->renderingContext
 		);

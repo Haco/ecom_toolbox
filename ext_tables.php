@@ -1,6 +1,6 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die('Access denied.');
+if ( !defined('TYPO3_MODE') ) {
+	die( 'Access denied.' );
 }
 
 // TS FILE
@@ -8,12 +8,12 @@ if (!defined('TYPO3_MODE')) {
 
 // Backend Icons
 \TYPO3\CMS\Backend\Sprite\SpriteManager::addSingleIcons(
-	array(
+	[
 		'region-default' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ecom_toolbox') . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_region.gif',
 		'region-country' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ecom_toolbox') . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_region_country.gif',
 		'region-region' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ecom_toolbox') . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_region_region.gif',
 		'language' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ecom_toolbox') . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_language.png',
-	),
+	],
 	'ecomToolbox'
 );
 

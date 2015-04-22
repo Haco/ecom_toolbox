@@ -64,9 +64,7 @@ class TypolinkViewHelper extends AbstractViewHelper {
 		if ($parameter) {
 			$contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
 			$content = $contentObject->typoLink_URL(
-				array(
-					'parameter' => implode(' ', $typolinkParameter),
-				)
+				[ 'parameter' => implode(' ', $typolinkParameter) ]
 			);
 		}
 
@@ -86,7 +84,7 @@ class TypolinkViewHelper extends AbstractViewHelper {
 		$parameterArray = GeneralUtility::unQuoteFilenames($parameter, TRUE);
 
 		if (empty($parameterArray)) {
-			return array();
+			return [];
 		}
 
 		// Extend to 4 elements

@@ -64,12 +64,12 @@ class TypolinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHe
 	 *
 	 * @return string
 	 */
-	public function render($parameter, $target = '', $class = '', $title = '', $additionalParams = '', $additionalAttributes = array()) {
+	public function render($parameter, $target = '', $class = '', $title = '', $additionalParams = '', $additionalAttributes = []) {
 		// Merge the $parameter with other arguments
 		$typolinkParameter = $this->createTypolinkParameterArrayFromArguments($parameter, $target, $class, $title, $additionalParams);
 
 		// array(param1 -> value1, param2 -> value2) --> "param1=value1 param2=>value2" for typolink.ATagParams
-		$extraAttributes = array();
+		$extraAttributes = [];
 		foreach ($additionalAttributes as $attributeName => $attributeValue) {
 			$extraAttributes[] = $attributeName . '="' . htmlspecialchars($attributeValue) . '"';
 		}
@@ -81,15 +81,15 @@ class TypolinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHe
 		if ($parameter) {
 			/** @var ContentObjectRenderer $contentObject */
 			$contentObject = GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::class);
-			$contentObject->start(array(), '');
+			$contentObject->start([], '');
 			$content = $contentObject->stdWrap(
 				$content,
-				array(
-					'typolink.' => array(
+				[
+					'typolink.' => [
 						'parameter' => implode(' ', $typolinkParameter),
-						'ATagParams' => $aTagParams,
-					)
-				)
+						'ATagParams' => $aTagParams
+					]
+				]
 			);
 		}
 
@@ -112,7 +112,7 @@ class TypolinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHe
 		$parameterArray = GeneralUtility::unQuoteFilenames($parameter, TRUE);
 
 		if (empty($parameterArray)) {
-			return array();
+			return [];
 		}
 
 		// Extend to 4 elements
