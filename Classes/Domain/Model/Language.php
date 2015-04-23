@@ -112,4 +112,11 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->flag = $flag;
 	}
 
+	/**
+	 * @return string
+	 */
+	public function getFlagSource() {
+		return (version_compare(TYPO3_branch, '7.1', '>=') ? 'EXT:core/Resources/Public/Icons/Flags/' : 'EXT:t3skin/images/flags/') . $this->flag . '.png';
+	}
+
 }
