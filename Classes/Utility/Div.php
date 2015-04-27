@@ -102,7 +102,7 @@ class Div {
 	 *
 	 * @param $array
 	 */
-	public static function removeEmptyArrayElements(array &$array) {
+	public static function removeEmptyArrayElements(&$array) {
 		if ( is_array($array) ) {
 			$array = array_filter($array);
 		}
