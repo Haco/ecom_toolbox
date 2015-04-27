@@ -88,7 +88,7 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return string $abbreviation
 	 */
 	public function getAbbreviation() {
-		return $this->abbreviation;
+		return $this->abbreviation ?: $this->title;
 	}
 
 	/**
