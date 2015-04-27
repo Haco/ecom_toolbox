@@ -10,9 +10,6 @@ namespace Ecom\EcomToolbox\Domain\Session;
 
 /**
  * BackendSessionHandler
- *
- * @package S3b0
- * @subpackage Ecompc
  */
 class BackendSessionHandler extends SessionHandler {
 

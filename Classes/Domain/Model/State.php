@@ -37,7 +37,7 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * title
 	 *
 	 * @var string
-	 * @validate S3b0\EcomToolbox\Validation\Validator\NotEmpty
+	 * @validate Ecom\EcomToolbox\Validation\Validator\NotEmpty
 	 */
 	protected $title = '';
 
