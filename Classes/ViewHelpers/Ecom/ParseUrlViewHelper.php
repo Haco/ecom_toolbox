@@ -5,7 +5,7 @@ namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
  *
  *  Copyright notice
  *
- *  (c) 2014 Sebastian Iffland <sebastian.iffland@ecom-ex.com>, ecom instruments GmbH
+ *  (c) 2015 Sebastian Iffland <sebastian.iffland@ecom-ex.com>, ecom instruments GmbH
  *
  *  All rights reserved
  *
@@ -26,20 +26,21 @@ namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-class InArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ParseUrlViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
-	 * @param array $haystack
-	 * @param mixed $needle
+	 * @param string $url
+	 * @param string $component
+	 * @see http://php.net/manual/de/function.parse-url.php
 	 *
-	 * @return boolean
+	 * @return array
 	 */
-	public function render($haystack, $needle = NULL) {
-		if ( $needle === NULL ) {
-			$needle = $this->renderChildren();
+	public function render($url = NULL, $component = NULL) {
+		if ( $url === NULL ) {
+			$url = $this->renderChildren();
 		}
 
-		return is_array($haystack) ? in_array( $needle, $haystack ) : FALSE;
+		return parse_url($url, $component ? constant($component) : -1);
 	}
 
 }
