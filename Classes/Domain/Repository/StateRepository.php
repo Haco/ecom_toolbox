@@ -51,4 +51,62 @@ class StateRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractReposi
 		$this->setDefaultQuerySettings($querySettings);
 	}
 
+	/**
+	 * findByAbbreviation
+	 *
+	 * @param string $abbreviation
+	 *
+	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+	 */
+	public function findByAbbreviation($abbreviation = '') {
+		$query = $this->createQuery();
+
+		$result = $query->matching(
+			$query->equals('abbreviation', $abbreviation)
+		)->execute();
+
+		if ($result instanceof \TYPO3\CMS\Extbase\Persistence\QueryResultInterface) {
+			return $result;
+		} else {
+			/**
+			 * Alternately check for title matching
+			 */
+			return $query->matching(
+				$query->equals('title', $abbreviation)
+			)->execute();
+		}
+	}
+
+	/**
+	 * findOneByAbbreviation
+	 *
+	 * @param string $abbreviation
+	 *
+	 * @return null|object
+	 */
+	public function findOneByAbbreviation($abbreviation = '') {
+		$query = $this->createQuery();
+
+		$result = $query->matching(
+			$query->equals('abbreviation', $abbreviation)
+		)->setLimit(1)->execute();
+
+		if ($result instanceof \TYPO3\CMS\Extbase\Persistence\QueryResultInterface) {
+			return $result->getFirst();
+		} else {
+			/**
+			 * Alternately check for title matching
+			 */
+			$result = $query->matching(
+				$query->equals('title', $abbreviation)
+			)->setLimit(1)->execute();
+		}
+
+		if ($result instanceof \TYPO3\CMS\Extbase\Persistence\QueryResultInterface) {
+			return $result->getFirst();
+		} else {
+			return NULL;
+		}
+	}
+
 }
