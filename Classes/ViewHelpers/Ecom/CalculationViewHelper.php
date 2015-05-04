@@ -170,7 +170,7 @@ class CalculationViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 
 		}
 		if ( $i >= 99 ) {
-			throw new \TYPO3\CMS\Fluid\Core\ViewHelper\Exception('Too many calculations passed to S3b0\\CalculationViewhelper', 1415258817);
+			throw new \TYPO3\CMS\Fluid\Core\ViewHelper\Exception('Too many calculations passed to Ecom\\CalculationViewhelper', 1415258817);
 		}
 
 		return count($expressionArray) == 1 ? reset($expressionArray) : '';
