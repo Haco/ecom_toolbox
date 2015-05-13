@@ -3,8 +3,11 @@ if ( !defined('TYPO3_MODE') ) {
 	die( 'Access denied.' );
 }
 
-// TS FILE
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'ecom Toolbox');
+// TS FILE Toolbox Base
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'ecom Toolbox Base');
+
+// TS FILE for Ext:News
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/News', 'ecom Toolbox for EXT:News');
 
 // Backend Icons
 \TYPO3\CMS\Backend\Sprite\SpriteManager::addSingleIcons(
@@ -22,3 +25,6 @@ if ( !defined('TYPO3_MODE') ) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_ecomtoolbox_domain_model_region', 'EXT:ecom_toolbox/Resources/Private/Language/locallang_csh_tx_ecomtoolbox_domain_model_region.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_ecomtoolbox_domain_model_state', 'EXT:ecom_toolbox/Resources/Private/Language/locallang_csh_tx_ecomtoolbox_domain_model_state.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_ecomtoolbox_domain_model_territory', 'EXT:ecom_toolbox/Resources/Private/Language/locallang_csh_tx_ecomtoolbox_domain_model_territory.xlf');
+
+// Extend EXT:News Flexform SortBy Dropdown
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByNews'] .= ',ecom_eventdate';

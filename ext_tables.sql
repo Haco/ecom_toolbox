@@ -146,3 +146,10 @@ CREATE TABLE tx_ecomtoolbox_domain_model_territory (
  KEY language (l10n_parent,sys_language_uid)
 
 );
+
+#
+# Table structure for table 'tx_news_domain_model_news'
+#
+CREATE TABLE tx_news_domain_model_news (
+	ecom_eventdate int(11) DEFAULT '0' NOT NULL
+);

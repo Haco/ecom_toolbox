@@ -10,7 +10,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[ 'ecom_toolbox' ] = [
+$EM_CONF['ecom_toolbox'] = [
 	'title' => 'ecom Toolbox',
 	'description' => 'Provides useful tools for and from ecom.',
 	'category' => 'plugin',
@@ -24,9 +24,12 @@ $EM_CONF[ 'ecom_toolbox' ] = [
 	'version' => '1.0.6',
 	'constraints' => [
 		'depends' => [
-			'typo3' => '6.2'
+			'typo3' => '6.2',
+			'news'
 		],
 		'conflicts' => [],
-		'suggests' => []
+		'suggests' => [
+			'cb_newscal'
+		]
 	]
 ];
