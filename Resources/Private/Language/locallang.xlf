@@ -3,6 +3,18 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-14T11:47:17Z" product-name="ecom_toolbox">
 		<header/>
 		<body>
+			<trans-unit id="calendar.legend" xml:space="preserve">
+				<source>Legend</source>
+			</trans-unit>
+			<trans-unit id="calendar.events" xml:space="preserve">
+				<source>Events</source>
+			</trans-unit>
+			<trans-unit id="calendar.eventsToday" xml:space="preserve">
+				<source>Today's events</source>
+			</trans-unit>
+			<trans-unit id="calendar.today" xml:space="preserve">
+				<source>Today</source>
+			</trans-unit>
 			<trans-unit id="file_size_units" xml:space="preserve">
 				<source>Byte|KB|MB|GB|TB|PB|EB|ZB|YB</source>
 			</trans-unit>

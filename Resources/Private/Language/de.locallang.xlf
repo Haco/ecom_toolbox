@@ -3,6 +3,22 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-11-26T11:17:02Z" product-name="t3locations">
 		<header/>
 		<body>
+			<trans-unit id="calendar.legend" xml:space="preserve">
+				<source>Legend</source>
+				<target>Legende</target>
+			</trans-unit>
+			<trans-unit id="calendar.events" xml:space="preserve">
+				<source>Events</source>
+				<target>Ereignisse</target>
+			</trans-unit>
+			<trans-unit id="calendar.eventsToday" xml:space="preserve">
+				<source>Today's events</source>
+				<target>Ereignisse am heutigen Tag</target>
+			</trans-unit>
+			<trans-unit id="calendar.today" xml:space="preserve">
+				<source>Today</source>
+				<target>Heute</target>
+			</trans-unit>
 			<!-- Validation -->
 			<trans-unit id="validator.notempty.null" xml:space="preserve">
 				<source>This is a required field. Please fill in!</source>
