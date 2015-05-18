@@ -3,6 +3,9 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-14T11:47:17Z" product-name="ecom_toolbox">
 		<header/>
 		<body>
+			<trans-unit id="calendar.currentMonth" xml:space="preserve">
+				<source>Current month</source>
+			</trans-unit>
 			<trans-unit id="calendar.legend" xml:space="preserve">
 				<source>Legend</source>
 			</trans-unit>
