@@ -1,9 +1,8 @@
 <?php
 $newsEventDateColumn = array(
 	'ecom_eventdate' => Array (
-		'exclude' => 1,
+		'exclude' => 0,
 		'label' => 'ecom Event Date',
-		'l10n_mode' => 'exclude',
 		'config' => Array (
 			'type' => 'input',
 			'eval' => 'date',
