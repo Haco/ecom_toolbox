@@ -2,6 +2,7 @@
 	$extensionClassesPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath( 'ecom_toolbox' ) . 'Classes/';
 
 	return [
+		'TYPO3\CMS\Fluid\ViewHelpers\CountStringViewHelper' => $extensionClassesPath . 'ViewHelpers/CountStringViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Format\CaseViewHelper' => $extensionClassesPath . 'ViewHelpers/Format/CaseViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Link\TypolinkViewHelper' => $extensionClassesPath . 'ViewHelpers/Link/TypolinkViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Uri\TypolinkViewHelper' => $extensionClassesPath . 'ViewHelpers/Uri/TypolinkViewHelper.php',

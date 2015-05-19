@@ -29,36 +29,9 @@ namespace Ecom\EcomToolbox\Domain\Repository;
  ***************************************************************/
 
 /**
- * Abstract repository
+ * Category repository
  */
-class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-
-	/**
-	 * @param string $labelField
-	 *
-	 * @return \S3b0\EcomProductTools\Domain\Repository\AbstractRepository
-	 */
-	public function jsonRequestSetOrderingByAlphabet($labelField = 'title') {
-		$this->setDefaultOrderings([ $labelField => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING ]);
-
-		return $this;
-	}
-
-	/**
-	 * Intended for Ajax requests
-	 *
-	 * @return \Ecom\EcomToolbox\Domain\Repository\AbstractRepository
-	 */
-	public function setExtQuerySettings() {
-		/** @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings */
-		$querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\QuerySettingsInterface');
-		$querySettings
-			->setRespectStoragePage(FALSE)  // Disable storage pid
-			->setRespectSysLanguage(FALSE); // Disable sys_language
-		$this->setDefaultQuerySettings($querySettings);
-
-		return $this;
-	}
+class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository {
 
 	/**
 	 * @param string $property
