@@ -3,6 +3,27 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-11-26T11:17:02Z" product-name="t3locations">
 		<header/>
 		<body>
+			<trans-unit id="event.industries.I.0" xml:space="preserve">
+				<source>Chemical</source>
+				<target>Chemie</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.1" xml:space="preserve">
+				<source>Mining</source>
+				<target>Bergbau</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.2" xml:space="preserve">
+				<source>Oil <![CDATA[&]]> Gas</source>
+				<target>Öl <![CDATA[&]]> Gas</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.3" xml:space="preserve">
+				<source>Pharma</source>
+				<target>Pharma</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.4" xml:space="preserve">
+				<source>Process <![CDATA[&]]> Automation</source>
+				<target>Prozess- <![CDATA[&]]> Automatisierungstechnik</target>
+			</trans-unit>
+
 			<trans-unit id="calendar.currentMonth" xml:space="preserve">
 				<source>Current month</source>
 				<target>Aktueller Monat</target>

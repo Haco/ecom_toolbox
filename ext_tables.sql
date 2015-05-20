@@ -151,5 +151,12 @@ CREATE TABLE tx_ecomtoolbox_domain_model_territory (
 # Table structure for table 'tx_news_domain_model_news'
 #
 CREATE TABLE tx_news_domain_model_news (
-	ecom_eventdate int(11) DEFAULT '0' NOT NULL
+	ecom_eventdate int(11) DEFAULT '0' NOT NULL,
+	ecom_event_end int(11) DEFAULT '0' NOT NULL,
+	ecom_event_booth varchar(255) DEFAULT '' NOT NULL,
+	ecom_event_country int(11) unsigned DEFAULT '0',
+	ecom_event_city varchar(255) DEFAULT '' NOT NULL,
+	ecom_event_address text NOT NULL,
+	ecom_event_industries int(11) DEFAULT '0' NOT NULL,
+	ecom_event_industries_custom text NOT NULL
 );
