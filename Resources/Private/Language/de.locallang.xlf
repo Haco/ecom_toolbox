@@ -16,8 +16,8 @@
 				<target>Öl <![CDATA[&]]> Gas</target>
 			</trans-unit>
 			<trans-unit id="event.industries.I.3" xml:space="preserve">
-				<source>Pharma</source>
-				<target>Pharma</target>
+				<source>Pharmaceutical</source>
+				<target>Pharmazeutisch</target>
 			</trans-unit>
 			<trans-unit id="event.industries.I.4" xml:space="preserve">
 				<source>Process <![CDATA[&]]> Automation</source>

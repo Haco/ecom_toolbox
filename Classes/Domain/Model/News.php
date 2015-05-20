@@ -183,10 +183,25 @@ class News extends \Tx_News_Domain_Model_News {
 	/**
 	 * Returns the ecom Event Industries
 	 *
-	 * @return integer $ecomEventIndustries
+	 * @return array $ecomEventIndustries
 	 */
 	public function getEcomEventIndustries() {
-		return $this->ecomEventIndustries;
+		$result = NULL;
+		$numberOfCheckboxes = 5;
+
+		if ($this->ecomEventIndustries) {
+			$checksArray = NULL;
+			for ($i = 0; $i <= $numberOfCheckboxes-1; $i++) {
+				if (($this->ecomEventIndustries >> $i) & 1) {
+					$checksArray[$i] = 'checked';
+				}
+			}
+			// Generate translated array
+			foreach ($checksArray as $checkboxValue => $checked) {
+				$result[] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('event.industries.I.' . $checkboxValue, 'ecom_toolbox');
+			}
+		}
+		return $result;
 	}
 
 	/**
