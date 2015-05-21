@@ -9,7 +9,6 @@ namespace Ecom\EcomToolbox\Domain\Model;
  */
 
 class News extends \Tx_News_Domain_Model_News {
-
 	/**
 	 * ecom Eventdate
 	 *
@@ -183,10 +182,20 @@ class News extends \Tx_News_Domain_Model_News {
 	/**
 	 * Returns the ecom Event Industries
 	 *
-	 * @return array $ecomEventIndustries
+	 * @return array
 	 */
 	public function getEcomEventIndustries() {
-		$result = NULL;
+		return $this->ecomEventIndustries;
+	}
+
+	/**
+	 * Returns the evaluated checkboxes of $ecomEventIndustries
+	 * plus the user defined input as array (translated)
+	 *
+	 * @return array
+	 */
+	public function getEcomEventIndustriesArray() {
+		$result = array();
 		$numberOfCheckboxes = 5;
 
 		if ($this->ecomEventIndustries) {
@@ -201,6 +210,19 @@ class News extends \Tx_News_Domain_Model_News {
 				$result[] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('event.industries.I.' . $checkboxValue, 'ecom_toolbox');
 			}
 		}
+
+		// Merge with user-defined
+		if($this->ecomEventIndustriesCustom) {
+			if (is_array($result)) {
+				$result = array_merge($result, \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->ecomEventIndustriesCustom, TRUE));
+			} else {
+				$result = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->ecomEventIndustriesCustom, TRUE);
+			}
+		}
+
+		// Sort values
+		if (is_array($result)) sort($result, SORT_LOCALE_STRING | SORT_FLAG_CASE);
+
 		return $result;
 	}
 

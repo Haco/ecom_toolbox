@@ -24,6 +24,10 @@
 				<target>Prozess- <![CDATA[&]]> Automatisierungstechnik</target>
 			</trans-unit>
 
+			<trans-unit id="calendar.showDetails" xml:space="preserve">
+				<source>Show Details</source>
+				<target>Details anzeigen</target>
+			</trans-unit>
 			<trans-unit id="calendar.currentMonth" xml:space="preserve">
 				<source>Current month</source>
 				<target>Aktueller Monat</target>

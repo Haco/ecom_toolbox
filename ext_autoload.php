@@ -6,6 +6,7 @@
 		'TYPO3\CMS\Fluid\ViewHelpers\Link\TypolinkViewHelper' => $extensionClassesPath . 'ViewHelpers/Link/TypolinkViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Uri\TypolinkViewHelper' => $extensionClassesPath . 'ViewHelpers/Uri/TypolinkViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\Format\BytesViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/Format/BytesViewHelper.php',
+		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\Format\EliminateViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/Format/EliminateViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\System\TimestampViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/System/TimestampViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\CalculationViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/CalculationViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\CheckBitViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/CheckBitViewHelper.php',
