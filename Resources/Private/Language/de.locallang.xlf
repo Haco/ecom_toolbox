@@ -3,6 +3,10 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-11-26T11:17:02Z" product-name="t3locations">
 		<header/>
 		<body>
+			<trans-unit id="event.industries" xml:space="preserve">
+				<source>Industries</source>
+				<target>Industrie</target>
+			</trans-unit>
 			<trans-unit id="event.industries.I.0" xml:space="preserve">
 				<source>Chemical</source>
 				<target>Chemie</target>

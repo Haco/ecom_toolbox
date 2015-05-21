@@ -3,6 +3,9 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-14T11:47:17Z" product-name="ecom_toolbox">
 		<header/>
 		<body>
+			<trans-unit id="event.industries" xml:space="preserve">
+				<source>Industries</source>
+			</trans-unit>
 			<trans-unit id="event.industries.I.0" xml:space="preserve">
 				<source>Chemical</source>
 			</trans-unit>
