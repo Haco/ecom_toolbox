@@ -36,7 +36,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	/**
 	 * @param string $labelField
 	 *
-	 * @return \S3b0\EcomProductTools\Domain\Repository\AbstractRepository
+	 * @return \Ecom\EcomToolbox\Domain\Repository\AbstractRepository
 	 */
 	public function jsonRequestSetOrderingByAlphabet($labelField = 'title') {
 		$this->setDefaultOrderings([ $labelField => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING ]);
@@ -49,7 +49,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 *
 	 * @return \Ecom\EcomToolbox\Domain\Repository\AbstractRepository
 	 */
-	public function setExtQuerySettings() {
+	public function ignoreStoragePidAndSysLanguageUid() {
 		/** @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings */
 		$querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\QuerySettingsInterface');
 		$querySettings
