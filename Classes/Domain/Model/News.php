@@ -8,7 +8,7 @@ namespace Ecom\EcomToolbox\Domain\Model;
  * Extends the News Model with custom fields
  */
 
-class News extends \Tx_News_Domain_Model_News {
+class News extends \GeorgRinger\News\Domain\Model\News {
 	/**
 	 * ecom Eventdate
 	 *

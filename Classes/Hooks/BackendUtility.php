@@ -2,7 +2,7 @@
 
 namespace Ecom\EcomToolbox\Hooks;
 
-class T3libBefunc extends \Tx_News_Hooks_T3libBefunc {
+class BackendUtility extends \GeorgRinger\News\Hooks\BackendUtility {
 
 	public function updateFlexforms(&$params, &$reference) {
 		if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('cb_newscal')) {
