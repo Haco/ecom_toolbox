@@ -25,7 +25,7 @@ $EM_CONF['ecom_toolbox'] = [
 	'constraints' => [
 		'depends' => [
 			'typo3' => '6.2',
-			'news' => ''
+			'news' => '3.2.0-3.2.99'
 		],
 		'conflicts' => [],
 		'suggests' => [
