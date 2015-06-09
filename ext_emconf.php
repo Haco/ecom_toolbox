@@ -29,7 +29,7 @@ $EM_CONF['ecom_toolbox'] = [
 		],
 		'conflicts' => [],
 		'suggests' => [
-			'cb_newscal' => ''
+			'cb_newscal' => '1.2.2-nsc',
 		]
 	]
 ];
