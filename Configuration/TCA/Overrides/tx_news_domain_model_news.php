@@ -93,13 +93,33 @@ $newsEventDateColumn = array(
 		),
 	),
 
+	'ecom_event_hide_infobox' => array (
+		'label' => 'Hide Info box in Blog entry',
+		'l10n_mode' => 'exclude',
+		'l10n_display' => 'defaultAsReadonly',
+		'config' => array(
+			'type' => 'check',
+			'default' => 0
+		),
+	),
+	
+	'ecom_event_hide_googlemaps' => array (
+		'label' => 'Hide Google Maps Link',
+		'l10n_mode' => 'exclude',
+		'l10n_display' => 'defaultAsReadonly',
+		'config' => array(
+			'type' => 'check',
+			'default' => 0
+		),
+	),
 );
 
 // Custom Palettes
+$GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_options'] = array('showitem' => 'ecom_event_hide_infobox,ecom_event_hide_googlemaps', 'canNotCollapse' => 1);
 $GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_dates'] = array('showitem' => 'ecom_eventdate,ecom_event_end', 'canNotCollapse' => 1);
 $GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_location'] = array('showitem' => 'ecom_event_booth,--linebreak--,ecom_event_country,ecom_event_city,--linebreak--,ecom_event_address', 'canNotCollapse' => 1);
 $GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_topic'] = array('showitem' => 'ecom_event_industries,--linebreak--,ecom_event_industries_custom', 'canNotCollapse' => 1);
 
 // Adds the event field to ext:news TCA palettes
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news', $newsEventDateColumn, 1);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', '--div--;ecom Event,--palette--;Event Dates;ecom_event_dates,--palette--;Event Location;ecom_event_location,--palette--;Event Topic;ecom_event_topic');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', '--div--;ecom Event,--palette--;Event Options;ecom_event_options,--palette--;Event Dates;ecom_event_dates,--palette--;Event Location;ecom_event_location,--palette--;Event Topic;ecom_event_topic');

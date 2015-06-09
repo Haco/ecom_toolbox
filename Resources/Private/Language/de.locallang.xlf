@@ -3,6 +3,50 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-11-26T11:17:02Z" product-name="t3locations">
 		<header/>
 		<body>
+			<trans-unit id="modal.closewindow" xml:space="preserve">
+				<source>Close window</source>
+				<target>Fenster schließen</target>
+			</trans-unit>
+			<trans-unit id="event.country" xml:space="preserve">
+				<source>Country</source>
+				<target>Land</target>
+			</trans-unit>
+			<trans-unit id="event.city" xml:space="preserve">
+				<source>City</source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="event.address" xml:space="preserve">
+				<source>Address</source>
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="event.location" xml:space="preserve">
+				<source>Location</source>
+				<target>Standort</target>
+			</trans-unit>
+			<trans-unit id="event.hall" xml:space="preserve">
+				<source>Hall</source>
+				<target>Halle</target>
+			</trans-unit>
+			<trans-unit id="event.booth" xml:space="preserve">
+				<source>Booth</source>
+				<target>Stand</target>
+			</trans-unit>
+			<trans-unit id="event.category" xml:space="preserve">
+				<source>Category</source>
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="event.days" xml:space="preserve">
+				<source>Days</source>
+				<target>Tage</target>
+			</trans-unit>
+			<trans-unit id="event.day" xml:space="preserve">
+				<source>Day</source>
+				<target>Tag</target>
+			</trans-unit>
+			<trans-unit id="event.duration" xml:space="preserve">
+				<source>Duration</source>
+				<target>Dauer</target>
+			</trans-unit>
 			<trans-unit id="event.industries" xml:space="preserve">
 				<source>Industries</source>
 				<target>Industrie</target>
@@ -27,7 +71,10 @@
 				<source>Process <![CDATA[&]]> Automation</source>
 				<target>Prozess- <![CDATA[&]]> Automatisierungstechnik</target>
 			</trans-unit>
-
+			<trans-unit id="calendar.readmore" xml:space="preserve">
+				<source>Read more</source>
+				<target>Weiterlesen</target>
+			</trans-unit>
 			<trans-unit id="calendar.showDetails" xml:space="preserve">
 				<source>Show Details</source>
 				<target>Details anzeigen</target>

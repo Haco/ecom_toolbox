@@ -66,6 +66,20 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	protected $ecomEventIndustriesCustom = NULL;
 
 	/**
+	 * ecom Event Hide Infobox
+	 *
+	 * @var boolean
+	 */
+	protected $ecomEventHideInfobox = NULL;
+
+	/**
+	 * ecom Event Hide Googlemaps
+	 *
+	 * @var boolean
+	 */
+	protected $ecomEventHideGooglemaps = NULL;
+
+	/**
 	 * Returns the ecom Eventdate
 	 *
 	 * @return \DateTime $ecomEventdate
@@ -253,5 +267,43 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 */
 	public function setEcomEventIndustriesCustom($ecomEventIndustriesCustom) {
 		$this->ecomEventIndustriesCustom = $ecomEventIndustriesCustom;
+	}
+
+	/**
+	 * Returns the ecom Event Hide Infobox
+	 *
+	 * @return boolean $ecomEventHideInfobox
+	 */
+	public function getEcomEventHideInfobox() {
+		return $this->ecomEventHideInfobox;
+	}
+
+	/**
+	 * Sets the ecom Event Hide Infobox
+	 *
+	 * @param boolean $ecomEventHideInfobox
+	 * @return void
+	 */
+	public function setEcomEventHideInfobox($ecomEventHideInfobox) {
+		$this->ecomEventHideInfobox = $ecomEventHideInfobox;
+	}
+
+	/**
+	 * Returns the ecom Event Hide Googlemaps
+	 *
+	 * @return boolean $ecomEventHideGooglemaps
+	 */
+	public function getEcomEventHideGooglemaps() {
+		return $this->ecomEventHideGooglemaps;
+	}
+
+	/**
+	 * Sets the ecom Event Hide Googlemaps
+	 *
+	 * @param boolean $ecomEventHideGooglemaps
+	 * @return void
+	 */
+	public function setEcomEventHideGooglemaps($ecomEventHideGooglemaps) {
+		$this->ecomEventHideGooglemaps = $ecomEventHideGooglemaps;
 	}
 }

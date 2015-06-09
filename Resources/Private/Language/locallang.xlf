@@ -3,6 +3,39 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-14T11:47:17Z" product-name="ecom_toolbox">
 		<header/>
 		<body>
+			<trans-unit id="modal.closewindow" xml:space="preserve">
+				<source>Close window</source>
+			</trans-unit>
+			<trans-unit id="event.country" xml:space="preserve">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="event.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="event.address" xml:space="preserve">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="event.location" xml:space="preserve">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="event.hall" xml:space="preserve">
+				<source>Hall</source>
+			</trans-unit>
+			<trans-unit id="event.booth" xml:space="preserve">
+				<source>Booth</source>
+			</trans-unit>
+			<trans-unit id="event.category" xml:space="preserve">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="event.days" xml:space="preserve">
+				<source>Days</source>
+			</trans-unit>
+			<trans-unit id="event.day" xml:space="preserve">
+				<source>Day</source>
+			</trans-unit>
+			<trans-unit id="event.duration" xml:space="preserve">
+				<source>Duration</source>
+			</trans-unit>
 			<trans-unit id="event.industries" xml:space="preserve">
 				<source>Industries</source>
 			</trans-unit>
@@ -22,6 +55,9 @@
 				<source>Process <![CDATA[&]]> Automation</source>
 			</trans-unit>
 
+			<trans-unit id="calendar.readmore" xml:space="preserve">
+				<source>Read more</source>
+			</trans-unit>
 			<trans-unit id="calendar.showDetails" xml:space="preserve">
 				<source>Show Details</source>
 			</trans-unit>
