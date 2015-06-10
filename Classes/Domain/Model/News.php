@@ -10,7 +10,28 @@ namespace Ecom\EcomToolbox\Domain\Model;
 
 class News extends \GeorgRinger\News\Domain\Model\News {
 	/**
-	 * ecom Eventdate
+	 * ecom Event Host
+	 *
+	 * @var \string
+	 */
+	protected $ecomEventHost = NULL;
+
+	/**
+	 * ecom Event Website
+	 *
+	 * @var \string
+	 */
+	protected $ecomEventConsultants = NULL;
+
+	/**
+	 * ecom Event Website
+	 *
+	 * @var \string
+	 */
+	protected $ecomEventWebsite = NULL;
+
+	/**
+	 * ecom Event
 	 *
 	 * @var \DateTime
 	 */
@@ -22,6 +43,20 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 * @var \DateTime
 	 */
 	protected $ecomEventEnd = NULL;
+
+	/**
+	 * ecom Event Open From
+	 *
+	 * @var \DateTime
+	 */
+	protected $ecomEventOpenFrom = NULL;
+
+	/**
+	 * ecom Event Open Till
+	 *
+	 * @var \DateTime
+	 */
+	protected $ecomEventOpenTill = NULL;
 
 	/**
 	 * ecom Event Booth
@@ -80,6 +115,63 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	protected $ecomEventHideGooglemaps = NULL;
 
 	/**
+	 * Returns the ecom Event Host
+	 *
+	 * @return string $ecomEventHost
+	 */
+	public function getEcomEventHost() {
+		return $this->ecomEventHost;
+	}
+
+	/**
+	 * Sets the ecom Event Host
+	 *
+	 * @param string $ecomEventHost
+	 * @return void
+	 */
+	public function setEcomEventHost($ecomEventHost) {
+		$this->ecomEventHost = $ecomEventHost;
+	}
+
+	/**
+	 * Returns the ecom Event Consultants
+	 *
+	 * @return string $ecomEventConsultants
+	 */
+	public function getEcomEventConsultants() {
+		return $this->ecomEventConsultants;
+	}
+
+	/**
+	 * Sets the ecom Event Consultants
+	 *
+	 * @param string $ecomEventConsultants
+	 * @return void
+	 */
+	public function setEcomEventConsultants($ecomEventConsultants) {
+		$this->ecomEventConsultants = $ecomEventConsultants;
+	}
+
+	/**
+	 * Returns the ecom Event Website
+	 *
+	 * @return string $ecomEventWebsite
+	 */
+	public function getEcomEventWebsite() {
+		return $this->ecomEventWebsite;
+	}
+
+	/**
+	 * Sets the ecom Event Website
+	 *
+	 * @param string $ecomEventWebsite
+	 * @return void
+	 */
+	public function setEcomEventWebsite($ecomEventWebsite) {
+		$this->ecomEventWebsite = $ecomEventWebsite;
+	}
+
+	/**
 	 * Returns the ecom Eventdate
 	 *
 	 * @return \DateTime $ecomEventdate
@@ -115,6 +207,44 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 */
 	public function setEcomEventEnd($ecomEventEnd) {
 		$this->ecomEventEnd = $ecomEventEnd;
+	}
+
+	/**
+	 * Returns the ecom Event Open From
+	 *
+	 * @return \DateTime $ecomEventOpenFrom
+	 */
+	public function getEcomEventOpenFrom() {
+		return $this->ecomEventOpenFrom;
+	}
+
+	/**
+	 * Sets the ecom EventOpenFrom
+	 *
+	 * @param \DateTime $ecomEventOpenFrom
+	 * @return void
+	 */
+	public function setEcomEventOpenFrom($ecomEventOpenFrom) {
+		$this->ecomEventOpenFrom = $ecomEventOpenFrom;
+	}
+
+	/**
+	 * Returns the ecom Event Open Till
+	 *
+	 * @return \DateTime $ecomEventOpenTill
+	 */
+	public function getEcomEventOpenTill() {
+		return $this->ecomEventOpenTill;
+	}
+
+	/**
+	 * Sets the ecom EventOpenTill
+	 *
+	 * @param \DateTime $ecomEventOpenTill
+	 * @return void
+	 */
+	public function setEcomEventOpenTill($ecomEventOpenTill) {
+		$this->ecomEventOpenTill = $ecomEventOpenTill;
 	}
 
 	/**
@@ -213,15 +343,10 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 		$numberOfCheckboxes = 5;
 
 		if ($this->ecomEventIndustries) {
-			$checksArray = NULL;
 			for ($i = 0; $i <= $numberOfCheckboxes-1; $i++) {
 				if (($this->ecomEventIndustries >> $i) & 1) {
-					$checksArray[$i] = 'checked';
+					$result[] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('event.industries.I.' . $i, 'ecom_toolbox');
 				}
-			}
-			// Generate translated array
-			foreach ($checksArray as $checkboxValue => $checked) {
-				$result[] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('event.industries.I.' . $checkboxValue, 'ecom_toolbox');
 			}
 		}
 

@@ -1,11 +1,56 @@
 <?php
 $newsEventDateColumn = array(
+	'ecom_event_host' => array (
+		'label' => 'Event Host',
+		'l10n_mode' => 'exclude',
+		'l10n_display' => 'defaultAsReadonly',
+		'config' => array (
+			'type' => 'input',
+			'eval' => 'trim',
+			'size' => '13'
+		),
+	),
+
+	'ecom_event_consultants' => array (
+		'label' => 'Consultants',
+		'l10n_mode' => 'exclude',
+		'l10n_display' => 'defaultAsReadonly',
+		'config' => array (
+			'type' => 'text',
+			'eval' => 'trim',
+			'rows' => '4',
+			'cols' => '31'
+		),
+	),
+
+	'ecom_event_website' => array (
+		'label' => 'Official Website',
+		'l10n_mode' => 'exclude',
+		'l10n_display' => 'defaultAsReadonly',
+		'config' => array (
+			'type' => 'input',
+			'size' => '13',
+			'eval' => 'trim',
+			'wizards' => array(
+				'_PADDING' => 2,
+				'link' => array(
+					'type' => 'popup',
+					'title' => 'LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel',
+					'icon' => 'link_popup.gif',
+					'script' => 'browse_links.php?mode=wizard',
+					'JSopenParams' => 'height=500,width=700,status=0,menubar=0,scrollbars=1',
+				),
+			),
+			'softref' => 'typolink',
+		),
+	),
+
 	'ecom_eventdate' => array (
 		'exclude' => 0,
 		'label' => 'ecom Event Date',
 		'config' => array (
 			'type' => 'input',
-			'eval' => 'date',
+			'eval' => 'datetime',
 			'size' => 10
 		),
 	),
@@ -17,8 +62,32 @@ $newsEventDateColumn = array(
 		'label' => 'ecom Event End',
 		'config' => array (
 			'type' => 'input',
-			'eval' => 'date',
+			'eval' => 'datetime',
 			'size' => 10
+		),
+	),
+
+	'ecom_event_open_from' => array (
+		'exclude' => 0,
+		'l10n_mode' => 'exclude',
+		'l10n_display' => 'defaultAsReadonly',
+		'label' => 'Open from',
+		'config' => array (
+			'type' => 'input',
+			'eval' => 'time',
+			'size' => 4
+		),
+	),
+
+	'ecom_event_open_till' => array (
+		'exclude' => 0,
+		'l10n_mode' => 'exclude',
+		'l10n_display' => 'defaultAsReadonly',
+		'label' => 'Open till',
+		'config' => array (
+			'type' => 'input',
+			'eval' => 'time',
+			'size' => 4
 		),
 	),
 
@@ -102,7 +171,7 @@ $newsEventDateColumn = array(
 			'default' => 0
 		),
 	),
-	
+
 	'ecom_event_hide_googlemaps' => array (
 		'label' => 'Hide Google Maps Link',
 		'l10n_mode' => 'exclude',
@@ -116,10 +185,12 @@ $newsEventDateColumn = array(
 
 // Custom Palettes
 $GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_options'] = array('showitem' => 'ecom_event_hide_infobox,ecom_event_hide_googlemaps', 'canNotCollapse' => 1);
+$GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_contact'] = array('showitem' => 'ecom_event_host,ecom_event_website,--linebreak--,ecom_event_consultants', 'canNotCollapse' => 1);
 $GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_dates'] = array('showitem' => 'ecom_eventdate,ecom_event_end', 'canNotCollapse' => 1);
+$GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_daily_openings'] = array('showitem' => 'ecom_event_open_from,ecom_event_open_till', 'canNotCollapse' => 1);
 $GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_location'] = array('showitem' => 'ecom_event_booth,--linebreak--,ecom_event_country,ecom_event_city,--linebreak--,ecom_event_address', 'canNotCollapse' => 1);
 $GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['ecom_event_topic'] = array('showitem' => 'ecom_event_industries,--linebreak--,ecom_event_industries_custom', 'canNotCollapse' => 1);
 
 // Adds the event field to ext:news TCA palettes
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news', $newsEventDateColumn, 1);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', '--div--;ecom Event,--palette--;Event Options;ecom_event_options,--palette--;Event Dates;ecom_event_dates,--palette--;Event Location;ecom_event_location,--palette--;Event Topic;ecom_event_topic');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', '--div--;ecom Event,--palette--;Event Options;ecom_event_options,--palette--;Event Contact;ecom_event_contact,--palette--;Event Dates;ecom_event_dates,--palette--;Event Daily Openings;ecom_event_daily_openings,--palette--;Event Location;ecom_event_location,--palette--;Event Topic;ecom_event_topic');
