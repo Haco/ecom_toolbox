@@ -14,28 +14,28 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 *
 	 * @var \string
 	 */
-	protected $ecomEventHost = NULL;
+	protected $ecomEventHost = '';
 
 	/**
 	 * ecom Event Website
 	 *
 	 * @var \string
 	 */
-	protected $ecomEventConsultants = NULL;
+	protected $ecomEventConsultants = '';
 
 	/**
 	 * ecom Event Website
 	 *
 	 * @var \string
 	 */
-	protected $ecomEventWebsite = NULL;
+	protected $ecomEventWebsite = '';
 
 	/**
 	 * ecom Event
 	 *
 	 * @var \DateTime
 	 */
-	protected $ecomEventdate = NULL;
+	protected $ecomEventDate = NULL;
 
 	/**
 	 * ecom Event End
@@ -63,7 +63,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 *
 	 * @var string
 	 */
-	protected $ecomEventBooth = NULL;
+	protected $ecomEventBooth = '';
 
 	/**
 	 * ecom Event Country
@@ -77,14 +77,14 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 *
 	 * @var string
 	 */
-	protected $ecomEventCity = NULL;
+	protected $ecomEventCity = '';
 
 	/**
 	 * ecom Event Address
 	 *
 	 * @var string
 	 */
-	protected $ecomEventAddress = NULL;
+	protected $ecomEventAddress = '';
 
 	/**
 	 * ecom Event Industries
@@ -98,21 +98,14 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 *
 	 * @var string
 	 */
-	protected $ecomEventIndustriesCustom = NULL;
+	protected $ecomEventIndustriesCustom = '';
 
 	/**
-	 * ecom Event Hide Infobox
+	 * ecom Event Settings
 	 *
 	 * @var boolean
 	 */
-	protected $ecomEventHideInfobox = NULL;
-
-	/**
-	 * ecom Event Hide Googlemaps
-	 *
-	 * @var boolean
-	 */
-	protected $ecomEventHideGooglemaps = NULL;
+	protected $ecomEventSettings = 0;
 
 	/**
 	 * Returns the ecom Event Host
@@ -174,20 +167,21 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	/**
 	 * Returns the ecom Eventdate
 	 *
-	 * @return \DateTime $ecomEventdate
+	 * @return \DateTime $ecomEventDate
 	 */
-	public function getEcomEventdate() {
-		return $this->ecomEventdate;
+	public function getEcomEventDate() {
+		return $this->ecomEventDate;
 	}
 
 	/**
 	 * Sets the ecom Eventdate
 	 *
-	 * @param \DateTime $ecomEventdate
+	 * @param \DateTime $ecomEventDate
+	 *
 	 * @return void
 	 */
-	public function setEcomEventdate($ecomEventdate) {
-		$this->ecomEventdate = $ecomEventdate;
+	public function setEcomEventDate($ecomEventDate) {
+		$this->ecomEventDate = $ecomEventDate;
 	}
 
 	/**
@@ -339,7 +333,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 * @return array
 	 */
 	public function getEcomEventIndustriesArray() {
-		$result = array();
+		$result = [];
 		$numberOfCheckboxes = 5;
 
 		if ($this->ecomEventIndustries) {
@@ -395,22 +389,30 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
+	 * Returns the ecom Event Settings
+	 *
+	 * @return boolean
+	 */
+	public function isEcomEventSettings() {
+		return $this->ecomEventSettings;
+	}
+
+	/**
+	 * Returns the ecom Event Settings
+	 *
+	 * @param boolean $ecomEventSettings
+	 */
+	public function setEcomEventSettings($ecomEventSettings) {
+		$this->ecomEventSettings = $ecomEventSettings;
+	}
+
+	/**
 	 * Returns the ecom Event Hide Infobox
 	 *
 	 * @return boolean $ecomEventHideInfobox
 	 */
 	public function getEcomEventHideInfobox() {
-		return $this->ecomEventHideInfobox;
-	}
-
-	/**
-	 * Sets the ecom Event Hide Infobox
-	 *
-	 * @param boolean $ecomEventHideInfobox
-	 * @return void
-	 */
-	public function setEcomEventHideInfobox($ecomEventHideInfobox) {
-		$this->ecomEventHideInfobox = $ecomEventHideInfobox;
+		return (bool) ($this->ecomEventSettings & 1);
 	}
 
 	/**
@@ -419,16 +421,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 * @return boolean $ecomEventHideGooglemaps
 	 */
 	public function getEcomEventHideGooglemaps() {
-		return $this->ecomEventHideGooglemaps;
+		return (bool) ($this->ecomEventSettings & 2);
 	}
 
-	/**
-	 * Sets the ecom Event Hide Googlemaps
-	 *
-	 * @param boolean $ecomEventHideGooglemaps
-	 * @return void
-	 */
-	public function setEcomEventHideGooglemaps($ecomEventHideGooglemaps) {
-		$this->ecomEventHideGooglemaps = $ecomEventHideGooglemaps;
-	}
 }

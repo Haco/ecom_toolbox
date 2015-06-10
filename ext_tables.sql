@@ -154,7 +154,7 @@ CREATE TABLE tx_news_domain_model_news (
 	ecom_event_host varchar(255) DEFAULT '' NOT NULL,
 	ecom_event_consultants text NOT NULL,
 	ecom_event_website varchar(255) DEFAULT '' NOT NULL,
-	ecom_eventdate int(11) DEFAULT '0' NOT NULL,
+	ecom_event_date int(11) DEFAULT '0' NOT NULL,
 	ecom_event_end int(11) DEFAULT '0' NOT NULL,
 	ecom_event_open_from int(11) DEFAULT '0' NOT NULL,
 	ecom_event_open_till int(11) DEFAULT '0' NOT NULL,
@@ -164,6 +164,5 @@ CREATE TABLE tx_news_domain_model_news (
 	ecom_event_address text NOT NULL,
 	ecom_event_industries int(11) DEFAULT '0' NOT NULL,
 	ecom_event_industries_custom text NOT NULL,
-	ecom_event_hide_infobox tinyint(1) DEFAULT '0',
-	ecom_event_hide_googlemaps tinyint(1) DEFAULT '0',
+	ecom_event_settings int(11) DEFAULT '0' NOT NULL
 );
