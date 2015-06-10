@@ -27,4 +27,4 @@ if ( !defined('TYPO3_MODE') ) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_ecomtoolbox_domain_model_territory', 'EXT:ecom_toolbox/Resources/Private/Language/locallang_csh_tx_ecomtoolbox_domain_model_territory.xlf');
 
 // Extend EXT:News Flexform SortBy Dropdown
-$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByNews'] .= ',ecom_eventdate';
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByNews'] .= ',ecom_event_date';

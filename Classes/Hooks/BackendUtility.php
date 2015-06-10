@@ -16,6 +16,6 @@ class BackendUtility extends \GeorgRinger\News\Hooks\BackendUtility {
 
 	// Add item to the "dateField" Dropdown in Calendar View of EXT:cb_newscal
 	protected function updateCalendarFlexforms(&$params, &$reference) {
-		$params['dataStructure']['sheets']['sDEF']['ROOT']['el']['settings.dateField']['TCEforms']['config']['items'][] = array('ecom Event Date', 'ecom_eventdate');
+		$params['dataStructure']['sheets']['sDEF']['ROOT']['el']['settings.dateField']['TCEforms']['config']['items'][] = array('ecom Event Date', 'ecom_event_date');
 	}
 }

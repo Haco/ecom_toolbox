@@ -1,2 +1,2 @@
 // Allow Ordering of EXT:News records by newly added field "ecom_eventdate"
-plugin.tx_news.settings.orderByAllowed := addToList(ecom_eventdate)
+plugin.tx_news.settings.orderByAllowed := addToList(ecom_event_date)

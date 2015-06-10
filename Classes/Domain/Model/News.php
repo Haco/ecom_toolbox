@@ -17,7 +17,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	protected $ecomEventHost = '';
 
 	/**
-	 * ecom Event Website
+	 * ecom Event Consultants
 	 *
 	 * @var \string
 	 */

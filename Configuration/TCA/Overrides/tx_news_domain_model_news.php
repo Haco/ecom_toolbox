@@ -51,7 +51,7 @@
 			]
 		],
 
-		'ecom_eventdate' => [
+		'ecom_event_date' => [
 			'exclude' => 0,
 			'label' => 'ecom Event Date',
 			'config' => [
@@ -189,7 +189,7 @@
 	$GLOBALS['TCA']['tx_news_domain_model_news']['palettes'],
 	[
 		'ecom_event_contact' => [ 'showitem' => 'ecom_event_host,ecom_event_website,--linebreak--,ecom_event_consultants', 'canNotCollapse' => 1 ],
-		'ecom_event_dates' => [ 'showitem' => 'ecom_eventdate,ecom_event_end', 'canNotCollapse' => 1 ],
+		'ecom_event_dates' => [ 'showitem' => 'ecom_event_date,ecom_event_end', 'canNotCollapse' => 1 ],
 		'ecom_event_daily_openings' => [ 'showitem' => 'ecom_event_open_from,ecom_event_open_till', 'canNotCollapse' => 1 ],
 		'ecom_event_location' => [ 'showitem' => 'ecom_event_booth,--linebreak--,ecom_event_country,ecom_event_city,--linebreak--,ecom_event_address', 'canNotCollapse' => 1 ],
 		'ecom_event_topic' => [ 'showitem' => 'ecom_event_industries,--linebreak--,ecom_event_industries_custom', 'canNotCollapse' => 1 ]
