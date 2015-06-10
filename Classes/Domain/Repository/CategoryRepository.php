@@ -34,6 +34,21 @@ namespace Ecom\EcomToolbox\Domain\Repository;
 class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository {
 
 	/**
+	 * @param string $list
+	 * @param array  $storagePids
+	 *
+	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+	 */
+	public function findByUidList($list, array $storagePids = []) {
+		$query = $this->createQuery();
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectSysLanguage( FALSE )->setStoragePageIds( $storagePids ) );
+
+		return $query->matching(
+			$query->in('uid', \TYPO3\CMS\Core\Utility\GeneralUtility::intExplode(',', $list, TRUE))
+		)->execute();
+	}
+
+	/**
 	 * @param string $property
 	 * @param string $lookUp
 	 *
@@ -41,10 +56,7 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRe
 	 */
 	public function findSimilarByProperty($property, $lookUp) {
 		$query = $this->createQuery();
-		$query->setQuerySettings(
-			$query->getQuerySettings()
-				->setRespectStoragePage(FALSE)
-		);
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectStoragePage( FALSE ) );
 
 		return $query->matching(
 			$query->logicalOr([

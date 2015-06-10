@@ -45,8 +45,6 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	}
 
 	/**
-	 * Intended for Ajax requests
-	 *
 	 * @return \Ecom\EcomToolbox\Domain\Repository\AbstractRepository
 	 */
 	public function ignoreStoragePidAndSysLanguageUid() {
@@ -61,6 +59,66 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	}
 
 	/**
+	 * @return \Ecom\EcomToolbox\Domain\Repository\AbstractRepository
+	 */
+	public function ignoreStoragePid() {
+		/** @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings */
+		$querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\QuerySettingsInterface');
+		$querySettings->setRespectStoragePage(FALSE); // Disable storage pid
+		$this->setDefaultQuerySettings($querySettings);
+
+		return $this;
+	}
+
+	/**
+	 * @return \Ecom\EcomToolbox\Domain\Repository\AbstractRepository
+	 */
+	public function ignoreSysLanguageUid() {
+		/** @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings */
+		$querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\QuerySettingsInterface');
+		$querySettings->setRespectSysLanguage(FALSE); // Disable sys_language
+		$this->setDefaultQuerySettings($querySettings);
+
+		return $this;
+	}
+
+	/**
+	 * @return void
+	 */
+	public function ignoreStoragePidAndSysLanguageUidOnQuery(\TYPO3\CMS\Extbase\Persistence\QueryInterface &$query) {
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectStoragePage( FALSE )->setRespectSysLanguage( FALSE ) );
+	}
+
+	/**
+	 * @return void
+	 */
+	public function ignoreStoragePidOnQuery(\TYPO3\CMS\Extbase\Persistence\QueryInterface &$query) {
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectStoragePage( FALSE ) );
+	}
+
+	/**
+	 * @return void
+	 */
+	public function ignoreSysLanguageUidOnQuery(\TYPO3\CMS\Extbase\Persistence\QueryInterface &$query) {
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectSysLanguage( FALSE ) );
+	}
+
+	/**
+	 * @param string $list
+	 * @param array  $storagePids
+	 *
+	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+	 */
+	public function findByUidList($list, array $storagePids = []) {
+		$query = $this->createQuery();
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectSysLanguage( FALSE )->setStoragePageIds( $storagePids ) );
+
+		return $query->matching(
+			$query->in('uid', \TYPO3\CMS\Core\Utility\GeneralUtility::intExplode(',', $list, TRUE))
+		)->execute();
+	}
+
+	/**
 	 * @param string $property
 	 * @param string $lookUp
 	 *
@@ -68,10 +126,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 */
 	public function findSimilarByProperty($property, $lookUp) {
 		$query = $this->createQuery();
-		$query->setQuerySettings(
-			$query->getQuerySettings()
-				->setRespectStoragePage(FALSE)
-		);
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectStoragePage( FALSE ) );
 
 		return $query->matching(
 			$query->logicalOr([
