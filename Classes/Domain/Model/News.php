@@ -103,7 +103,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	/**
 	 * ecom Event Settings
 	 *
-	 * @var boolean
+	 * @var integer
 	 */
 	protected $ecomEventSettings = 0;
 
@@ -391,7 +391,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	/**
 	 * Returns the ecom Event Settings
 	 *
-	 * @return boolean
+	 * @return integer
 	 */
 	public function isEcomEventSettings() {
 		return $this->ecomEventSettings;
@@ -400,7 +400,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	/**
 	 * Returns the ecom Event Settings
 	 *
-	 * @param boolean $ecomEventSettings
+	 * @param integer $ecomEventSettings
 	 */
 	public function setEcomEventSettings($ecomEventSettings) {
 		$this->ecomEventSettings = $ecomEventSettings;
