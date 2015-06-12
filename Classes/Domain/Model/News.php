@@ -73,6 +73,20 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	protected $ecomEventCountry = NULL;
 
 	/**
+	 * ecom Event State
+	 *
+	 * @var \Ecom\EcomToolbox\Domain\Model\State
+	 */
+	protected $ecomEventState = NULL;
+
+	/**
+	 * ecom Event Zip
+	 *
+	 * @var string
+	 */
+	protected $ecomEventZip = '';
+
+	/**
 	 * ecom Event City
 	 *
 	 * @var string
@@ -270,13 +284,51 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventCountry
+	 * Sets the ecom Event Country
 	 *
 	 * @param \Ecom\EcomToolbox\Domain\Model\Region $ecomEventCountry
 	 * @return void
 	 */
 	public function setEcomEventCountry(\Ecom\EcomToolbox\Domain\Model\Region $ecomEventCountry = NULL) {
 		$this->ecomEventCountry = $ecomEventCountry;
+	}
+
+	/**
+	 * Returns the ecom Event State
+	 *
+	 * @return \Ecom\EcomToolbox\Domain\Model\State
+	 */
+	public function getEcomEventState() {
+		return $this->ecomEventState;
+	}
+
+	/**
+	 * Sets the ecom Event State
+	 *
+	 * @param \Ecom\EcomToolbox\Domain\Model\State $ecomEventState
+	 * @return void
+	 */
+	public function setEcomEventState(\Ecom\EcomToolbox\Domain\Model\State $ecomEventState = NULL) {
+		$this->ecomEventState = $ecomEventState;
+	}
+
+	/**
+	 * Returns the ecom Event Zip
+	 *
+	 * @return string $ecomEventZip
+	 */
+	public function getEcomEventZip() {
+		return $this->ecomEventZip;
+	}
+
+	/**
+	 * Sets the ecom Event Zip
+	 *
+	 * @param string $ecomEventZip
+	 * @return void
+	 */
+	public function setEcomEventZip($ecomEventZip) {
+		$this->ecomEventZip = $ecomEventZip;
 	}
 
 	/**
@@ -289,7 +341,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventCity
+	 * Sets the ecom Event City
 	 *
 	 * @param string $ecomEventCity
 	 * @return void

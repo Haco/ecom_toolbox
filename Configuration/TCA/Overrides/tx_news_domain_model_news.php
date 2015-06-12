@@ -122,6 +122,32 @@
 			]
 		],
 
+		'ecom_event_state' => [
+			'label' => 'State',
+			'l10n_mode' => 'exclude',
+			'l10n_display' => 'defaultAsReadonly',
+			'config' => [
+				'type' => 'select',
+				'cols' => 15,
+				'foreign_table' => 'tx_ecomtoolbox_domain_model_state',
+				'foreign_table_where' => 'AND tx_ecomtoolbox_domain_model_state.country=###REC_FIELD_ecom_event_country### AND tx_ecomtoolbox_domain_model_state.deleted=0 ORDER BY tx_ecomtoolbox_domain_model_state.title',
+				'items' => [
+					[ '', '' ]
+				]
+			]
+		],
+
+		'ecom_event_zip' => [
+			'label' => 'ZIP / Post Code',
+			'l10n_mode' => 'exclude',
+			'l10n_display' => 'defaultAsReadonly',
+			'config' => [
+				'type' => 'input',
+				'size' => 6,
+				'eval' => 'trim'
+			]
+		],
+
 		'ecom_event_city' => [
 			'label' => 'City',
 			'l10n_mode' => 'exclude',
@@ -191,10 +217,13 @@
 		'ecom_event_contact' => [ 'showitem' => 'ecom_event_host,ecom_event_website,--linebreak--,ecom_event_consultants', 'canNotCollapse' => 1 ],
 		'ecom_event_dates' => [ 'showitem' => 'ecom_event_date,ecom_event_end', 'canNotCollapse' => 1 ],
 		'ecom_event_daily_openings' => [ 'showitem' => 'ecom_event_open_from,ecom_event_open_till', 'canNotCollapse' => 1 ],
-		'ecom_event_location' => [ 'showitem' => 'ecom_event_booth,--linebreak--,ecom_event_country,ecom_event_city,--linebreak--,ecom_event_address', 'canNotCollapse' => 1 ],
+		'ecom_event_location' => [ 'showitem' => 'ecom_event_booth,--linebreak--,ecom_event_country,ecom_event_state,--linebreak--,ecom_event_zip,ecom_event_city,--linebreak--,ecom_event_address', 'canNotCollapse' => 1 ],
 		'ecom_event_topic' => [ 'showitem' => 'ecom_event_industries,--linebreak--,ecom_event_industries_custom', 'canNotCollapse' => 1 ]
 	]
 );
+
+// Request update for country select field
+$GLOBALS[ 'TCA' ][ 'tx_news_domain_model_news' ][ 'ctrl' ][ 'requestUpdate' ] .= ',ecom_event_country';
 
 // Adds the event field to ext:news TCA palettes
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', '--div--;ecom Event,ecom_event_settings,--palette--;Event Contact;ecom_event_contact,--palette--;Event Dates;ecom_event_dates,--palette--;Event Daily Openings;ecom_event_daily_openings,--palette--;Event Location;ecom_event_location,--palette--;Event Topic;ecom_event_topic');
