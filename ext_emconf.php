@@ -21,12 +21,19 @@ $EM_CONF[ 'ecom_toolbox' ] = [
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
+<<<<<<< HEAD
 	'version' => '1.0.9',
+=======
+	'version' => '1.1.0-dev',
+>>>>>>> newscalendar
 	'constraints' => [
 		'depends' => [
-			'typo3' => '6.2'
+			'typo3' => '6.2',
+			'news' => '3.2.0-3.2.99'
 		],
 		'conflicts' => [],
-		'suggests' => []
+		'suggests' => [
+			'cb_newscal' => '1.2.2-nsc',
+		]
 	]
 ];

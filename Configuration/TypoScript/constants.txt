@@ -1,13 +1,5 @@
 
 plugin.tx_ecomtoolbox {
-	view {
-		# cat=plugin.tx_ecomtoolbox/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:ecom_toolbox/Resources/Private/Templates/
-		# cat=plugin.tx_ecomtoolbox/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:ecom_toolbox/Resources/Private/Partials/
-		# cat=plugin.tx_ecomtoolbox/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:ecom_toolbox/Resources/Private/Layouts/
-	}
 	persistence {
 		# cat=plugin.tx_ecomtoolbox//a; type=string; label=Default storage PID
 		storagePid =

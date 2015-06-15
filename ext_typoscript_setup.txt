@@ -3,7 +3,11 @@ config.tx_extbase {
 		classes {
 			TYPO3\CMS\Extbase\Domain\Model\Category {
 				subclasses {
+<<<<<<< HEAD
 					0 = Ecom\EcomToolbox\Domain\ModelCategory
+=======
+					0 = Ecom\EcomToolbox\Domain\Model\Category
+>>>>>>> newscalendar
 				}
 			}
 			Ecom\EcomToolbox\Domain\Model\Category {

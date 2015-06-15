@@ -1,8 +1,124 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-11-26T11:17:02Z" product-name="t3locations">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-11-26T11:17:02Z" product-name="ecom_toolbox">
 		<header/>
 		<body>
+			<trans-unit id="modal.closewindow" xml:space="preserve">
+				<source>Close window</source>
+				<target>Fenster schließen</target>
+			</trans-unit>
+			<trans-unit id="event.host" xml:space="preserve">
+				<source>Host</source>
+				<target>Veranstalter</target>
+			</trans-unit>
+			<trans-unit id="event.website" xml:space="preserve">
+				<source>Official Website</source>
+				<target>Offizielle Webseite</target>
+			</trans-unit>
+			<trans-unit id="event.consultants" xml:space="preserve">
+				<source>Consultant(s)</source>
+				<target>Referent(en)</target>
+			</trans-unit>
+			<trans-unit id="event.dailyOpenings" xml:space="preserve">
+				<source>Opening Hours</source>
+				<target>Öffnungszeiten</target>
+			</trans-unit>
+			<trans-unit id="event.openFromTill" xml:space="preserve">
+				<source>Daily open from %1$d till %2$d</source>
+				<target>Täglich von %1$s bis %2$s</target>
+			</trans-unit>
+			<trans-unit id="event.country" xml:space="preserve">
+				<source>Country</source>
+				<target>Land</target>
+			</trans-unit>
+			<trans-unit id="event.city" xml:space="preserve">
+				<source>City</source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="event.address" xml:space="preserve">
+				<source>Address</source>
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="event.location" xml:space="preserve">
+				<source>Location</source>
+				<target>Standort</target>
+			</trans-unit>
+			<trans-unit id="event.hall" xml:space="preserve">
+				<source>Hall</source>
+				<target>Halle</target>
+			</trans-unit>
+			<trans-unit id="event.booth" xml:space="preserve">
+				<source>Booth</source>
+				<target>Stand</target>
+			</trans-unit>
+			<trans-unit id="event.category" xml:space="preserve">
+				<source>Category</source>
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="event.days" xml:space="preserve">
+				<source>Days</source>
+				<target>Tage</target>
+			</trans-unit>
+			<trans-unit id="event.day" xml:space="preserve">
+				<source>Day</source>
+				<target>Tag</target>
+			</trans-unit>
+			<trans-unit id="event.duration" xml:space="preserve">
+				<source>Duration</source>
+				<target>Dauer</target>
+			</trans-unit>
+			<trans-unit id="event.industries" xml:space="preserve">
+				<source>Industries</source>
+				<target>Industrie</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.0" xml:space="preserve">
+				<source>Chemical</source>
+				<target>Chemie</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.1" xml:space="preserve">
+				<source>Mining</source>
+				<target>Bergbau</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.2" xml:space="preserve">
+				<source>Oil <![CDATA[&]]> Gas</source>
+				<target>Öl <![CDATA[&]]> Gas</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.3" xml:space="preserve">
+				<source>Pharmaceutical</source>
+				<target>Pharmazeutisch</target>
+			</trans-unit>
+			<trans-unit id="event.industries.I.4" xml:space="preserve">
+				<source>Process <![CDATA[&]]> Automation</source>
+				<target>Prozess- <![CDATA[&]]> Automatisierungstechnik</target>
+			</trans-unit>
+			<trans-unit id="calendar.readmore" xml:space="preserve">
+				<source>Read more</source>
+				<target>Weiterlesen</target>
+			</trans-unit>
+			<trans-unit id="calendar.showDetails" xml:space="preserve">
+				<source>Show Details</source>
+				<target>Details anzeigen</target>
+			</trans-unit>
+			<trans-unit id="calendar.currentMonth" xml:space="preserve">
+				<source>Current month</source>
+				<target>Aktueller Monat</target>
+			</trans-unit>
+			<trans-unit id="calendar.legend" xml:space="preserve">
+				<source>Legend</source>
+				<target>Legende</target>
+			</trans-unit>
+			<trans-unit id="calendar.events" xml:space="preserve">
+				<source>Events</source>
+				<target>Events</target>
+			</trans-unit>
+			<trans-unit id="calendar.eventsToday" xml:space="preserve">
+				<source>Today's events</source>
+				<target>Events am heutigen Tag</target>
+			</trans-unit>
+			<trans-unit id="calendar.today" xml:space="preserve">
+				<source>Today</source>
+				<target>Heute</target>
+			</trans-unit>
 			<!-- Validation -->
 			<trans-unit id="validator.notempty.null" xml:space="preserve">
 				<source>This is a required field. Please fill in!</source>
