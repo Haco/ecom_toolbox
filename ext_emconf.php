@@ -10,7 +10,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF['ecom_toolbox'] = [
+$EM_CONF[ 'ecom_toolbox' ] = [
 	'title' => 'ecom Toolbox',
 	'description' => 'Provides useful tools for and from ecom.',
 	'category' => 'plugin',
