@@ -134,6 +134,44 @@
 				<target><![CDATA[Der übermittelte Wert muss einer der Folgenden sein: %s
 (angegeben: %s)]]></target>
 			</trans-unit>
+
+			<!-- FLASH MESSAGES -->
+			<trans-unit id="f.record_created" xml:space="preserve">
+				<source>The %s was created.</source>
+				<target>Die %s wurde erstellt.</target>
+			</trans-unit>
+			<trans-unit id="m.record_created" xml:space="preserve">
+				<source>The %s was created.</source>
+				<target>Der %s wurde erstellt.</target>
+			</trans-unit>
+			<trans-unit id="n.record_created" xml:space="preserve">
+				<source>The %s was created.</source>
+				<target>Das %s wurde erstellt.</target>
+			</trans-unit>
+			<trans-unit id="f.record_updated" xml:space="preserve">
+				<source>The %1$s "%2$s" was updated.</source>
+				<target>Die %1$s „%2$s“ wurde aktualisiert.</target>
+			</trans-unit>
+			<trans-unit id="m.record_updated" xml:space="preserve">
+				<source>The %1$s "%2$s" was updated.</source>
+				<target>Der %1$s „%2$s“ wurde aktualisiert.</target>
+			</trans-unit>
+			<trans-unit id="n.record_updated" xml:space="preserve">
+				<source>The %1$s "%2$s" was updated.</source>
+				<target>Das %1$s „%2$s“ wurde aktualisiert.</target>
+			</trans-unit>
+			<trans-unit id="f.record_deleted" xml:space="preserve">
+				<source>The %1$s "%2$s" was deleted.</source>
+				<target>Die %1$s „%2$s“ wurde gelöscht.</target>
+			</trans-unit>
+			<trans-unit id="m.record_deleted" xml:space="preserve">
+				<source>The %1$s "%2$s" was deleted.</source>
+				<target>Der %1$s „%2$s“ wurde gelöscht.</target>
+			</trans-unit>
+			<trans-unit id="n.record_deleted" xml:space="preserve">
+				<source>The %1$s "%2$s" was deleted.</source>
+				<target>Das %1$s „%2$s“ wurde gelöscht.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

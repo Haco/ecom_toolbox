@@ -26,11 +26,16 @@ namespace Ecom\EcomToolbox\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * Class ActionController
  */
 class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+
+	const MALE_ARTICLE = 'm';
+	const FEMALE_ARTICLE = 'f';
+	const NEUTER_ARTICLE = 'n';
 
 	/**
 	 * This action is for lazy programmers who don't want write the NULL values
@@ -59,31 +64,37 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
 	/**
 	 * @param \TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject
+	 * @param string                                               $message
+	 * @param string                                               $translateArticle
 	 */
-	public function createRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject) {
+	public function createRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $translateArticle = ActionController::NEUTER_ARTICLE) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
-		$this->addFlashMessage('The ' . $reflect->getShortName() . ' was created.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+		$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_created', 'ecom_toolbox', [ $reflect->getShortName() ]), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
 		$this->{$repository}->add($abstractDomainObject);
 	}
 
 	/**
 	 * @param \TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject
+	 * @param string                                               $message
+	 * @param string                                               $translateArticle
 	 */
-	public function updateRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject) {
+	public function updateRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $translateArticle = ActionController::NEUTER_ARTICLE) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
-		$this->addFlashMessage('The ' . $reflect->getShortName() . ' "' . ($abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString()) . '" was updated.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+		$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_updated', 'ecom_toolbox', [ $reflect->getShortName(), $abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString() ]), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
 		$this->{$repository}->update($abstractDomainObject);
 	}
 
 	/**
 	 * @param \TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject
+	 * @param string                                               $message
+	 * @param string                                               $translateArticle
 	 */
-	public function deleteRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject) {
+	public function deleteRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $translateArticle = ActionController::NEUTER_ARTICLE) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
-		$this->addFlashMessage('The ' . $reflect->getShortName() . ' "' . ($abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString()) . '" was deleted.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+		$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_deleted', 'ecom_toolbox', [ $reflect->getShortName(), $abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString() ]), '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->{$repository}->remove($abstractDomainObject);
 	}
 }

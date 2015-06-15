@@ -105,6 +105,35 @@
 				<source><![CDATA[The value provided must be one of the following: %s
 (submitted: %s)]]></source>
 			</trans-unit>
+
+			<!-- FLASH MESSAGES -->
+			<trans-unit id="f.record_created" xml:space="preserve">
+				<source>The %s was created.</source>
+			</trans-unit>
+			<trans-unit id="m.record_created" xml:space="preserve">
+				<source>The %s was created.</source>
+			</trans-unit>
+			<trans-unit id="n.record_created" xml:space="preserve">
+				<source>The %s was created.</source>
+			</trans-unit>
+			<trans-unit id="f.record_updated" xml:space="preserve">
+				<source>The %1$s "%2$s" was updated.</source>
+			</trans-unit>
+			<trans-unit id="m.record_updated" xml:space="preserve">
+				<source>The %1$s "%2$s" was updated.</source>
+			</trans-unit>
+			<trans-unit id="n.record_updated" xml:space="preserve">
+				<source>The %1$s "%2$s" was updated.</source>
+			</trans-unit>
+			<trans-unit id="f.record_deleted" xml:space="preserve">
+				<source>The %1$s "%2$s" was deleted.</source>
+			</trans-unit>
+			<trans-unit id="m.record_deleted" xml:space="preserve">
+				<source>The %1$s "%2$s" was deleted.</source>
+			</trans-unit>
+			<trans-unit id="n.record_deleted" xml:space="preserve">
+				<source>The %1$s "%2$s" was deleted.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
