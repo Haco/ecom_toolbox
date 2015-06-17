@@ -46,7 +46,7 @@ class TimeViewHelper extends AbstractViewHelper {
 		$twelveHourFormat = call_user_func('strto' . strtolower($thfCase), $hours > 11 ? 'pm' : 'am');
 
 		if ( $usDate ) {
-			$hours = $hours % 12;
+			$hours = $hours % 12 ?: 12;
 		}
 
 		switch ( $section ) {
