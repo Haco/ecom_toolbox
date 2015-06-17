@@ -101,6 +101,13 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	protected $ecomEventAddress = '';
 
 	/**
+	 * ecom Event Maps Location
+	 *
+	 * @var string
+	 */
+	protected $ecomEventMapsLocation = '';
+
+	/**
 	 * ecom Event Industries
 	 *
 	 * @var integer
@@ -367,6 +374,25 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 */
 	public function setEcomEventAddress($ecomEventAddress) {
 		$this->ecomEventAddress = $ecomEventAddress;
+	}
+
+	/**
+	 * Returns the ecom Maps Location
+	 *
+	 * @return string $ecomEventMapsLocation
+	 */
+	public function getEcomEventMapsLocation() {
+		return $this->ecomEventMapsLocation;
+	}
+
+	/**
+	 * Sets the ecom Event Maps Location
+	 *
+	 * @param string $ecomEventMapsLocation
+	 * @return void
+	 */
+	public function setEcomEventMapsLocation($ecomEventMapsLocation) {
+		$this->ecomEventMapsLocation = $ecomEventMapsLocation;
 	}
 
 	/**

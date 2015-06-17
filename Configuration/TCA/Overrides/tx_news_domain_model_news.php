@@ -169,6 +169,16 @@
 			]
 		],
 
+		'ecom_event_maps_location' => [
+			'label' => 'Google Maps Location',
+			'l10n_mode' => 'exclude',
+			'l10n_display' => 'defaultAsReadonly',
+			'config' => [
+				'type' => 'input',
+				'eval' => 'trim',
+			]
+		],
+
 		'ecom_event_industries' => [
 			'label' => 'Industries / Topic',
 			'l10n_mode' => 'exclude',
@@ -217,7 +227,7 @@
 		'ecom_event_contact' => [ 'showitem' => 'ecom_event_host,ecom_event_website,--linebreak--,ecom_event_consultants', 'canNotCollapse' => 1 ],
 		'ecom_event_dates' => [ 'showitem' => 'ecom_event_date,ecom_event_end', 'canNotCollapse' => 1 ],
 		'ecom_event_daily_openings' => [ 'showitem' => 'ecom_event_open_from,ecom_event_open_till', 'canNotCollapse' => 1 ],
-		'ecom_event_location' => [ 'showitem' => 'ecom_event_booth,--linebreak--,ecom_event_country,ecom_event_state,--linebreak--,ecom_event_zip,ecom_event_city,--linebreak--,ecom_event_address', 'canNotCollapse' => 1 ],
+		'ecom_event_location' => [ 'showitem' => 'ecom_event_booth,--linebreak--,ecom_event_country,ecom_event_state,--linebreak--,ecom_event_zip,ecom_event_city,--linebreak--,ecom_event_address,--linebreak--, ecom_event_maps_location', 'canNotCollapse' => 1 ],
 		'ecom_event_topic' => [ 'showitem' => 'ecom_event_industries,--linebreak--,ecom_event_industries_custom', 'canNotCollapse' => 1 ]
 	]
 );
