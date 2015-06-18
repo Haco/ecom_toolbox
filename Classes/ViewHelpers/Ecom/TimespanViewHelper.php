@@ -20,36 +20,23 @@ class TimespanViewHelper extends AbstractViewHelper {
 	 * @param integer|\DateTime $startDate
 	 * @param integer|\DateTime $endDate
 	 * @param bool $returnTimestamp
-	 * @param string $roundMethod (ceil|floor|none); Default value: ceil
 	 *
 	 * @return string
 	 */
-	public function render($startDate = NULL, $endDate = NULL, $returnTimestamp = FALSE, $roundMethod = 'ceil') {
-		$roundMethod = strtolower($roundMethod);
+	public function render($startDate = NULL, $endDate = NULL, $returnTimestamp = FALSE) {
 		if ($startDate === NULL || $endDate === NULL) {
 			return 'Error in TimespanViewHelper: Arguments startDate || endDate can not be NULL';
 		}
 
-		$startDate = ($startDate instanceof \DateTime) ? $startDate->getTimestamp() : $startDate;
-		$endDate = ($endDate instanceof \DateTime) ? $endDate->getTimestamp() : $endDate;
+		if (!($startDate instanceof \DateTime)) $startDate = new \DateTime('@'.$startDate);
+		if (!($endDate instanceof \DateTime)) $endDate = new \DateTime('@'.$endDate);
 
-		$result = $endDate - $startDate;
+		$result = date_diff($startDate->setTime(0,0,0), $endDate->setTime(0,0,0))->days;
 
-		if (!$returnTimestamp) {
-			$result = $result / 60 / 60 / 24;
+		if ($returnTimestamp) {
+			$result = $endDate->getTimestamp() - $startDate->getTimestamp();
 		}
 
-		switch($roundMethod) {
-			case 'ceil': {
-				$result = ceil($result);
-				break;
-			}
-			case 'floor': {
-				$result = floor($result);
-				break;
-			}
-		}
-		
 		return $result;
 	}
 }
