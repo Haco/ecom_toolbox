@@ -169,3 +169,10 @@ CREATE TABLE tx_news_domain_model_news (
 	ecom_event_industries_custom text NOT NULL,
 	ecom_event_settings int(11) DEFAULT '0' NOT NULL
 );
+
+#
+# Table structure for table 'sys_file_reference'
+#
+CREATE TABLE sys_file_reference (
+	hideinpost tinyint(4) DEFAULT '0' NOT NULL
+);
