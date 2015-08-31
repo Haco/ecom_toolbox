@@ -49,7 +49,7 @@ class SessionHandler {
 		if ( $this->mode === NULL || ( $this->mode !== 'BE' && $this->mode !== 'FE' ) ) {
 			throw new \Exception( 'TYPO3-Mode is not defined!', 1388660107 );
 		}
-		$this->sessionObject = ( $this->mode === 'BE' ) ? $GLOBALS['BE_USER'] : $GLOBALS['TSFE']->fe_user;
+		$this->sessionObject = $this->mode === 'BE' ? $GLOBALS['BE_USER'] : $GLOBALS['TSFE']->fe_user;
 	}
 
 	/**
@@ -83,7 +83,7 @@ class SessionHandler {
 	 */
 	public function delete($key) {
 		$sessionData = $this->sessionObject->getSessionData($this->storageKey);
-		unset($sessionData[$key]);
+		unset($sessionData[ $key ]);
 		$this->sessionObject->setAndSaveSessionData( $this->storageKey, $sessionData );
 	}
 
