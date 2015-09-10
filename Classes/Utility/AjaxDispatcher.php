@@ -180,18 +180,19 @@
 			$this->initCallArguments();
 
 			/** @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $GLOBALS['TSFE'] */
-			$GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( 'TYPO3\\CMS\\Frontend\\Controller\\TypoScriptFrontendController', $TYPO3_CONF_VARS, \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('id'), 0, TRUE );
-			$GLOBALS['TSFE']->fe_user = \TYPO3\CMS\Frontend\Utility\EidUtility::initFeUser();
-			$GLOBALS['TSFE']->id = $this->pageUid;
-			$GLOBALS['TSFE']->sys_language_content = $this->language;
-			// ATTENTION CAUSING 500 INTERNAL ERROR @TYPO3 CMS 6.2.x
-			/** @var \TYPO3\CMS\Frontend\Page\PageRepository sys_page */
-			$GLOBALS['TSFE']->sys_page = CoreUtility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\Page\\PageRepository');
-			$GLOBALS['TSFE']->sys_page->init($GLOBALS['TSFE']->showHiddenPage);
-			########################################################
+			$GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( 'TYPO3\\CMS\\Frontend\\Controller\\TypoScriptFrontendController', $TYPO3_CONF_VARS, NULL, 0, TRUE );
+
+			\TYPO3\CMS\Frontend\Utility\EidUtility::initLanguage();
+			$GLOBALS['TSFE']->connectToDB();
+			$GLOBALS['TSFE']->initFEuser();
+			$GLOBALS['TSFE']->checkAlternativeIdMethods();
+			$GLOBALS['TSFE']->clear_preview();
 			$GLOBALS['TSFE']->determineId();
 			$GLOBALS['TSFE']->initTemplate();
 			$GLOBALS['TSFE']->getConfigArray();
+			$GLOBALS['TSFE']->cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer');
+			$GLOBALS['TSFE']->settingLanguage();
+			$GLOBALS['TSFE']->settingLocale();
 
 			return $this;
 		}

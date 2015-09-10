@@ -28,7 +28,6 @@ class Frontend extends \TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentica
 	 * @param string $roles
 	 *
 	 * @return bool
-	 * @todo rewrite for FE-usergroups
 	 */
 	public static function checkForUserRoles($roles = '') {
 		if ( $roles !== '' ) {
