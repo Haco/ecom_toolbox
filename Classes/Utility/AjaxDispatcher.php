@@ -182,9 +182,16 @@
 			/** @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $GLOBALS['TSFE'] */
 			$GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( 'TYPO3\\CMS\\Frontend\\Controller\\TypoScriptFrontendController', $TYPO3_CONF_VARS, NULL, 0, TRUE );
 
+			$GLOBALS['TSFE']->fe_user = \TYPO3\CMS\Frontend\Utility\EidUtility::initFeUser();
 			\TYPO3\CMS\Frontend\Utility\EidUtility::initLanguage();
 			$GLOBALS['TSFE']->connectToDB();
 			$GLOBALS['TSFE']->initFEuser();
+			$GLOBALS['TSFE']->id = $this->pageUid;
+			$GLOBALS['TSFE']->sys_language_content = $this->language;
+			/** @var \TYPO3\CMS\Frontend\Page\PageRepository sys_page */
+			$GLOBALS['TSFE']->sys_page = CoreUtility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\Page\\PageRepository');
+			$GLOBALS['TSFE']->sys_page->init($GLOBALS['TSFE']->showHiddenPage);
+			########################################################
 			$GLOBALS['TSFE']->checkAlternativeIdMethods();
 			$GLOBALS['TSFE']->clear_preview();
 			$GLOBALS['TSFE']->determineId();
