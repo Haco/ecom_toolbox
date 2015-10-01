@@ -67,11 +67,13 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @param string                                               $message
 	 * @param int                                                  $severity
 	 * @param string                                               $translateArticle
+	 * @param boolean                                              $addFlashMessage
 	 */
-	public function createRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::OK, $translateArticle = ActionController::NEUTER_ARTICLE) {
+	public function createRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::OK, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = FALSE) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
-		$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_created', 'ecom_toolbox', [ $reflect->getShortName() ]), '', $severity);
+		if ( $addFlashMessage )
+			$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_created', 'ecom_toolbox', [ $reflect->getShortName() ]), '', $severity);
 		$this->{$repository}->add($abstractDomainObject);
 	}
 
@@ -80,11 +82,13 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @param string                                               $message
 	 * @param int                                                  $severity
 	 * @param string                                               $translateArticle
+	 * @param boolean                                              $addFlashMessage
 	 */
-	public function updateRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::OK, $translateArticle = ActionController::NEUTER_ARTICLE) {
+	public function updateRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::OK, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = FALSE) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
-		$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_updated', 'ecom_toolbox', [ $reflect->getShortName(), $abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString() ]), '', $severity);
+		if ( $addFlashMessage )
+			$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_updated', 'ecom_toolbox', [ $reflect->getShortName(), $abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString() ]), '', $severity);
 		$this->{$repository}->update($abstractDomainObject);
 	}
 
@@ -93,11 +97,13 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @param string                                               $message
 	 * @param int                                                  $severity
 	 * @param string                                               $translateArticle
+	 * @param boolean                                              $addFlashMessage
 	 */
-	public function deleteRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR, $translateArticle = ActionController::NEUTER_ARTICLE) {
+	public function deleteRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = FALSE) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
-		$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_deleted', 'ecom_toolbox', [ $reflect->getShortName(), $abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString() ]), '', $severity);
+		if ( $addFlashMessage )
+			$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_deleted', 'ecom_toolbox', [ $reflect->getShortName(), $abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString() ]), '', $severity);
 		$this->{$repository}->remove($abstractDomainObject);
 	}
 }
