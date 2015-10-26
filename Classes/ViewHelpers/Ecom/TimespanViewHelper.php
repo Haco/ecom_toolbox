@@ -20,10 +20,11 @@ class TimespanViewHelper extends AbstractViewHelper {
 	 * @param integer|\DateTime $startDate
 	 * @param integer|\DateTime $endDate
 	 * @param bool $returnTimestamp
+	 * @param bool $countFullDays
 	 *
 	 * @return string
 	 */
-	public function render($startDate = NULL, $endDate = NULL, $returnTimestamp = FALSE) {
+	public function render($startDate = NULL, $endDate = NULL, $returnTimestamp = FALSE, $countFullDays = FALSE) {
 		if ($startDate === NULL || $endDate === NULL) {
 			return 'Error in TimespanViewHelper: Arguments startDate || endDate can not be NULL';
 		}
@@ -31,7 +32,11 @@ class TimespanViewHelper extends AbstractViewHelper {
 		if (!($startDate instanceof \DateTime)) $startDate = new \DateTime('@'.$startDate);
 		if (!($endDate instanceof \DateTime)) $endDate = new \DateTime('@'.$endDate);
 
-		$result = date_diff($startDate->setTime(0,0,0), $endDate->setTime(0,0,0))->days;
+		$startDate->setTime(0,0,0);
+		$endDate->setTime(0,0,0);
+		if($countFullDays) $endDate->setTime(24,0,0);
+
+		$result = date_diff($startDate, $endDate)->days;
 
 		if ($returnTimestamp) {
 			$result = $endDate->getTimestamp() - $startDate->getTimestamp();
