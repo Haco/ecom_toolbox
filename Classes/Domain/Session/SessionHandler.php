@@ -53,9 +53,14 @@ class SessionHandler {
 	}
 
 	/**
-	 * Setter for storageKey
-	 *
-	 * @param  mixed $storageKey
+	 * @return string
+	 */
+	public function getStorageKey() {
+		return $this->storageKey;
+	}
+
+	/**
+	 * @param  string $storageKey
 	 * @return void
 	 */
 	public function setStorageKey($storageKey) {
@@ -66,13 +71,14 @@ class SessionHandler {
 	 * Store value in session
 	 *
 	 * @param string $key
-	 * @param mixed $value
+	 * @param mixed  $value
+	 * @param string $storageKey
 	 * @return void
 	 */
-	public function store($key, $value) {
-		$sessionData = $this->sessionObject->getSessionData($this->storageKey);
+	public function store($key, $value, $storageKey = '') {
+		$sessionData = $this->sessionObject->getSessionData($storageKey ?: $this->storageKey);
 		$sessionData[ $key ] = $value;
-		$this->sessionObject->setAndSaveSessionData( $this->storageKey, $sessionData );
+		$this->sessionObject->setAndSaveSessionData( $storageKey ?: $this->storageKey, $sessionData );
 	}
 
 	/**
@@ -101,10 +107,11 @@ class SessionHandler {
 	 * Read value from session
 	 *
 	 * @param string $key
+	 * @param string $storageKey
 	 * @return mixed
 	 */
-	public function get($key) {
-		$sessionData = $this->sessionObject->getSessionData( $this->storageKey );
+	public function get($key, $storageKey = '') {
+		$sessionData = $this->sessionObject->getSessionData( $storageKey ?: $this->storageKey );
 		return isset( $sessionData[ $key ] ) ? $sessionData[ $key ] : NULL;
 	}
 
