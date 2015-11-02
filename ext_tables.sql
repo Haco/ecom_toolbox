@@ -151,6 +151,7 @@ CREATE TABLE tx_ecomtoolbox_domain_model_territory (
 # Table structure for table 'tx_news_domain_model_news'
 #
 CREATE TABLE tx_news_domain_model_news (
+	ecom_event_name varchar(255) DEFAULT '' NOT NULL,
 	ecom_event_host varchar(255) DEFAULT '' NOT NULL,
 	ecom_event_consultants text NOT NULL,
 	ecom_event_website varchar(255) DEFAULT '' NOT NULL,

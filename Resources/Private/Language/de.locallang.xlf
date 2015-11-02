@@ -7,6 +7,10 @@
 				<source>Close window</source>
 				<target>Fenster schließen</target>
 			</trans-unit>
+			<trans-unit id="event.name" xml:space="preserve">
+				<source>Event</source>
+				<target>Event</target>
+			</trans-unit>
 			<trans-unit id="event.host" xml:space="preserve">
 				<source>Host</source>
 				<target>Veranstalter</target>

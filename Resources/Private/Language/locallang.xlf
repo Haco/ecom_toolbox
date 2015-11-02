@@ -6,6 +6,9 @@
 			<trans-unit id="modal.closewindow" xml:space="preserve">
 				<source>Close window</source>
 			</trans-unit>
+			<trans-unit id="event.name" xml:space="preserve">
+				<source>Event</source>
+			</trans-unit>
 			<trans-unit id="event.host" xml:space="preserve">
 				<source>Host</source>
 			</trans-unit>

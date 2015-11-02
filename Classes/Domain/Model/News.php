@@ -9,6 +9,15 @@ namespace Ecom\EcomToolbox\Domain\Model;
  */
 
 class News extends \GeorgRinger\News\Domain\Model\News {
+
+	/**
+	 * ecom Event Name
+	 * Custom Name for the event (only for usage in the calendar)
+	 *
+	 * @var \string
+	 */
+	protected $ecomEventName = '';
+
 	/**
 	 * ecom Event Host
 	 *
@@ -127,6 +136,25 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	 * @var integer
 	 */
 	protected $ecomEventSettings = 0;
+
+	/**
+	 * Returns the ecom Event Name
+	 *
+	 * @return string $ecomEventName
+	 */
+	public function getEcomEventName() {
+		return $this->ecomEventName;
+	}
+
+	/**
+	 * Sets the ecom Event Name
+	 *
+	 * @param string $ecomEventName
+	 * @return void
+	 */
+	public function setEcomEventName($ecomEventName) {
+		$this->ecomEventName = $ecomEventName;
+	}
 
 	/**
 	 * Returns the ecom Event Host

@@ -2,6 +2,17 @@
 \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
 	$GLOBALS['TCA']['tx_news_domain_model_news']['columns'],
 	[
+		'ecom_event_name' => [
+			'label' => 'Override: Event title (for calendar view only)',
+			'l10n_mode' => 'exclude',
+			'l10n_display' => 'defaultAsReadonly',
+			'config' => [
+				'type' => 'input',
+				'eval' => 'trim',
+				'size' => '13'
+			]
+		],
+
 		'ecom_event_host' => [
 			'label' => 'Event Host',
 			'l10n_mode' => 'exclude',
@@ -224,7 +235,7 @@
 \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
 	$GLOBALS['TCA']['tx_news_domain_model_news']['palettes'],
 	[
-		'ecom_event_contact' => [ 'showitem' => 'ecom_event_host,ecom_event_website,--linebreak--,ecom_event_consultants', 'canNotCollapse' => 1 ],
+		'ecom_event_contact' => [ 'showitem' => 'ecom_event_name,--linebreak--,ecom_event_host,ecom_event_website,--linebreak--,ecom_event_consultants', 'canNotCollapse' => 1 ],
 		'ecom_event_dates' => [ 'showitem' => 'ecom_event_date,ecom_event_end', 'canNotCollapse' => 1 ],
 		'ecom_event_daily_openings' => [ 'showitem' => 'ecom_event_open_from,ecom_event_open_till', 'canNotCollapse' => 1 ],
 		'ecom_event_location' => [ 'showitem' => 'ecom_event_booth,--linebreak--,ecom_event_country,ecom_event_state,--linebreak--,ecom_event_zip,ecom_event_city,--linebreak--,ecom_event_address,--linebreak--, ecom_event_maps_location', 'canNotCollapse' => 1 ],
