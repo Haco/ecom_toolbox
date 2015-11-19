@@ -108,4 +108,24 @@ class Div {
 		}
 	}
 
+	/**
+	 * Minify All Output - based on the search and replace regexes.
+	 * @param string $buffer Input string
+	 * @return string
+	 */
+	public static function sanitize_output($buffer) {
+		$search = [
+				'/\>[^\S ]+/s', //strip whitespaces after tags, except space
+				'/[^\S ]+\</s', //strip whitespaces before tags, except space
+				'/(\s)+/s'  // shorten multiple whitespace sequences
+		];
+		$replace = [
+				'>',
+				'<',
+				'\\1'
+		];
+		$buffer = preg_replace($search, $replace, $buffer);
+		return $buffer;
+	}
+
 }
