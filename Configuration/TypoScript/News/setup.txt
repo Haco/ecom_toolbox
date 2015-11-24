@@ -1,2 +1,5 @@
-// Allow Ordering of EXT:News records by newly added field "ecom_eventdate"
-plugin.tx_news.settings.orderByAllowed := addToList(ecom_event_date)
+// Allow Ordering of EXT:News records by newly added fields
+plugin.tx_news.settings.orderByAllowed := addToList(ecom_event_date,ecom_blogpost_visits)
+
+// Exclude IPs for counting visits
+plugin.tx_news.settings.excludedIpsForVisits = 80.150.99.114,85.10.214.214,217.86.226.80,91.117.105.162

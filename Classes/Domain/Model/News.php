@@ -138,6 +138,13 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	protected $ecomEventSettings = 0;
 
 	/**
+	 * ecom Blogpost Visits
+	 *
+	 * @var integer
+	 */
+	protected $ecomBlogpostVisits = 0;
+
+	/**
 	 * Returns the ecom Event Name
 	 *
 	 * @return string $ecomEventName
@@ -530,4 +537,22 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 		return (bool) ($this->ecomEventSettings & 2);
 	}
 
+	/**
+	 * Returns the ecom Blostpost Visits
+	 *
+	 * @return integer $ecomBlogpostVisits
+	 */
+	public function getEcomBlogpostVisits() {
+		return $this->ecomBlogpostVisits;
+	}
+
+	/**
+	 * Sets the ecom Blostpost Visits
+	 *
+	 * @param integer $ecomBlogpostVisits
+	 * @return void
+	 */
+	public function setEcomBlogpostVisits($ecomBlogpostVisits) {
+		$this->ecomBlogpostVisits = $ecomBlogpostVisits;
+	}
 }

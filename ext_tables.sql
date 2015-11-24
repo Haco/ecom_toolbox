@@ -168,7 +168,8 @@ CREATE TABLE tx_news_domain_model_news (
 	ecom_event_maps_location varchar(255) DEFAULT '' NOT NULL,
 	ecom_event_industries int(11) DEFAULT '0' NOT NULL,
 	ecom_event_industries_custom text NOT NULL,
-	ecom_event_settings int(11) DEFAULT '0' NOT NULL
+	ecom_event_settings int(11) DEFAULT '0' NOT NULL,
+	ecom_blogpost_visits int(11) unsigned DEFAULT '0' NOT NULL
 );
 
 #

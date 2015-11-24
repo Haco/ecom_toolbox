@@ -227,7 +227,20 @@
 				],
 				'default' => 0
 			]
-		]
+		],
+
+		'ecom_blogpost_visits' => [
+			'label' => 'Blogpost Visits',
+			'l10n_display' => 'hideDiff',
+			'config' => [
+					'foreign_table' => 'tx_news_domain_model_news',
+					'foreign_field' => 'ecom_blogpost_visits',
+					'type' => 'input',
+					'eval' => 'trim,num',
+					'readOnly' => 1,
+					'size' => '11'
+			]
+		],
 	]
 );
 
@@ -248,3 +261,4 @@ $GLOBALS[ 'TCA' ][ 'tx_news_domain_model_news' ][ 'ctrl' ][ 'requestUpdate' ] .=
 
 // Adds the event field to ext:news TCA palettes
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', '--div--;ecom Event,ecom_event_settings,--palette--;Event Contact;ecom_event_contact,--palette--;Event Dates;ecom_event_dates,--palette--;Event Daily Openings;ecom_event_daily_openings,--palette--;Event Location;ecom_event_location,--palette--;Event Topic;ecom_event_topic');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'ecom_blogpost_visits','','before:keywords');
