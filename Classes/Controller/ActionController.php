@@ -106,4 +106,20 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 			$this->addFlashMessage($message ?: LocalizationUtility::translate($translateArticle . '.record_deleted', 'ecom_toolbox', [ $reflect->getShortName(), $abstractDomainObject->_hasProperty('title') ? $abstractDomainObject->_getProperty('title') : $abstractDomainObject->__toString() ]), '', $severity);
 		$this->{$repository}->remove($abstractDomainObject);
 	}
+
+	/**
+	 * @return \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController
+	 */
+	protected static function getTypoScriptFrontendController() {
+		return $GLOBALS['TSFE'];
+	}
+
+	/**
+	 * Returns the database connection
+	 *
+	 * @return \TYPO3\CMS\Core\Database\DatabaseConnection
+	 */
+	protected function getDatabaseConnection() {
+		return $GLOBALS['TYPO3_DB'];
+	}
 }
