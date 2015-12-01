@@ -11,6 +11,11 @@ config.tx_extbase {
 					tableName = sys_category
 				}
 			}
+			Ecom\EcomToolbox\Domain\Model\User {
+				mapping {
+					tableName = fe_users
+				}
+			}
 		}
 	}
 }
