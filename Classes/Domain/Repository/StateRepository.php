@@ -46,16 +46,13 @@ class StateRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractReposi
 	 */
 	public function initializeObject() {
 		/** @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings */
-		$querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\QuerySettingsInterface');
-		$querySettings->setRespectStoragePage(FALSE); // Disable storage pid
+		$querySettings = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface::class);
+		$querySettings->setRespectStoragePage(false); // Disable storage pid
 		$this->setDefaultQuerySettings($querySettings);
 	}
 
 	/**
-	 * findByAbbreviation
-	 *
 	 * @param string $abbreviation
-	 *
 	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	public function findByAbbreviation($abbreviation = '') {
@@ -82,7 +79,7 @@ class StateRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractReposi
 	 *
 	 * @param string $abbreviation
 	 *
-	 * @return null|object
+	 * @return null|\Ecom\EcomToolbox\Domain\Model\State
 	 */
 	public function findOneByAbbreviation($abbreviation = '') {
 		$query = $this->createQuery();
@@ -105,7 +102,7 @@ class StateRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractReposi
 		if ($result instanceof \TYPO3\CMS\Extbase\Persistence\QueryResultInterface) {
 			return $result->getFirst();
 		} else {
-			return NULL;
+			return null;
 		}
 	}
 

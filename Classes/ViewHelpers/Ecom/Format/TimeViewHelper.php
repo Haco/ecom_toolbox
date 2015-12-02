@@ -29,8 +29,8 @@ class TimeViewHelper extends AbstractViewHelper {
 	 *
 	 * @return string Time
 	 */
-	public function render($time = NULL, $section = 'h', $pad = 2, $thfCase = 'upper', $usDate = FALSE) {
-		if ( $time === NULL ) {
+	public function render($time = null, $section = 'h', $pad = 2, $thfCase = 'upper', $usDate = false) {
+		if ( $time === null ) {
 			$time = $this->renderChildren();
 		}
 

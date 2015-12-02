@@ -1,12 +1,32 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sebo
- * Date: 17.07.14
- * Time: 09:39
- */
-
 namespace Ecom\EcomToolbox\Domain\Session;
+
+
+/***************************************************************
+ *
+ *  Copyright notice
+ *
+ *  (c) 2014 Nicolas Scheidler <Nicolas.Scheidler@ecom-ex.com>, ecom instruments GmbH
+ *           Sebastian Iffland <sebastian.iffland@ecom-ex.com>, ecom instruments GmbH
+ *
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
 
 /**
  * SessionHandler
@@ -19,7 +39,7 @@ class SessionHandler {
 	 *
 	 * @var string
 	 */
-	protected $mode = NULL;
+	protected $mode = null;
 
 	/**
 	 * The User-Object with the session-methods.
@@ -27,7 +47,7 @@ class SessionHandler {
 	 *
 	 * @var object
 	 */
-	protected $sessionObject = NULL;
+	protected $sessionObject = null;
 
 	/**
 	 * The key the data is stored in the session.
@@ -41,12 +61,12 @@ class SessionHandler {
 	 * @param  string $mode
 	 * @throws \Exception
 	 */
-	public function __construct($mode = NULL) {
+	public function __construct($mode = null) {
 		if ( $mode ) {
 			$this->mode = $mode;
 		}
 
-		if ( $this->mode === NULL || ( $this->mode !== 'BE' && $this->mode !== 'FE' ) ) {
+		if ( $this->mode === null || ( $this->mode !== 'BE' && $this->mode !== 'FE' ) ) {
 			throw new \Exception( 'TYPO3-Mode is not defined!', 1388660107 );
 		}
 		$this->sessionObject = $this->mode === 'BE' ? $GLOBALS['BE_USER'] : $GLOBALS['TSFE']->fe_user;
@@ -94,7 +114,7 @@ class SessionHandler {
 	}
 
 	/**
-	 * Delete all values in session except of currency
+	 * Delete all values in session (except of currency)
 	 *
 	 * @return void
 	 */
@@ -112,7 +132,8 @@ class SessionHandler {
 	 */
 	public function get($key, $storageKey = '') {
 		$sessionData = $this->sessionObject->getSessionData( $storageKey ?: $this->storageKey );
-		return isset( $sessionData[ $key ] ) ? $sessionData[ $key ] : NULL;
+
+		return isset( $sessionData[ $key ] ) ? $sessionData[ $key ] : null;
 	}
 
 }

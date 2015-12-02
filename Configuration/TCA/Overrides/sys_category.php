@@ -7,7 +7,7 @@
  */
 
 if ( \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('realurl') ) {
-	$GLOBALS[ 'TCA' ][ 'sys_category' ][ 'columns' ][ 'tx_realurl_pathsegment' ] = [
+	$GLOBALS['TCA']['sys_category']['columns']['tx_realurl_pathsegment'] = [
 		'label'   => 'LLL:EXT:realurl/locallang_db.xml:pages.tx_realurl_pathsegment',
 		'exclude' => 1,
 		'config'  => [

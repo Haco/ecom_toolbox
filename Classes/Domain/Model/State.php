@@ -34,38 +34,28 @@ namespace Ecom\EcomToolbox\Domain\Model;
 class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * title
-	 *
 	 * @var string
 	 * @validate Ecom\EcomToolbox\Validation\Validator\NotEmpty
 	 */
 	protected $title = '';
 
 	/**
-	 * abbreviation
-	 *
 	 * @var string
 	 */
 	protected $abbreviation = '';
 
 	/**
-	 * verified
-	 *
 	 * @var bool
 	 */
-	protected $verified = FALSE;
+	protected $verified = false;
 
 	/**
-	 * Assign corresponding country
-	 *
 	 * @var \Ecom\EcomToolbox\Domain\Model\Region
 	 * @validate Ecom\EcomToolbox\Validation\Validator\NotEmpty
 	 */
-	protected $country = NULL;
+	protected $country = null;
 
 	/**
-	 * Returns the title
-	 *
 	 * @return string $title
 	 */
 	public function getTitle() {
@@ -73,8 +63,6 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the title
-	 *
 	 * @param string $title
 	 * @return void
 	 */
@@ -83,8 +71,6 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the abbreviation
-	 *
 	 * @return string $abbreviation
 	 */
 	public function getAbbreviation() {
@@ -92,8 +78,6 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the abbreviation
-	 *
 	 * @param string $abbreviation
 	 * @return void
 	 */
@@ -102,8 +86,6 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the verified
-	 *
 	 * @return bool $verified
 	 */
 	public function isVerified() {
@@ -111,8 +93,6 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the verified
-	 *
 	 * @param bool $verified
 	 * @return void
 	 */
@@ -121,8 +101,6 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the country
-	 *
 	 * @return \Ecom\EcomToolbox\Domain\Model\Region $country
 	 */
 	public function getCountry() {
@@ -130,8 +108,6 @@ class State extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the country
-	 *
 	 * @param \Ecom\EcomToolbox\Domain\Model\Region $country
 	 * @return void
 	 */

@@ -4,20 +4,20 @@ if ( !defined('TYPO3_MODE') ) {
 }
 
 // TS FILE Toolbox Base
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'ecom Toolbox Base');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Resources/Private/TypoScript', 'ecom Toolbox Base');
 
 // TS FILE for Ext:News
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/News', 'ecom Toolbox for EXT:News');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Resources/Private/TypoScript/News', 'ecom Toolbox for EXT:News');
 
 // Backend Icons
 \TYPO3\CMS\Backend\Sprite\SpriteManager::addSingleIcons(
 	[
-		'region-default' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ecom_toolbox') . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_region.gif',
-		'region-country' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ecom_toolbox') . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_region_country.gif',
-		'region-region' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ecom_toolbox') . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_region_region.gif',
-		'language' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ecom_toolbox') . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_language.png',
+		'region-default' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('static_info_tables') . 'Resources/Public/Images/Icons/static_countries.svg',
+		'region-country' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('static_info_tables') . 'Resources/Public/Images/Icons/static_countries.svg',
+		'region-region' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('static_info_tables') . 'Resources/Public/Images/Icons/static_country_zones.svg',
+		'language' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('static_info_tables') . 'Resources/Public/Images/Icons/static_languages.svg',
 	],
-	'ecomToolbox'
+	'ecomtoolbox'
 );
 
 // CSH Files

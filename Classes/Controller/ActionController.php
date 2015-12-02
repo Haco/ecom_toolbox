@@ -6,7 +6,8 @@ namespace Ecom\EcomToolbox\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2014 Sebastian Iffland <Sebastian.Iffland@ecom-ex.com>, ecom instruments GmbH
+ *  (c) 2015 Nicolas Scheidler <Nicolas.Scheidler@ecom-ex.com>, ecom instruments GmbH
+ *           Sebastian Iffland <sebastian.iffland@ecom-ex.com>, ecom instruments GmbH
  *
  *  All rights reserved
  *
@@ -38,7 +39,7 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	const NEUTER_ARTICLE = 'n';
 
 	/**
-	 * This action is for lazy programmers who don't want write the NULL values
+	 * This action is for lazy programmers who don't want write the null values
 	 * for extension and Controller all time (minimized arguments)
 	 *
 	 * @param string $action
@@ -48,8 +49,8 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 *
 	 * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
 	 */
-	public function internalRedirect($action, array $arguments = NULL, $pid = NULL, $statusCode = 303) {
-		$this->redirect($action, NULL, NULL, $arguments, $pid, 0, $statusCode);
+	public function internalRedirect($action, array $arguments = null, $pid = null, $statusCode = 303) {
+		$this->redirect($action, null, null, $arguments, $pid, 0, $statusCode);
 	}
 
 	/**
@@ -69,7 +70,7 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @param string                                               $translateArticle
 	 * @param boolean                                              $addFlashMessage
 	 */
-	public function createRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::OK, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = FALSE) {
+	public function createRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::OK, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = false) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
 		if ( $addFlashMessage )
@@ -84,7 +85,7 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @param string                                               $translateArticle
 	 * @param boolean                                              $addFlashMessage
 	 */
-	public function updateRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::OK, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = FALSE) {
+	public function updateRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::OK, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = false) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
 		if ( $addFlashMessage )
@@ -99,7 +100,7 @@ class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @param string                                               $translateArticle
 	 * @param boolean                                              $addFlashMessage
 	 */
-	public function deleteRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = FALSE) {
+	public function deleteRecord(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $abstractDomainObject, $message = '', $severity = \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR, $translateArticle = ActionController::NEUTER_ARTICLE, $addFlashMessage = false) {
 		$reflect = new \ReflectionClass($abstractDomainObject);
 		$repository = lcfirst($reflect->getShortName()) . 'Repository';
 		if ( $addFlashMessage )

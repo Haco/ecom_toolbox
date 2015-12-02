@@ -1,6 +1,7 @@
 <?php
 namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -26,6 +27,9 @@ namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+/**
+ * Class ParseUrlViewHelper
+ */
 class ParseUrlViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
@@ -35,8 +39,8 @@ class ParseUrlViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHe
 	 *
 	 * @return array
 	 */
-	public function render($url = NULL, $component = NULL) {
-		if ( $url === NULL ) {
+	public function render($url = null, $component = null) {
+		if ( $url === null ) {
 			$url = $this->renderChildren();
 		}
 

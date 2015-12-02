@@ -39,8 +39,8 @@ class AbstractModel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function reset(array $properties = [ ]) {
 		$vars = get_object_vars($this);
-		foreach ($vars as $property => $value) {
-			if ( (sizeof($properties) && in_array($property, $properties)) || !sizeof($properties) ) {
+		foreach ( $vars as $property => $value ) {
+			if ( ( sizeof($properties) && in_array($property, $properties) ) || !sizeof($properties) ) {
 				$this->{$property} = $this->_getCleanProperty($property);
 			}
 		}
@@ -58,11 +58,12 @@ class AbstractModel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return array The object
 	 */
 	public function toArray() {
-		$array = array();
+		$array = [ ];
 		$vars = get_object_vars($this);
-		foreach ($vars as $property => $value) {
+		foreach ( $vars as $property => $value ) {
 			$array[$property] = $value;
 		}
+
 		return $array;
 	}
 

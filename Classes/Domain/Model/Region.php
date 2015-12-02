@@ -34,8 +34,6 @@ namespace Ecom\EcomToolbox\Domain\Model;
 class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * title
-	 *
 	 * @var string
 	 * @validate Ecom\EcomToolbox\Validation\Validator\NotEmpty
 	 */
@@ -52,47 +50,35 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $type = 0;
 
 	/**
-	 * isoCodeA2
-	 *
 	 * @var string
 	 */
 	protected $isoCodeA2 = '';
 
 	/**
-	 * isoCodeA3
-	 *
 	 * @var string
 	 */
 	protected $isoCodeA3 = '';
 
 	/**
-	 * verified
-	 *
 	 * @var bool
 	 */
-	protected $verified = FALSE;
+	protected $verified = false;
 
 	/**
-	 * flagIconName
-	 *
 	 * @var string
 	 */
 	protected $flagIconName = '';
 
 	/**
-	 * Assign corresponding countries
-	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ecom\EcomToolbox\Domain\Model\Region>
 	 */
-	protected $countries = NULL;
+	protected $countries = null;
 
 	/**
-	 * territory
-	 *
 	 * @var \Ecom\EcomToolbox\Domain\Model\Territory
 	 * @validate Ecom\EcomToolbox\Validation\Validator\NotEmpty
 	 */
-	protected $territory = NULL;
+	protected $territory = null;
 
 	/**
 	 * __construct
@@ -104,9 +90,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Initializes all ObjectStorage properties
-	 * Do not modify this method!
-	 * It will be rewritten on each save in the extension builder
-	 * You may modify the constructor of this class instead
 	 *
 	 * @return void
 	 */
@@ -115,8 +98,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the title
-	 *
 	 * @return string $title
 	 */
 	public function getTitle() {
@@ -124,8 +105,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the title
-	 *
 	 * @param string $title
 	 * @return void
 	 */
@@ -134,8 +113,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the type
-	 *
 	 * @return int
 	 */
 	public function getType() {
@@ -143,8 +120,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the type
-	 *
 	 * @param int $type
 	 * @return void
 	 */
@@ -153,8 +128,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the isoCodeA2
-	 *
 	 * @return string $isoCodeA2
 	 */
 	public function getIsoCodeA2() {
@@ -162,8 +135,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the isoCodeA2
-	 *
 	 * @param string $isoCodeA2
 	 * @return void
 	 */
@@ -172,8 +143,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the isoCodeA3
-	 *
 	 * @return string $isoCodeA3
 	 */
 	public function getIsoCodeA3() {
@@ -181,8 +150,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the isoCodeA3
-	 *
 	 * @param string $isoCodeA3
 	 * @return void
 	 */
@@ -191,8 +158,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the verified
-	 *
 	 * @return bool $verified
 	 */
 	public function isVerified() {
@@ -200,8 +165,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the verified
-	 *
 	 * @param bool $verified
 	 * @return void
 	 */
@@ -210,16 +173,14 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the flagIconName
-	 *
-	 * @return string $flagIconName
+	 * @return string $flagIconName -> localized
 	 */
 	public function getFlagIconName() {
 		if ( $this->_languageUid ) {
 			/** @var \TYPO3\CMS\Core\Database\DatabaseConnection $db */
 			$db = $GLOBALS['TYPO3_DB'];
 			/** @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer $contentObjectRenderer */
-			$contentObjectRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer');
+			$contentObjectRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::class);
 			/**
 			 * Fetch default translation, since fallback is not requested
 			 * @var array $originalRecord
@@ -233,8 +194,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the flagIconName
-	 *
 	 * @param string $flagIconName
 	 * @return void
 	 */
@@ -243,7 +202,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Adds a Country
 	 * @param \Ecom\EcomToolbox\Domain\Model\Region $country
 	 * @return void
 	 */
@@ -254,8 +212,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Removes a Country
-	 *
 	 * @param \Ecom\EcomToolbox\Domain\Model\Region $countryToRemove The Country to be removed
 	 * @return void
 	 */
@@ -264,8 +220,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the countries
-	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ecom\EcomToolbox\Domain\Model\Region> $countries
 	 */
 	public function getCountries() {
@@ -273,12 +227,10 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the countries
-	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ecom\EcomToolbox\Domain\Model\Region> $countries
 	 * @return void
 	 */
-	public function setCountries(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $countries = NULL) {
+	public function setCountries(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $countries = null) {
 		if ( $countries instanceof \TYPO3\CMS\Extbase\Persistence\ObjectStorage && $countries->count() ) {
 			/** @var \Ecom\EcomToolbox\Domain\Model\Region $country */
 			foreach ( $countries as $country ) {
@@ -290,8 +242,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the territory
-	 *
 	 * @return \Ecom\EcomToolbox\Domain\Model\Territory $territory
 	 */
 	public function getTerritory() {
@@ -299,8 +249,6 @@ class Region extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the territory
-	 *
 	 * @param \Ecom\EcomToolbox\Domain\Model\Territory $territory
 	 * @return void
 	 */

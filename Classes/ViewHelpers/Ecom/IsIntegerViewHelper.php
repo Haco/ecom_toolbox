@@ -1,6 +1,7 @@
 <?php
 namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -26,14 +27,17 @@ namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+/**
+ * Class IsIntegerViewHelper
+ */
 class IsIntegerViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * @param mixed $value
-	 * @return boolean
+	 * @return bool
 	 */
 	public function render($value = '') {
-		if ( $value === NULL ) {
+		if ( $value === null ) {
 			$value = $this->renderChildren();
 		}
 

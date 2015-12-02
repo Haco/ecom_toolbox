@@ -26,13 +26,11 @@ return [
 			'endtime' => 'endtime',
 		],
 		'typeicon_column' => 'type',
-		'typeicon_classes' => [
-			'default' => 'extensions-ecomToolbox-region-default',
-			'0' => 'extensions-ecomToolbox-region-country',
-			'1' => 'extensions-ecomToolbox-region-region'
+		'typeicons' => [
+			'1' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'static_info_tables' ) . 'Resources/Public/Images/Icons/' . (version_compare(TYPO3_branch, '7.6', '>=') ? 'static_countries.svg' : 'icon_static_countries.gif')
 		],
 		'searchFields' => 'title,iso_code_a2,iso_code_a3,flag_icon_name,',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded( 'static_info_tables' ) ? \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'static_info_tables' ) . 'Resources/Public/Images/Icons/icon_static_countries.gif' : \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'ecom_toolbox' ) . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_region.gif'
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded( 'static_info_tables' ) ? \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'static_info_tables' ) . 'Resources/Public/Images/Icons/' . (version_compare(TYPO3_branch, '7.6', '>=') ? 'static_countries.svg' : 'icon_static_countries.gif') : \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'ecom_toolbox' ) . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_region.gif'
 	],
 	'interface' => [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, type, iso_code_a2, iso_code_a3, verified, flag_icon_name, countries, territory'

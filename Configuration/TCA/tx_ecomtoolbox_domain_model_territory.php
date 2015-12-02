@@ -11,10 +11,10 @@ return [
 		'rootLevel' => 1,
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
-		'dividers2tabs' => TRUE,
+		'dividers2tabs' => true,
 		'default_sortby' => 'ORDER BY title',
 		'versioningWS' => 2,
-		'versioning_followPages' => TRUE,
+		'versioning_followPages' => true,
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -25,7 +25,7 @@ return [
 			'endtime' => 'endtime',
 		],
 		'searchFields' => 'title,',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded( 'static_info_tables' ) ? \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'static_info_tables' ) . 'Resources/Public/Images/Icons/icon_static_territories.gif' : \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'ecom_toolbox' ) . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_territory.gif'
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded( 'static_info_tables' ) ? \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'static_info_tables' ) . 'Resources/Public/Images/Icons/' . (version_compare(TYPO3_branch, '7.6', '>=') ? 'static_territories.svg' : 'icon_static_territories.gif') : \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'ecom_toolbox' ) . 'Resources/Public/Icons/tx_ecomtoolbox_domain_model_territory.gif'
 	],
 	'interface' => [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, verified'

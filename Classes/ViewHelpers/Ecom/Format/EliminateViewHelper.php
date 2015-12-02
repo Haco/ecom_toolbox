@@ -43,24 +43,24 @@ class EliminateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 	 * @return void
 	 */
 	public function initializeArguments() {
-		$this->registerArgument('caseSensitive', 'boolean', 'Wether or not to perform case sensitive replacement', FALSE, TRUE);
+		$this->registerArgument('caseSensitive', 'boolean', 'Wether or not to perform case sensitive replacement', false, true);
 		$this->registerArgument('characters', 'mixed', "Characters to remove. Array or string, i.e. {0: 'a', 1: 'b', 2: 'c'} or 'abc' to remove all occurrences of a, b and c");
 		$this->registerArgument('strings', 'mixed', "Strings to remove. Array or CSV, i.e. {0: 'foo', 1: 'bar'} or 'foo,bar' to remove all occorrences of foo and bar. If your strings overlap then place the longest match first");
-		$this->registerArgument('whitespace', 'boolean', 'Eliminate ALL whitespace characters', FALSE, FALSE);
-		$this->registerArgument('tabs', 'boolean', 'Eliminate only tab whitespaces', FALSE, FALSE);
-		$this->registerArgument('unixBreaks', 'boolean', 'Eliminate only UNIX line breaks', FALSE, FALSE);
-		$this->registerArgument('windowsBreaks', 'boolean', 'Eliminates only Windows carriage returns', FALSE, FALSE);
-		$this->registerArgument('digits', 'boolean', 'Eliminates all number characters (but not the dividers between floats converted to strings)', FALSE, FALSE);
-		$this->registerArgument('letters', 'boolean', 'Eliminates all letters (non-numbers, non-whitespace, non-syntactical)', FALSE, FALSE);
-		$this->registerArgument('nonAscii', 'boolean', 'Eliminates any ASCII char', FALSE, FALSE);
+		$this->registerArgument('whitespace', 'boolean', 'Eliminate ALL whitespace characters', false, false);
+		$this->registerArgument('tabs', 'boolean', 'Eliminate only tab whitespaces', false, false);
+		$this->registerArgument('unixBreaks', 'boolean', 'Eliminate only UNIX line breaks', false, false);
+		$this->registerArgument('windowsBreaks', 'boolean', 'Eliminates only Windows carriage returns', false, false);
+		$this->registerArgument('digits', 'boolean', 'Eliminates all number characters (but not the dividers between floats converted to strings)', false, false);
+		$this->registerArgument('letters', 'boolean', 'Eliminates all letters (non-numbers, non-whitespace, non-syntactical)', false, false);
+		$this->registerArgument('nonAscii', 'boolean', 'Eliminates any ASCII char', false, false);
 	}
 
 	/**
 	 * @param string $content
 	 * @return string
 	 */
-	public function render($content = NULL) {
-		if ($content === NULL) {
+	public function render($content = null) {
+		if ($content === null) {
 			$content = $this->renderChildren();
 		}
 		if ($this->arguments['characters']) {

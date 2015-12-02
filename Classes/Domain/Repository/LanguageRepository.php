@@ -45,8 +45,8 @@ class LanguageRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractRep
 	 */
 	public function initializeObject() {
 		/** @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings */
-		$querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\QuerySettingsInterface');
-		$querySettings->setRespectStoragePage(FALSE); // Disable storage pid
+		$querySettings = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface::class);
+		$querySettings->setRespectStoragePage(false); // Disable storage pid
 		$this->setDefaultQuerySettings($querySettings);
 	}
 }

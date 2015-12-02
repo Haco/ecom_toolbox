@@ -1,6 +1,7 @@
 <?php
 namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -26,20 +27,23 @@ namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+/**
+ * Class InArrayViewHelper
+ */
 class InArrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * @param array $haystack
 	 * @param mixed $needle
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
-	public function render($haystack, $needle = NULL) {
-		if ( $needle === NULL ) {
+	public function render($haystack, $needle = null) {
+		if ( $needle === null ) {
 			$needle = $this->renderChildren();
 		}
 
-		return is_array($haystack) ? in_array( $needle, $haystack ) : FALSE;
+		return is_array($haystack) && in_array( $needle, $haystack );
 	}
 
 }

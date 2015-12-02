@@ -32,7 +32,7 @@ namespace TYPO3\CMS\Fluid\ViewHelpers\Ecom;
  * </code>
  *
  * Output:
- * 12 (output defaults to TRUE!)
+ * 12 (output defaults to true!)
  * Stores the result in a new template variable "twelve"
  * <f:calculation expressionString="{twelve}-1+3" />
  * which here can be used in the next calculation ( with multicalculation / but no precedence of operators)
@@ -66,7 +66,7 @@ class CalculationViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 *
 	 * @return string
 	 */
-	public function render($expressionString, $output = TRUE, $aliasToCreate = NULL) {
+	public function render($expressionString, $output = true, $aliasToCreate = null) {
 		$splitArray = [];
 		preg_match_all('([0-9.]*|[\D]?)', $expressionString, $splitArray);
 		$expressionArray = $this->buildExpressionArray($splitArray[0]);
@@ -113,27 +113,27 @@ class CalculationViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 * @throws \TYPO3\CMS\Fluid\Core\ViewHelper\Exception
 	 */
 	function evaluateExpressionArray(array $expressionArray = []){
-		$subExpressionsEliminated = FALSE;
+		$subExpressionsEliminated = false;
 		// eliminate sub expressions, this is recursive, so after first run, all sub expressions should be eliminated
-		if ( $subExpressionsEliminated === FALSE ) {
+		if ( $subExpressionsEliminated === false ) {
 			foreach ( $expressionArray as $key => $mathData ) {
 				if ( is_array($mathData) ) {
 					$expressionArray[$key] = $this->evaluateExpressionArray($mathData);
 				}
 			}
-			$subExpressionsEliminated = TRUE;
+			$subExpressionsEliminated = true;
 		}
 		$i = 0;
 		// we loop a maximum of 99 times over the expression before Exception
 		while ( count($expressionArray) > 1 && $i < 99 ) {
-			$prev = NULL;
+			$prev = null;
 			$i ++;
 			foreach ( $expressionArray as $key => $mathData ) {
 				// lets see if we have an operator
 				if ( array_key_exists($mathData, $this->operatorsWithPrecedenceValue) ) {
 					// check next
 					$next_key = $this->findNextValidKey($expressionArray, $key);
-					$next = is_numeric($next_key) ? $expressionArray[$next_key] : NULL;
+					$next = is_numeric($next_key) ? $expressionArray[$next_key] : null;
 
 					if ( is_numeric($prev) && is_numeric($next) ) {
 						switch ( $mathData ) {
@@ -157,7 +157,7 @@ class CalculationViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 						unset($expressionArray[$next_key]);
 						$expressionArray[$key] = $eval;
 						break;
-					} elseif ( $prev !== NULL && array_key_exists($prev, $this->operatorsWithPrecedenceValue) && is_numeric($next) && $mathData === '-' ) {
+					} elseif ( $prev !== null && array_key_exists($prev, $this->operatorsWithPrecedenceValue) && is_numeric($next) && $mathData === '-' ) {
 						$expressionArray[$key] = 0 - $next;
 						unset($expressionArray[$next_key]);
 						break;
@@ -186,8 +186,8 @@ class CalculationViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 */
 	function findNextValidKey(array $array, $keyFrom){
 		$i = 0;
-		$key = NULL;
-		while ( $key == NULL && $i < 99 ) {
+		$key = null;
+		while ( $key == null && $i < 99 ) {
 			$i++;
 			if ( $array[$keyFrom + $i] ) {
 				$key = $keyFrom + $i;

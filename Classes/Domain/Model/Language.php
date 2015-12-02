@@ -34,30 +34,22 @@ namespace Ecom\EcomToolbox\Domain\Model;
 class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * title
-	 *
 	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $title = '';
 
 	/**
-	 * sysLanguage
-	 *
 	 * @var int
 	 */
 	protected $sysLanguage = 0;
 
 	/**
-	 * flag
-	 *
 	 * @var string
 	 */
 	protected $flag = '';
 
 	/**
-	 * Returns the title
-	 *
 	 * @return string $title
 	 */
 	public function getTitle() {
@@ -65,8 +57,6 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the title
-	 *
 	 * @param string $title
 	 * @return void
 	 */
@@ -75,8 +65,6 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the sysLanguage
-	 *
 	 * @return int $sysLanguage
 	 */
 	public function getSysLanguage() {
@@ -84,8 +72,6 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the sysLanguage
-	 *
 	 * @param int $sysLanguage
 	 * @return void
 	 */
@@ -94,8 +80,6 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the flag
-	 *
 	 * @return string $flag
 	 */
 	public function getFlag() {
@@ -103,8 +87,6 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the flag
-	 *
 	 * @param string $flag
 	 * @return void
 	 */
@@ -116,7 +98,17 @@ class Language extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return string
 	 */
 	public function getFlagSource() {
-		return (version_compare(TYPO3_branch, '7.1', '>=') ? 'EXT:core/Resources/Public/Icons/Flags/' : 'EXT:t3skin/images/flags/') . $this->flag . '.png';
+		if ( version_compare(TYPO3_branch, '7.1', '>=') ) {
+			$source = "EXT:core/Resources/Public/Icons/Flags/{$this->flag}.png";
+		} else {
+			$source = "EXT:t3skin/images/flags/{$this->flag}.png";
+		}
+
+		if ( version_compare(TYPO3_branch, '7.6', '>=') && file_exists(\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName('EXT:core/Resources/Public/Icons/Flags/SVG/' . strtoupper($this->flag) . '.svg')) ) {
+			$source = 'EXT:core/Resources/Public/Icons/Flags/SVG/' . strtoupper($this->flag) . '.svg';
+		}
+
+		return $source;
 	}
 
 }

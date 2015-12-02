@@ -37,12 +37,12 @@ class ExplodeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHel
 	 *
 	 * @param string $subject String to explode.
 	 * @param string $delimiter Char or string to split the string into pieces. Default is a comma sign(,).
-	 * @param boolean $removeEmpty If TRUE empty items will be removed.
+	 * @param bool   $removeEmpty If true empty items will be removed.
 	 *
 	 * @return array Exploded parts
 	 */
-	public function render($subject = NULL, $delimiter = ',', $removeEmpty = TRUE) {
-		if ( $subject === NULL ) {
+	public function render($subject = null, $delimiter = ',', $removeEmpty = true) {
+		if ( $subject === null ) {
 			$subject = $this->renderChildren();
 		}
 

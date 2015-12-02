@@ -4,22 +4,16 @@ namespace Ecom\EcomToolbox\Domain\Model;
 class User extends \TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
 
 	/**
-	 * ecomToolboxCountry
-	 *
 	 * @var \Ecom\EcomToolbox\Domain\Model\Region
 	 */
 	protected $ecomToolboxCountry = null;
 
 	/**
-	 * ecomToolboxState
-	 *
 	 * @var \Ecom\EcomToolbox\Domain\Model\State
 	 */
 	protected $ecomToolboxState = null;
 
 	/**
-	 * privacyPolicy
-	 *
 	 * @var boolean
 	 */
 	protected $privacyPolicy = false;
@@ -41,6 +35,7 @@ class User extends \TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
 
 	/**
 	 * @param \Ecom\EcomToolbox\Domain\Model\Region $ecomToolboxCountry
+	 * @return void
 	 */
 	public function setEcomToolboxCountry(\Ecom\EcomToolbox\Domain\Model\Region $ecomToolboxCountry = null) {
 		$this->ecomToolboxCountry = $ecomToolboxCountry;
@@ -55,6 +50,7 @@ class User extends \TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
 
 	/**
 	 * @param \Ecom\EcomToolbox\Domain\Model\State $ecomToolboxState
+	 * @return void
 	 */
 	public function setEcomToolboxState(\Ecom\EcomToolbox\Domain\Model\State $ecomToolboxState = null) {
 		$this->ecomToolboxState = $ecomToolboxState;
@@ -69,6 +65,7 @@ class User extends \TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
 
 	/**
 	 * @param boolean $privacyPolicy
+	 * @return void
 	 */
 	public function setPrivacyPolicy($privacyPolicy) {
 		$this->privacyPolicy = $privacyPolicy;

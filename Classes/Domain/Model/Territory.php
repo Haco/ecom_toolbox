@@ -34,23 +34,17 @@ namespace Ecom\EcomToolbox\Domain\Model;
 class Territory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * title
-	 *
 	 * @var string
 	 * @validate Ecom\EcomToolbox\Validation\Validator\NotEmpty
 	 */
 	protected $title = '';
 
 	/**
-	 * verified
-	 *
 	 * @var bool
 	 */
-	protected $verified = FALSE;
+	protected $verified = false;
 
 	/**
-	 * Returns the title
-	 *
 	 * @return string $title
 	 */
 	public function getTitle() {
@@ -58,8 +52,6 @@ class Territory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the title
-	 *
 	 * @param string $title
 	 * @return void
 	 */
@@ -68,8 +60,6 @@ class Territory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the verified
-	 *
 	 * @return bool $verified
 	 */
 	public function isVerified() {
@@ -77,8 +67,6 @@ class Territory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Sets the verified
-	 *
 	 * @param bool $verified
 	 * @return void
 	 */

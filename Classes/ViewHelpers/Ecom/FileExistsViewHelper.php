@@ -28,10 +28,10 @@ class FileExistsViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
 
 	/**
 	 * @param null|string $file
-	 * @return boolean
+	 * @return bool
 	 */
-	public function render($file = NULL) {
-		if ( $file === NULL ) {
+	public function render($file = null) {
+		if ( $file === null ) {
 			$file = $this->renderChildren();
 		}
 

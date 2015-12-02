@@ -38,7 +38,7 @@ $columns = [
 ];
 
 $GLOBALS[ 'TCA' ][ 'fe_users' ][ 'ctrl' ][ 'requestUpdate' ] .= ',ecom_toolbox_country';
-$GLOBALS[ 'TCA' ][ 'fe_users' ][ 'palettes' ][ 'ecomtoolbox.0' ] = [ 'showitem' => 'country' ] ;
+$GLOBALS[ 'TCA' ][ 'fe_users' ][ 'palettes' ][ 'ecomtoolbox-0' ] = [ 'showitem' => 'country' ] ;
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns( 'fe_users', $columns, true );
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes( 'fe_users', 'ecom_toolbox_country;;ecomtoolbox.0, ecom_toolbox_state, privacy_policy', '', 'replace:country' );
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes( 'fe_users', 'ecom_toolbox_country;;ecomtoolbox-0, ecom_toolbox_state, privacy_policy', '', 'replace:country' );

@@ -29,7 +29,7 @@ namespace Ecom\EcomToolbox\Domain\Repository;
  ***************************************************************/
 
 /**
- * Category repository
+ * The repository for Categories
  */
 class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository {
 
@@ -39,12 +39,12 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRe
 	 *
 	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
-	public function findByUidList($list, array $storagePids = []) {
+	public function findByUidList($list, array $storagePids = [ ]) {
 		$query = $this->createQuery();
-		$query->setQuerySettings( $query->getQuerySettings()->setRespectSysLanguage( FALSE )->setStoragePageIds( $storagePids ) );
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectSysLanguage( false )->setStoragePageIds( $storagePids ) );
 
 		return $query->matching(
-			$query->in('uid', \TYPO3\CMS\Core\Utility\GeneralUtility::intExplode(',', $list, TRUE))
+			$query->in('uid', \TYPO3\CMS\Core\Utility\GeneralUtility::intExplode(',', $list, true))
 		)->execute();
 	}
 
@@ -56,14 +56,14 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRe
 	 */
 	public function findSimilarByProperty($property, $lookUp) {
 		$query = $this->createQuery();
-		$query->setQuerySettings( $query->getQuerySettings()->setRespectStoragePage( FALSE ) );
+		$query->setQuerySettings( $query->getQuerySettings()->setRespectStoragePage( false ) );
 
 		return $query->matching(
 			$query->logicalOr([
-				$query->equals($property, $lookUp, FALSE),
-				$query->like($property, '%' . $lookUp . '%', FALSE),
-				$query->like($property, '%' . $lookUp, FALSE),
-				$query->like($property, $lookUp . '%', FALSE)
+				$query->equals($property, $lookUp, false),
+				$query->like($property, '%' . $lookUp . '%', false),
+				$query->like($property, '%' . $lookUp, false),
+				$query->like($property, $lookUp . '%', false)
 			])
 		)->execute();
 	}

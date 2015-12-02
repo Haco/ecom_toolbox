@@ -48,14 +48,14 @@ class BytesViewHelper extends AbstractViewHelper implements CompilableInterface 
 	/**
 	 * Render the supplied byte count as a human readable string.
 	 *
-	 * @param int $value The incoming data to convert, or NULL if VH children should be used
+	 * @param int $value The incoming data to convert, or null if VH children should be used
 	 * @param int $decimals The number of digits after the decimal point
 	 * @param string $decimalSeparator The decimal point character
 	 * @param string $thousandsSeparator The character for grouping the thousand digits
 	 * @return string Formatted byte count
 	 * @api
 	 */
-	public function render($value = NULL, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') {
+	public function render($value = null, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') {
 		return self::renderStatic(
 			[
 				'value' => $value,
@@ -77,9 +77,9 @@ class BytesViewHelper extends AbstractViewHelper implements CompilableInterface 
 	 * @return string
 	 */
 	static public function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext) {
-		$units = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode('|', \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('file_size_units', 'ecom_toolbox'), TRUE);
+		$units = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode('|', \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('file_size_units', 'ecom_toolbox'), true);
 		$value = $arguments['value'];
-		if ( $value === NULL ) {
+		if ( $value === null ) {
 			$value = $renderChildrenClosure();
 		}
 

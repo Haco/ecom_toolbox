@@ -1,152 +1,136 @@
 <?php
 namespace Ecom\EcomToolbox\Domain\Model;
 
-/**
- * Class News
- * @package Ecom\EcomToolbox\Domain\Model
- *
- * Extends the News Model with custom fields
- */
 
+/***************************************************************
+ *
+ *  Copyright notice
+ *
+ *  (c) 2015 Nicolas Scheidler <Nicolas.Scheidler@ecom-ex.com>, ecom instruments GmbH
+ *           Sebastian Iffland <sebastian.iffland@ecom-ex.com>, ecom instruments GmbH
+ *
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
+
+/**
+ * News
+ */
 class News extends \GeorgRinger\News\Domain\Model\News {
 
 	/**
-	 * ecom Event Name
-	 * Custom Name for the event (only for usage in the calendar)
+	 * Custom Name for the event (ONLY for usage in the calendar)
 	 *
 	 * @var \string
 	 */
 	protected $ecomEventName = '';
 
 	/**
-	 * ecom Event Host
-	 *
 	 * @var \string
 	 */
 	protected $ecomEventHost = '';
 
 	/**
-	 * ecom Event Consultants
-	 *
 	 * @var \string
 	 */
 	protected $ecomEventConsultants = '';
 
 	/**
-	 * ecom Event Website
-	 *
 	 * @var \string
 	 */
 	protected $ecomEventWebsite = '';
 
 	/**
-	 * ecom Event
-	 *
 	 * @var \DateTime
 	 */
-	protected $ecomEventDate = NULL;
+	protected $ecomEventDate = null;
 
 	/**
-	 * ecom Event End
-	 *
 	 * @var \DateTime
 	 */
-	protected $ecomEventEnd = NULL;
+	protected $ecomEventEnd = null;
 
 	/**
-	 * ecom Event Open From
-	 *
 	 * @var \DateTime
 	 */
-	protected $ecomEventOpenFrom = NULL;
+	protected $ecomEventOpenFrom = null;
 
 	/**
-	 * ecom Event Open Till
-	 *
 	 * @var \DateTime
 	 */
-	protected $ecomEventOpenTill = NULL;
+	protected $ecomEventOpenTill = null;
 
 	/**
-	 * ecom Event Booth
-	 *
 	 * @var string
 	 */
 	protected $ecomEventBooth = '';
 
 	/**
-	 * ecom Event Country
-	 *
 	 * @var \Ecom\EcomToolbox\Domain\Model\Region
 	 */
-	protected $ecomEventCountry = NULL;
+	protected $ecomEventCountry = null;
 
 	/**
-	 * ecom Event State
-	 *
 	 * @var \Ecom\EcomToolbox\Domain\Model\State
 	 */
-	protected $ecomEventState = NULL;
+	protected $ecomEventState = null;
 
 	/**
-	 * ecom Event Zip
-	 *
 	 * @var string
 	 */
 	protected $ecomEventZip = '';
 
 	/**
-	 * ecom Event City
-	 *
 	 * @var string
 	 */
 	protected $ecomEventCity = '';
 
 	/**
-	 * ecom Event Address
-	 *
 	 * @var string
 	 */
 	protected $ecomEventAddress = '';
 
 	/**
-	 * ecom Event Maps Location
-	 *
 	 * @var string
 	 */
 	protected $ecomEventMapsLocation = '';
 
 	/**
-	 * ecom Event Industries
-	 *
-	 * @var integer
+	 * @var int
 	 */
 	protected $ecomEventIndustries = 0;
 
 	/**
-	 * ecom Event Industries Custom
-	 *
 	 * @var string
 	 */
 	protected $ecomEventIndustriesCustom = '';
 
 	/**
-	 * ecom Event Settings
-	 *
-	 * @var integer
+	 * @var int
 	 */
 	protected $ecomEventSettings = 0;
 
 	/**
-	 * ecom Blogpost Visits
-	 *
-	 * @var integer
+	 * @var int
 	 */
 	protected $ecomBlogpostVisits = 0;
 
 	/**
-	 * Returns the ecom Event Name
-	 *
 	 * @return string $ecomEventName
 	 */
 	public function getEcomEventName() {
@@ -154,8 +138,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event Name
-	 *
 	 * @param string $ecomEventName
 	 * @return void
 	 */
@@ -164,8 +146,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Host
-	 *
 	 * @return string $ecomEventHost
 	 */
 	public function getEcomEventHost() {
@@ -173,8 +153,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event Host
-	 *
 	 * @param string $ecomEventHost
 	 * @return void
 	 */
@@ -183,8 +161,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Consultants
-	 *
 	 * @return string $ecomEventConsultants
 	 */
 	public function getEcomEventConsultants() {
@@ -192,8 +168,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event Consultants
-	 *
 	 * @param string $ecomEventConsultants
 	 * @return void
 	 */
@@ -202,8 +176,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Website
-	 *
 	 * @return string $ecomEventWebsite
 	 */
 	public function getEcomEventWebsite() {
@@ -211,8 +183,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event Website
-	 *
 	 * @param string $ecomEventWebsite
 	 * @return void
 	 */
@@ -221,8 +191,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Eventdate
-	 *
 	 * @return \DateTime $ecomEventDate
 	 */
 	public function getEcomEventDate() {
@@ -230,10 +198,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Eventdate
-	 *
 	 * @param \DateTime $ecomEventDate
-	 *
 	 * @return void
 	 */
 	public function setEcomEventDate($ecomEventDate) {
@@ -241,8 +206,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event End
-	 *
 	 * @return \DateTime $ecomEventEnd
 	 */
 	public function getEcomEventEnd() {
@@ -250,8 +213,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventEnd
-	 *
 	 * @param \DateTime $ecomEventEnd
 	 * @return void
 	 */
@@ -260,8 +221,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Open From
-	 *
 	 * @return \DateTime $ecomEventOpenFrom
 	 */
 	public function getEcomEventOpenFrom() {
@@ -269,8 +228,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventOpenFrom
-	 *
 	 * @param \DateTime $ecomEventOpenFrom
 	 * @return void
 	 */
@@ -279,8 +236,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Open Till
-	 *
 	 * @return \DateTime $ecomEventOpenTill
 	 */
 	public function getEcomEventOpenTill() {
@@ -288,8 +243,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventOpenTill
-	 *
 	 * @param \DateTime $ecomEventOpenTill
 	 * @return void
 	 */
@@ -298,8 +251,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	* Returns the ecom Event Booth
-	*
 	* @return string $ecomEventBooth
 	*/
 	public function getEcomEventBooth() {
@@ -307,8 +258,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventBooth
-	 *
 	 * @param string $ecomEventBooth
 	 * @return void
 	 */
@@ -317,8 +266,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Country
-	 *
 	 * @return \Ecom\EcomToolbox\Domain\Model\Region
 	 */
 	public function getEcomEventCountry() {
@@ -326,18 +273,14 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event Country
-	 *
 	 * @param \Ecom\EcomToolbox\Domain\Model\Region $ecomEventCountry
 	 * @return void
 	 */
-	public function setEcomEventCountry(\Ecom\EcomToolbox\Domain\Model\Region $ecomEventCountry = NULL) {
+	public function setEcomEventCountry(\Ecom\EcomToolbox\Domain\Model\Region $ecomEventCountry = null) {
 		$this->ecomEventCountry = $ecomEventCountry;
 	}
 
 	/**
-	 * Returns the ecom Event State
-	 *
 	 * @return \Ecom\EcomToolbox\Domain\Model\State
 	 */
 	public function getEcomEventState() {
@@ -345,18 +288,14 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event State
-	 *
 	 * @param \Ecom\EcomToolbox\Domain\Model\State $ecomEventState
 	 * @return void
 	 */
-	public function setEcomEventState(\Ecom\EcomToolbox\Domain\Model\State $ecomEventState = NULL) {
+	public function setEcomEventState(\Ecom\EcomToolbox\Domain\Model\State $ecomEventState = null) {
 		$this->ecomEventState = $ecomEventState;
 	}
 
 	/**
-	 * Returns the ecom Event Zip
-	 *
 	 * @return string $ecomEventZip
 	 */
 	public function getEcomEventZip() {
@@ -364,8 +303,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event Zip
-	 *
 	 * @param string $ecomEventZip
 	 * @return void
 	 */
@@ -374,8 +311,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event City
-	 *
 	 * @return string $ecomEventCity
 	 */
 	public function getEcomEventCity() {
@@ -383,8 +318,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event City
-	 *
 	 * @param string $ecomEventCity
 	 * @return void
 	 */
@@ -393,8 +326,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Address
-	 *
 	 * @return string $ecomEventAddress
 	 */
 	public function getEcomEventAddress() {
@@ -402,8 +333,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventAddress
-	 *
 	 * @param string $ecomEventAddress
 	 * @return void
 	 */
@@ -412,8 +341,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Maps Location
-	 *
 	 * @return string $ecomEventMapsLocation
 	 */
 	public function getEcomEventMapsLocation() {
@@ -421,8 +348,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom Event Maps Location
-	 *
 	 * @param string $ecomEventMapsLocation
 	 * @return void
 	 */
@@ -431,8 +356,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Industries
-	 *
 	 * @return array
 	 */
 	public function getEcomEventIndustries() {
@@ -440,8 +363,16 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
+	 * @param int $ecomEventIndustries
+	 * @return void
+	 */
+	public function setEcomEventIndustries($ecomEventIndustries) {
+		$this->ecomEventIndustries = $ecomEventIndustries;
+	}
+
+	/**
 	 * Returns the evaluated checkboxes of $ecomEventIndustries
-	 * plus the user defined input as array (translated)
+	 * plus user defined input as array (translated)
 	 *
 	 * @return array
 	 */
@@ -460,9 +391,9 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 		// Merge with user-defined
 		if($this->ecomEventIndustriesCustom) {
 			if (is_array($result)) {
-				$result = array_merge($result, \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->ecomEventIndustriesCustom, TRUE));
+				$result = array_merge($result, \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->ecomEventIndustriesCustom, true));
 			} else {
-				$result = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->ecomEventIndustriesCustom, TRUE);
+				$result = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->ecomEventIndustriesCustom, true);
 			}
 		}
 
@@ -473,18 +404,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventIndustries
-	 *
-	 * @param integer $ecomEventIndustries
-	 * @return void
-	 */
-	public function setEcomEventIndustries($ecomEventIndustries) {
-		$this->ecomEventIndustries = $ecomEventIndustries;
-	}
-
-	/**
-	 * Returns the ecom Event IndustriesCustom
-	 *
 	 * @return string $ecomEventIndustriesCustom
 	 */
 	public function getEcomEventIndustriesCustom() {
@@ -492,8 +411,6 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Sets the ecom EventIndustriesCustom
-	 *
 	 * @param string $ecomEventIndustriesCustom
 	 * @return void
 	 */
@@ -502,54 +419,42 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * Returns the ecom Event Settings
-	 *
-	 * @return integer
+	 * @return int
 	 */
-	public function isEcomEventSettings() {
+	public function getEcomEventSettings() {
 		return $this->ecomEventSettings;
 	}
 
 	/**
-	 * Returns the ecom Event Settings
-	 *
-	 * @param integer $ecomEventSettings
+	 * @param int $ecomEventSettings
 	 */
 	public function setEcomEventSettings($ecomEventSettings) {
 		$this->ecomEventSettings = $ecomEventSettings;
 	}
 
 	/**
-	 * Returns the ecom Event Hide Infobox
-	 *
-	 * @return boolean $ecomEventHideInfobox
+	 * @return bool $ecomEventHideInfobox
 	 */
 	public function getEcomEventHideInfobox() {
 		return (bool) ($this->ecomEventSettings & 1);
 	}
 
 	/**
-	 * Returns the ecom Event Hide Googlemaps
-	 *
-	 * @return boolean $ecomEventHideGooglemaps
+	 * @return bool $ecomEventHideGooglemaps
 	 */
 	public function getEcomEventHideGooglemaps() {
 		return (bool) ($this->ecomEventSettings & 2);
 	}
 
 	/**
-	 * Returns the ecom Blostpost Visits
-	 *
-	 * @return integer $ecomBlogpostVisits
+	 * @return int $ecomBlogpostVisits
 	 */
 	public function getEcomBlogpostVisits() {
 		return $this->ecomBlogpostVisits;
 	}
 
 	/**
-	 * Sets the ecom Blostpost Visits
-	 *
-	 * @param integer $ecomBlogpostVisits
+	 * @param int $ecomBlogpostVisits
 	 * @return void
 	 */
 	public function setEcomBlogpostVisits($ecomBlogpostVisits) {

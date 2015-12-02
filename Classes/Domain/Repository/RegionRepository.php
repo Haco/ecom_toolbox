@@ -45,20 +45,20 @@ class RegionRepository extends \Ecom\EcomToolbox\Domain\Repository\AbstractRepos
 	 */
 	public function initializeObject() {
 		/** @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings */
-		$querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\QuerySettingsInterface');
-		$querySettings->setRespectStoragePage(FALSE); // Disable storage pid
+		$querySettings = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface::class);
+		$querySettings->setRespectStoragePage(false); // Disable storage pid
 		$this->setDefaultQuerySettings($querySettings);
 	}
 
 	/**
 	 * findByUidList - find and sort entities defined by list
 	 *
-	 * @param array   $list
-	 * @param integer $mode Current modes are 0=excludeList, default=includeList
+	 * @param array $list
+	 * @param int   $mode Current modes are 0=excludeList, default=includeList
 	 *
 	 * @return null|\TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function findByUidList(array $list = [], $mode = 1) {
+	public function findByUidList(array $list = [ ], $mode = 1) {
 		/** In order to keep orderings as set in flexForm, we fetch record by record, storing them into an ObjectStorage */
 		$return = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		if ( $mode === 0 ) {

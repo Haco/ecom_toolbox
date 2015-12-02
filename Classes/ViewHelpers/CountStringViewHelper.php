@@ -30,8 +30,8 @@ class CountStringViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractVie
 	 * @param string $value
 	 * @return boolean
 	 */
-	public function render($value = NULL) {
-		if ( $value === NULL ) {
+	public function render($value = null) {
+		if ( $value === null ) {
 			$value = $this->renderChildren();
 		}
 
