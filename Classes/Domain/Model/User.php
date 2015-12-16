@@ -71,5 +71,37 @@ class User extends \TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
 		$this->privacyPolicy = $privacyPolicy;
 	}
 
+	/**
+	 * @return array|null
+	 */
+	public function getFeUserGroups()
+	{
+		if ($this->getUsergroup() instanceof \TYPO3\CMS\Extbase\Persistence\ObjectStorage) {
+			return $this->getFeUserGroupUidsAsArray($this->getUsergroup());
+		}
+		return null;
+	}
+
+	/**
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userGroups
+	 *
+	 * @return array
+	 */
+	public function getFeUserGroupUidsAsArray(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userGroups)
+	{
+		$array = [];
+		if ($userGroups->count()) {
+			/** @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUserGroup $userGroup */
+			foreach ($userGroups as $userGroup) {
+				$array[] = $userGroup->getUid();
+				if ($userGroup->getSubgroup() instanceof \TYPO3\CMS\Extbase\Persistence\ObjectStorage && $userGroup->getSubgroup()->count()) {
+					$array = array_merge($array, $this->getFeUserGroupUidsAsArray($userGroup->getSubgroup()));
+				}
+			}
+		}
+
+		return $array;
+	}
+
 }
 ?>
