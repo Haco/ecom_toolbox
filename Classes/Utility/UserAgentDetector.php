@@ -31,28 +31,31 @@ namespace Ecom\EcomToolbox\Utility;
 /**
  * Class UserAgentDetector
  */
-class UserAgentDetector {
+class UserAgentDetector
+{
 
-	// - http://www.robotstxt.org/db.html
+    // - http://www.robotstxt.org/db.html
 
-	/**
-	 * @return bool
-	 */
-	public static function isSpecificCrawler() {
-		$userAgent    = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : null;
-		$crawlerNames = 'Google|msnbot|Rambler|Yahoo|AbachoBOT|accoona|AcioRobot|ASPSeek|CocoCrawler|Dumbot|FAST-WebCrawler|GeonaBot|Gigabot|Lycos|MSRBOT|Scooter|AltaVista|IDBot|eStyle|Scrubby';
+    /**
+     * @return bool
+     */
+    public static function isSpecificCrawler()
+    {
+        $userAgent = isset($_SERVER[ 'HTTP_USER_AGENT' ]) ? $_SERVER[ 'HTTP_USER_AGENT' ] : null;
+        $crawlerNames = 'Google|msnbot|Rambler|Yahoo|AbachoBOT|accoona|AcioRobot|ASPSeek|CocoCrawler|Dumbot|FAST-WebCrawler|GeonaBot|Gigabot|Lycos|MSRBOT|Scooter|AltaVista|IDBot|eStyle|Scrubby';
 
-		return is_string( $userAgent ) && strlen( $userAgent ) ? preg_match("/{$crawlerNames}/i", $userAgent) > 0 : false;
-	}
+        return is_string($userAgent) && strlen($userAgent) ? preg_match("/{$crawlerNames}/i", $userAgent) > 0 : false;
+    }
 
-	/**
-	 * @return bool
-	 */
-	public static function isGenericBot() {
-		$userAgent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : null;
-		$botTypes  = 'bot|crawl|slurp|spider';
+    /**
+     * @return bool
+     */
+    public static function isGenericBot()
+    {
+        $userAgent = isset($_SERVER[ 'HTTP_USER_AGENT' ]) ? $_SERVER[ 'HTTP_USER_AGENT' ] : null;
+        $botTypes = 'bot|crawl|slurp|spider';
 
-		return is_string( $userAgent ) && strlen( $userAgent ) ? preg_match("/{$botTypes}/i", $userAgent) > 0 : false;
-	}
+        return is_string($userAgent) && strlen($userAgent) ? preg_match("/{$botTypes}/i", $userAgent) > 0 : false;
+    }
 
 }

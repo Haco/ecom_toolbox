@@ -1,7 +1,6 @@
 <?php
 namespace Ecom\EcomToolbox\Utility;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -31,63 +30,72 @@ namespace Ecom\EcomToolbox\Utility;
 /**
  * BitHandler
  */
-class BitHandler {
+class BitHandler
+{
 
-	/**
-	 * @var integer
-	 */
-	protected $bits = 0;
+    /**
+     * @var integer
+     */
+    protected $bits = 0;
 
-	/**
-	 * Gets the bits
-	 *
-	 * @return int
-	 */
-	public function getBits() {
-		return $this->bits;
-	}
+    /**
+     * Gets the bits
+     *
+     * @return int
+     */
+    public function getBits()
+    {
+        return $this->bits;
+    }
 
-	/**
-	 * Sets the bits
-	 *
-	 * @param $bits
-	 */
-	public function setBits($bits) {
-		$this->bits = $bits;
-	}
+    /**
+     * Sets the bits
+     *
+     * @param $bits
+     */
+    public function setBits($bits)
+    {
+        $this->bits = $bits;
+    }
 
-	/**
-	 * Resets the bits property
-	 *
-	 * @return $this For method chaining
-	 */
-	public function reset() {
-		$this->setBits(0);
-		return $this;
-	}
+    /**
+     * Resets the bits property
+     *
+     * @return $this For method chaining
+     */
+    public function reset()
+    {
+        $this->setBits(0);
 
-	/**
-	 * Checks if flag (bit) is set
-	 *
-	 * @param  int  $bit The Bit to be checked against
-	 * @return bool
-	 */
-	public function isBitSet($bit) {
-		return ($this->bits & $bit) == $bit;
-	}
+        return $this;
+    }
 
-	/**
-	 * @param int $bit The Bit to be set
-	 */
-	public function setSingleBit($bit = 0) {
-		$this->bits |= $bit;
-	}
+    /**
+     * Checks if flag (bit) is set
+     *
+     * @param  int $bit The Bit to be checked against
+     *
+     * @return bool
+     */
+    public function isBitSet($bit)
+    {
+        return ($this->bits & $bit) == $bit;
+    }
 
-	/**
-	 * @param int $bit The Bit to be unset
-	 */
-	public function unsetSingleBit($bit = 0) {
-		$this->bits &= ~$bit;
-	}
+    /**
+     * @param int $bit The Bit to be set
+     */
+    public function setSingleBit($bit = 0)
+    {
+        $this->bits |= $bit;
+    }
+
+    /**
+     * @param int $bit The Bit to be unset
+     */
+    public function unsetSingleBit($bit = 0)
+    {
+        $this->bits &= ~$bit;
+    }
 
 }
