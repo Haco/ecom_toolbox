@@ -7,6 +7,10 @@
 				<source>Close window</source>
 				<target>Fenster schließen</target>
 			</trans-unit>
+			<trans-unit id="event.eventinformation" xml:space="preserve">
+				<source>Event Information</source>
+				<target>Event Informationen</target>
+			</trans-unit>
 			<trans-unit id="event.name" xml:space="preserve">
 				<source>Event</source>
 				<target>Event</target>
@@ -95,6 +99,15 @@
 				<source>Process <![CDATA[&]]> Automation</source>
 				<target>Prozess- <![CDATA[&]]> Automatisierungstechnik</target>
 			</trans-unit>
+			<trans-unit id="event.startofevent" xml:space="preserve">
+                <source>Start of event</source>
+                <target>Event Start</target>
+            </trans-unit>
+            <trans-unit id="event.endofevent" xml:space="preserve">
+                <source>End of event</source>
+                <target>Event Ende</target>
+            </trans-unit>
+
 			<trans-unit id="calendar.readmore" xml:space="preserve">
 				<source>Read more</source>
 				<target>Weiterlesen</target>
@@ -117,7 +130,7 @@
 			</trans-unit>
 			<trans-unit id="calendar.eventsToday" xml:space="preserve">
 				<source>Today's events</source>
-				<target>Events am heutigen Tag</target>
+				<target>Events Heute</target>
 			</trans-unit>
 			<trans-unit id="calendar.today" xml:space="preserve">
 				<source>Today</source>

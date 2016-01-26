@@ -1,150 +1,193 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-14T11:47:17Z" product-name="ecom_toolbox">
+	<file source-language="en" target-language="pt" datatype="plaintext" original="messages" date="2014-11-26T11:17:02Z" product-name="ecom_toolbox">
 		<header/>
 		<body>
 			<trans-unit id="modal.closewindow" xml:space="preserve">
 				<source>Close window</source>
+				<target>Cerrar ventana</target>
 			</trans-unit>
 			<trans-unit id="event.eventinformation" xml:space="preserve">
 				<source>Event Information</source>
+				<target>Informaciones sobre eventos</target>
 			</trans-unit>
 			<trans-unit id="event.name" xml:space="preserve">
 				<source>Event</source>
+				<target>Evento</target>
 			</trans-unit>
 			<trans-unit id="event.host" xml:space="preserve">
 				<source>Host</source>
+				<target>Anfitrión</target>
 			</trans-unit>
 			<trans-unit id="event.website" xml:space="preserve">
 				<source>Official Website</source>
+				<target>Página web oficial</target>
 			</trans-unit>
 			<trans-unit id="event.consultants" xml:space="preserve">
 				<source>Consultant(s)</source>
+				<target>Consultor(es)</target>
 			</trans-unit>
 			<trans-unit id="event.dailyOpenings" xml:space="preserve">
 				<source>Opening Hours</source>
+				<target>Horario de apertura</target>
 			</trans-unit>
 			<trans-unit id="event.openFromTill" xml:space="preserve">
-				<source>Daily open from %1$s till %2$s</source>
+				<source>Daily open from %1$d till %2$d</source>
+				<target>Abierto todos los días desde el %1$s hasta %2$s</target>
 			</trans-unit>
 			<trans-unit id="event.country" xml:space="preserve">
 				<source>Country</source>
+				<target>País</target>
 			</trans-unit>
 			<trans-unit id="event.city" xml:space="preserve">
 				<source>City</source>
+				<target>Lugar</target>
 			</trans-unit>
 			<trans-unit id="event.address" xml:space="preserve">
 				<source>Address</source>
+				<target>Dirección</target>
 			</trans-unit>
 			<trans-unit id="event.location" xml:space="preserve">
 				<source>Location</source>
+				<target>Localización</target>
 			</trans-unit>
 			<trans-unit id="event.hall" xml:space="preserve">
 				<source>Hall</source>
+				<target>Auditorio</target>
 			</trans-unit>
 			<trans-unit id="event.booth" xml:space="preserve">
 				<source>Booth</source>
+				<target>Cabina</target>
 			</trans-unit>
 			<trans-unit id="event.category" xml:space="preserve">
 				<source>Category</source>
+				<target>Categoría</target>
 			</trans-unit>
 			<trans-unit id="event.days" xml:space="preserve">
 				<source>Days</source>
+				<target>Días</target>
 			</trans-unit>
 			<trans-unit id="event.day" xml:space="preserve">
 				<source>Day</source>
+				<target>Día</target>
 			</trans-unit>
 			<trans-unit id="event.duration" xml:space="preserve">
 				<source>Duration</source>
+				<target>Duración</target>
 			</trans-unit>
 			<trans-unit id="event.industries" xml:space="preserve">
 				<source>Industries</source>
+				<target>Industrias</target>
 			</trans-unit>
 			<trans-unit id="event.industries.I.0" xml:space="preserve">
 				<source>Chemical</source>
+				<target>Químico</target>
 			</trans-unit>
 			<trans-unit id="event.industries.I.1" xml:space="preserve">
 				<source>Mining</source>
+				<target>Minería</target>
 			</trans-unit>
 			<trans-unit id="event.industries.I.2" xml:space="preserve">
 				<source>Oil <![CDATA[&]]> Gas</source>
+				<target>Petróleo <![CDATA[&]]> Gas</target>
 			</trans-unit>
 			<trans-unit id="event.industries.I.3" xml:space="preserve">
 				<source>Pharmaceutical</source>
+				<target>Farmacéutico</target>
 			</trans-unit>
 			<trans-unit id="event.industries.I.4" xml:space="preserve">
 				<source>Process <![CDATA[&]]> Automation</source>
+				<target>Proceso <![CDATA[&]]> Automación</target>
 			</trans-unit>
 			<trans-unit id="event.startofevent" xml:space="preserve">
                 <source>Start of event</source>
+                <target>Inicio del evento</target>
             </trans-unit>
-			<trans-unit id="event.endofevent" xml:space="preserve">
+            <trans-unit id="event.endofevent" xml:space="preserve">
                 <source>End of event</source>
+                <target>Fin del evento</target>
             </trans-unit>
 
 			<trans-unit id="calendar.readmore" xml:space="preserve">
 				<source>Read more</source>
+				<target>Seguir leyendo</target>
 			</trans-unit>
 			<trans-unit id="calendar.showDetails" xml:space="preserve">
 				<source>Show Details</source>
+				<target>Mostrar detalles</target>
 			</trans-unit>
 			<trans-unit id="calendar.currentMonth" xml:space="preserve">
 				<source>Current month</source>
+				<target>Mes actual</target>
 			</trans-unit>
 			<trans-unit id="calendar.legend" xml:space="preserve">
 				<source>Legend</source>
+				<target>Inscripción</target>
 			</trans-unit>
 			<trans-unit id="calendar.events" xml:space="preserve">
 				<source>Events</source>
+				<target>Eventos</target>
 			</trans-unit>
 			<trans-unit id="calendar.eventsToday" xml:space="preserve">
 				<source>Today's events</source>
+				<target>Eventos de hoy</target>
 			</trans-unit>
 			<trans-unit id="calendar.today" xml:space="preserve">
 				<source>Today</source>
-			</trans-unit>
-			<trans-unit id="file_size_units" xml:space="preserve">
-				<source>Byte|KB|MB|GB|TB|PB|EB|ZB|YB</source>
+				<target>Hoy</target>
 			</trans-unit>
 			<!-- Validation -->
 			<trans-unit id="validator.notempty.null" xml:space="preserve">
 				<source>This is a required field. Please fill in!</source>
+				<target>Dies ist ein Pflichtfeld. Bitte füllen Sie diese aus!</target>
 			</trans-unit>
 			<trans-unit id="validator.notempty.empty" xml:space="preserve">
 				<source>This is a required field. Please fill in!</source>
+				<target>Dies ist ein Pflichtfeld. Bitte füllen Sie diese aus!</target>
 			</trans-unit>
 			<trans-unit id="validator.list.notinlist" xml:space="preserve">
 				<source><![CDATA[The value provided must be one of the following: %s
 (submitted: %s)]]></source>
+				<target><![CDATA[Der übermittelte Wert muss einer der Folgenden sein: %s
+(angegeben: %s)]]></target>
 			</trans-unit>
 
 			<!-- FLASH MESSAGES -->
 			<trans-unit id="f.record_created" xml:space="preserve">
 				<source>The %s was created.</source>
+				<target>Die %s wurde erstellt.</target>
 			</trans-unit>
 			<trans-unit id="m.record_created" xml:space="preserve">
 				<source>The %s was created.</source>
+				<target>Der %s wurde erstellt.</target>
 			</trans-unit>
 			<trans-unit id="n.record_created" xml:space="preserve">
 				<source>The %s was created.</source>
+				<target>Das %s wurde erstellt.</target>
 			</trans-unit>
 			<trans-unit id="f.record_updated" xml:space="preserve">
 				<source>The %1$s "%2$s" was updated.</source>
+				<target>Die %1$s „%2$s“ wurde aktualisiert.</target>
 			</trans-unit>
 			<trans-unit id="m.record_updated" xml:space="preserve">
 				<source>The %1$s "%2$s" was updated.</source>
+				<target>Der %1$s „%2$s“ wurde aktualisiert.</target>
 			</trans-unit>
 			<trans-unit id="n.record_updated" xml:space="preserve">
 				<source>The %1$s "%2$s" was updated.</source>
+				<target>Das %1$s „%2$s“ wurde aktualisiert.</target>
 			</trans-unit>
 			<trans-unit id="f.record_deleted" xml:space="preserve">
 				<source>The %1$s "%2$s" was deleted.</source>
+				<target>Die %1$s „%2$s“ wurde gelöscht.</target>
 			</trans-unit>
 			<trans-unit id="m.record_deleted" xml:space="preserve">
 				<source>The %1$s "%2$s" was deleted.</source>
+				<target>Der %1$s „%2$s“ wurde gelöscht.</target>
 			</trans-unit>
 			<trans-unit id="n.record_deleted" xml:space="preserve">
 				<source>The %1$s "%2$s" was deleted.</source>
+				<target>Das %1$s „%2$s“ wurde gelöscht.</target>
 			</trans-unit>
 		</body>
 	</file>
