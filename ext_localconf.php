@@ -6,6 +6,9 @@ if ( !defined('TYPO3_MODE') ) {
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'ecom_toolbox';
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/FileReference'][] = 'ecom_toolbox';
 
+// Extend GoogleSitemap for indexing languages of landingpage in a single sitemap
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['dd_googlesitemap']['sitemap']['ecom_lp'] = 'Ecom\EcomToolbox\Utility\SitemapUtility->generateSitemap';
+
 // Update News Flexform
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['Hooks/BackendUtility.php']['updateFlexforms'][] = 'Ecom\EcomToolbox\Hooks\BackendUtility->updateFlexforms';
 

@@ -4,4 +4,10 @@ plugin.tx_ecomtoolbox {
 		# cat=plugin.tx_ecomtoolbox//a; type=string; label=Default storage PID
 		storagePid =
 	}
+    settings {
+        # cat=plugin.tx_ecomtoolbox/settings/a; type=string; label=LP Sitemap PIDs: Comma separated list of Landingpage PIDs to include in a single sitemap.
+        lpSitemapPids = 229
+        # cat=plugin.tx_ecomtoolbox/settings/a; type=string; label=LP LangIDs to index: Comma separated list of Landingpage LanguageIds to index in a single file.
+        lpLangIdsToIndex = 4,11,33,34,35,36,29
+    }
 }
