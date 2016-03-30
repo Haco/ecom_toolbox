@@ -245,9 +245,12 @@ if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')) {
                     'readOnly'      => 1,
                     'size'          => '11'
                 ]
-            ],
+            ]
         ]
     );
+
+    unset($GLOBALS[ 'TCA' ][ 'tx_news_domain_model_news' ][ 'columns' ][ 'categories' ][ 'l10n_mode']);
+    $GLOBALS[ 'TCA' ][ 'tx_news_domain_model_news' ][ 'columns' ][ 'categories' ][ 'config' ][ 'foreign_table_where' ] = ' AND (sys_category.sys_language_uid IN (-1,0) OR sys_category.l10n_parent = 0) ORDER BY sys_category.sorting';
 
     // Custom Palettes
     \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(

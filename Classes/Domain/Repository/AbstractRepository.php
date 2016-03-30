@@ -104,12 +104,12 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	}
 
 	/**
-	 * @param string $list
-	 * @param array  $storagePids
+	 * @param string $list        A list of record ids
+	 * @param array  $storagePids A list of storage page ids
 	 *
 	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
-	public function findByUidList($list, array $storagePids = [ ]) {
+	public function findByList($list, array $storagePids = [ ]) {
 		$query = $this->createQuery();
 		$query->setQuerySettings( $query->getQuerySettings()->setRespectSysLanguage( false )->setStoragePageIds( $storagePids ) );
 
