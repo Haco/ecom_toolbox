@@ -36,22 +36,22 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	/**
 	 * Custom Name for the event (ONLY for usage in the calendar)
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $ecomEventName = '';
 
 	/**
-	 * @var \string
+	 * @var string
 	 */
 	protected $ecomEventHost = '';
 
 	/**
-	 * @var \string
+	 * @var string
 	 */
 	protected $ecomEventConsultants = '';
 
 	/**
-	 * @var \string
+	 * @var string
 	 */
 	protected $ecomEventWebsite = '';
 
@@ -66,14 +66,14 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	protected $ecomEventEnd = null;
 
 	/**
-	 * @var \DateTime
+	 * @var int
 	 */
-	protected $ecomEventOpenFrom = null;
+	protected $ecomEventOpenFrom = 0;
 
 	/**
-	 * @var \DateTime
+	 * @var int
 	 */
-	protected $ecomEventOpenTill = null;
+	protected $ecomEventOpenTill = 0;
 
 	/**
 	 * @var string
@@ -221,32 +221,32 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	}
 
 	/**
-	 * @return \DateTime $ecomEventOpenFrom
+	 * @return int $ecomEventOpenFrom
 	 */
 	public function getEcomEventOpenFrom() {
 		return $this->ecomEventOpenFrom;
 	}
 
 	/**
-	 * @param \DateTime $ecomEventOpenFrom
+	 * @param int $ecomEventOpenFrom
 	 * @return void
 	 */
-	public function setEcomEventOpenFrom($ecomEventOpenFrom) {
+	public function setEcomEventOpenFrom(int $ecomEventOpenFrom) {
 		$this->ecomEventOpenFrom = $ecomEventOpenFrom;
 	}
 
 	/**
-	 * @return \DateTime $ecomEventOpenTill
+	 * @return int $ecomEventOpenTill
 	 */
 	public function getEcomEventOpenTill() {
 		return $this->ecomEventOpenTill;
 	}
 
 	/**
-	 * @param \DateTime $ecomEventOpenTill
+	 * @param int $ecomEventOpenTill
 	 * @return void
 	 */
-	public function setEcomEventOpenTill($ecomEventOpenTill) {
+	public function setEcomEventOpenTill(int $ecomEventOpenTill) {
 		$this->ecomEventOpenTill = $ecomEventOpenTill;
 	}
 
