@@ -15,13 +15,13 @@ $EM_CONF[ 'ecom_toolbox' ] = [
 	'description' => 'Provides useful tools for and from ecom.',
 	'category' => 'plugin',
 	'author' => 'Nicolas Scheidler, Sebastian Iffland',
-	'author_email' => 'Nicolas.Scheidler@ecom-ex.com, sebastian.iffland@ecom-ex.com',
+	'author_email' => 'Nicolas.Scheidler@ecom-ex.com',
 	'state' => 'stable',
 	'internal' => '',
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '2.0.6',
+	'version' => '2.0.7',
 	'constraints' => [
 		'depends' => [
 			'typo3' => '6.2-7.6.99',
@@ -31,7 +31,7 @@ $EM_CONF[ 'ecom_toolbox' ] = [
 		'conflicts' => [],
 		'suggests' => [
             'dd_googlesitemap' => '2.0.4-2.0.99',
-			'cb_newscal' => '1.2.2-nsc'
+			'cb_newscal' => ''
 		]
 	]
 ];
