@@ -11,7 +11,7 @@ $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/FileReferenc
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['dd_googlesitemap']['sitemap']['ecom_lp'] = 'Ecom\EcomToolbox\Utility\SitemapUtility->generateSitemap';
 
 // Update News Flexform
-$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['Hooks/BackendUtility.php']['updateFlexforms'][] = 'Ecom\EcomToolbox\Hooks\BackendUtility->updateFlexforms';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['getFlexFormDSClass'][] = \Ecom\EcomToolbox\Hooks\BackendUtility::class;
 
 // Hook into detailAction of EXT:News
 /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
