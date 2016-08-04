@@ -129,7 +129,7 @@ class SitemapUtility extends PagesSitemapGenerator
     protected function writeSingleUrl(array $pageInfo)
     {
         $langId = $pageInfo['langId'];
-        if ($this->shouldIncludePageInSitemap($pageInfo) && ($url = $this->getPageLink($pageInfo['uid'], $langId))) {
+        if ($this->shouldIncludePageInSitemap($pageInfo) && ($url = $this->getPageLinkNew((int)$pageInfo['uid'], (int)$langId))) {
             echo $this->renderer->renderEntry($url, $pageInfo['title'],
                 $this->getLastMod($pageInfo),
                 $this->getChangeFrequency($pageInfo), '', $pageInfo['tx_ddgooglesitemap_priority']);
@@ -156,11 +156,11 @@ class SitemapUtility extends PagesSitemapGenerator
     /**
      * Creates a link to a single page
      *
-     * @param   array $pageId Page ID
+     * @param   integer $pageId Page ID
      * @param   integer $langId
      * @return  string    Full URL of the page including host name (escaped)
      */
-    protected function getPageLink($pageId, $langId)
+    protected function getPageLinkNew($pageId, $langId)
     {
         $conf = array(
             'parameter' => $pageId,
@@ -172,7 +172,6 @@ class SitemapUtility extends PagesSitemapGenerator
         }
 
         $link = htmlspecialchars($this->cObj->typoLink('', $conf));
-
         return GeneralUtility::locationHeaderUrl($link);
     }
 }
