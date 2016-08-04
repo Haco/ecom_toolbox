@@ -98,7 +98,8 @@ class SitemapUtility extends PagesSitemapGenerator
             if ($this->generatedItemCount >= $this->offset) {
                 foreach ($this->langIds as $langid) {
                     if (!empty($GLOBALS['TSFE']->sys_page->getPagesOverlay(array($pageInfo['uid']), $langid))) {
-                        $this->writeSingleUrl($pageInfo, $langid);
+                        $pageInfo['langId'] = $langid;
+                        $this->writeSingleUrl($pageInfo);
                     }
                 }
             }
@@ -123,11 +124,11 @@ class SitemapUtility extends PagesSitemapGenerator
      * Outputs information about single page
      *
      * @param   array $pageInfo Page information (needs 'uid' and 'SYS_LASTCHANGED' columns)
-     * @param   integer $langId
      * @return  void
      */
-    protected function writeSingleUrl(array $pageInfo, $langId)
+    protected function writeSingleUrl(array $pageInfo)
     {
+        $langId = $pageInfo['langId'];
         if ($this->shouldIncludePageInSitemap($pageInfo) && ($url = $this->getPageLink($pageInfo['uid'], $langId))) {
             echo $this->renderer->renderEntry($url, $pageInfo['title'],
                 $this->getLastMod($pageInfo),
