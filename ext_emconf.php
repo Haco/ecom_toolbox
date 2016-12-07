@@ -21,12 +21,12 @@ $EM_CONF[ 'ecom_toolbox' ] = [
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '2.0.73',
+	'version' => '2.0.75',
 	'constraints' => [
 		'depends' => [
 			'typo3' => '6.2-7.6.99',
 			'php' => '5.6',
-			'news' => '4.0.0-4.2.99'
+			'news' => '5.3.0-5.3.99'
 		],
 		'conflicts' => [],
 		'suggests' => [
