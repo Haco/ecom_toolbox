@@ -1,0 +1,21 @@
+<f:for each="{topCategories}" as="topCategory">
+    <f:link.action action="list" arguments="{category:topCategory}">
+        {topCategory.name}
+    </f:link.action>
+</f:for>
+<hr>
+<f:if condition="{currentCategory}">
+    <f:for each="{currentCategory.items}" as="item">
+        <f:link.action action="show" arguments="{item:item}">
+            {item.subject}
+        </f:link.action><br>
+    </f:for>
+</f:if>
+<hr>
+<f:if condition="{subCategories}">
+    <f:for each="{subCategories}" as="subCategory">
+        <f:link.action action="list" arguments="{category:subCategory}">
+            {subCategory.name} [Articles: {subCategory.items->f:count()}]
+        </f:link.action>
+    </f:for>
+</f:if>

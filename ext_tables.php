@@ -3,11 +3,21 @@ if ( !defined('TYPO3_MODE') ) {
 	die( 'Access denied.' );
 }
 
+// Register FAQ Plugin
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    'Ecom.' . $_EXTKEY,
+    'Ecomfaq',
+    'ecom FAQ'
+);
+
 // TS FILE Toolbox Base
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Resources/Private/TypoScript', 'ecom Toolbox Base');
 
 // TS FILE for Ext:News
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Resources/Private/TypoScript/News', 'ecom Toolbox for EXT:News');
+
+// TS FILE for faq
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Resources/Private/TypoScript/Faq', 'ecom FAQ');
 
 // Backend Icons
 \TYPO3\CMS\Backend\Sprite\SpriteManager::addSingleIcons(

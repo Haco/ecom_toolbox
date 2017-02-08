@@ -3,6 +3,19 @@ if ( !defined('TYPO3_MODE') ) {
 	die( 'Access denied.' );
 }
 
+// Configure Plugin
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'Ecom.' . $_EXTKEY,
+    'Ecomfaq',
+    array(
+        'Faq' => 'list, show',
+    ),
+    // non-cacheable actions
+    array(
+        'Faq' => '',
+    )
+);
+
 // Register Extend News
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'ecom_toolbox';
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/FileReference'][] = 'ecom_toolbox';

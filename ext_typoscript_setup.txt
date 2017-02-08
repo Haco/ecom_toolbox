@@ -1,21 +1,23 @@
 config.tx_extbase {
-	persistence {
-		classes {
-			TYPO3\CMS\Extbase\Domain\Model\Category {
-				subclasses {
-					0 = Ecom\EcomToolbox\Domain\Model\Category
-				}
-			}
-			Ecom\EcomToolbox\Domain\Model\Category {
-				mapping {
-					tableName = sys_category
-				}
-			}
-			Ecom\EcomToolbox\Domain\Model\User {
-				mapping {
-					tableName = fe_users
-				}
-			}
-		}
-	}
+    persistence {
+        classes {
+            TYPO3\CMS\Extbase\Domain\Model\Category {
+                subclasses {
+                    0 = Ecom\EcomToolbox\Domain\Model\Category
+                }
+            }
+
+            Ecom\EcomToolbox\Domain\Model\Category {
+                mapping {
+                    tableName = sys_category
+                }
+            }
+
+            Ecom\EcomToolbox\Domain\Model\User {
+                mapping {
+                    tableName = fe_users
+                }
+            }
+        }
+    }
 }
