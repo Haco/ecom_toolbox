@@ -3,4 +3,4 @@ plugin.tx_news.settings.orderByAllowed := addToList(ecom_event_date,ecom_blogpos
 plugin.tx_news.settings.demandClass = Ecom\EcomToolbox\Domain\Model\Dto\NewsDemand
 
 // Exclude IPs for counting visits
-plugin.tx_news.settings.excludedIpsForVisits = 80.150.99.114,85.10.214.214,217.86.226.80,91.117.105.162
+plugin.tx_news.settings.excludedIpsForVisits = 80.150.99.115,80.150.99.114,85.10.214.214,217.86.226.80,91.117.105.162
