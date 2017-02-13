@@ -5,6 +5,7 @@ if ( !defined('TYPO3_MODE') ) {
 
 // Register Extend News
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'ecom_toolbox';
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/Link'][] = 'ecom_toolbox';
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/FileReference'][] = 'ecom_toolbox';
 
 // Extend GoogleSitemap for indexing languages of landingpage in a single sitemap

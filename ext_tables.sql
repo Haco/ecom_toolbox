@@ -173,6 +173,13 @@ CREATE TABLE tx_news_domain_model_news (
 );
 
 #
+# Table structure for table 'tx_news_domain_model_link'
+#
+CREATE TABLE tx_news_domain_model_link (
+  ecom_show_button tinyint(4) unsigned DEFAULT '0' NOT NULL
+);
+
+#
 # Table structure for table 'sys_category'
 #
 CREATE TABLE sys_category (
