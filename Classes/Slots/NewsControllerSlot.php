@@ -1,7 +1,6 @@
 <?php
 namespace Ecom\EcomToolbox\Slots;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -27,7 +26,10 @@ namespace Ecom\EcomToolbox\Slots;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-use \TYPO3\CMS\Core\Utility\GeneralUtility;
+require \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('ecom_toolbox') . 'vendor/autoload.php';
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Jaybizzle\CrawlerDetect\CrawlerDetect;
 
 /**
  * Class NewsControllerSlot
@@ -56,13 +58,14 @@ class NewsControllerSlot extends \GeorgRinger\News\Controller\NewsController {
 	 * @return void
 	 */
 	public function detailActionSlot(\GeorgRinger\News\Domain\Model\News $news = null) {
-		$sessionKey = $this->extensionName . '_visits_news';
+        $CrawlerDetect = new CrawlerDetect;
+        $sessionKey = $this->extensionName . '_visits_news';
 		$excludedIps = $this->settings['excludedIpsForVisits'];
 		$this->isExcludedIp = in_array($GLOBALS['_SERVER']['REMOTE_ADDR'], GeneralUtility::trimExplode(',', $excludedIps, true));
 		$viewedNewsArray = $this->feSession->get($sessionKey);
-
+        
 		// Increases view count, updates news object, remembers object UID in session for unique views
-		if ( (!is_array($viewedNewsArray) || (is_array($viewedNewsArray) && !in_array($news->getUid(), $viewedNewsArray))) && !$this->isExcludedIp ) {
+		if ((!is_array($viewedNewsArray) || (is_array($viewedNewsArray) && !in_array($news->getUid(), $viewedNewsArray))) && !$this->isExcludedIp && !$CrawlerDetect->isCrawler()) {
 			$viewedNewsArray[] = $news->getUid();
 
 			/** @var \Ecom\EcomToolbox\Domain\Model\News $news */
