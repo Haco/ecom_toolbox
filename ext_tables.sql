@@ -180,6 +180,18 @@ CREATE TABLE tx_news_domain_model_link (
 );
 
 #
+# Table structure for table 'tx_news_domain_model_tag'
+#
+CREATE TABLE tx_news_domain_model_tag (
+  tx_realurl_pathsegment VARCHAR(255) DEFAULT '' NOT NULL,
+  sys_language_uid int(11) DEFAULT '0' NOT NULL,
+  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  l10n_diffsource mediumtext,
+
+	KEY language (l10n_parent,sys_language_uid)
+);
+
+#
 # Table structure for table 'sys_category'
 #
 CREATE TABLE sys_category (

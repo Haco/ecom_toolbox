@@ -28,3 +28,4 @@ if ( !defined('TYPO3_MODE') ) {
 
 // Extend EXT:News Flexform SortBy Dropdown
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByNews'] .= ',ecom_event_date,ecom_blogpost_visits';
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['switchableControllerActions']['newItems']['News->listbytag'] = 'List view (Posts by Tag)';

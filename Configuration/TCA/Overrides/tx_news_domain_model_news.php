@@ -4,9 +4,33 @@ if (!defined('TYPO3_MODE')) {
 }
 
 if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')) {
+    unset($GLOBALS[ 'TCA' ][ 'tx_news_domain_model_news' ][ 'columns' ]['tags']);
+
     \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
         $GLOBALS[ 'TCA' ][ 'tx_news_domain_model_news' ][ 'columns' ],
         [
+            'tags' => [
+                'exclude' => 1,
+                'l10n_mode' => 'exclude',
+                'label' => 'Tags',
+                'config' => [
+                    'type' => 'select',
+                    'MM' => 'tx_news_domain_model_news_tag_mm',
+                    'foreign_table' => 'tx_news_domain_model_tag',
+                    'foreign_table_where' => ' AND tx_news_domain_model_tag.sys_language_uid IN (0,-1) ORDER BY tx_news_domain_model_tag.title',
+                    'size' => 10,
+                    'minitems' => 0,
+                    'maxitems' => 99,
+                    'wizards' => [
+                        '_PADDING' => 2,
+                        '_VERTICAL' => 1,
+                        'suggest' => [
+                            'type' => 'suggest',
+                        ]
+                    ],
+                ],
+            ],
+
             'ecom_event_name' => [
                 'label'        => 'Override: Event title (for calendar view only)',
                 'l10n_mode'    => 'exclude',

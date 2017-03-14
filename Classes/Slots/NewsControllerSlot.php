@@ -34,45 +34,48 @@ use Jaybizzle\CrawlerDetect\CrawlerDetect;
 /**
  * Class NewsControllerSlot
  */
-class NewsControllerSlot extends \GeorgRinger\News\Controller\NewsController {
+class NewsControllerSlot extends \GeorgRinger\News\Controller\NewsController
+{
 
-	/**
-	 * feSession
-	 *
-	 * @var \Ecom\EcomToolbox\Domain\Session\FrontendSessionHandler
-	 * @inject
-	 */
-	protected $feSession = null;
+    /**
+     * feSession
+     *
+     * @var \Ecom\EcomToolbox\Domain\Session\FrontendSessionHandler
+     * @inject
+     */
+    protected $feSession = null;
 
-	/**
-	 * Is excluded IP?
-	 *
-	 * @var bool
-	 */
-	protected $isExcludedIp = false;
+    /**
+     * Is excluded IP?
+     *
+     * @var bool
+     */
+    protected $isExcludedIp = false;
 
-	/**
-	 * Handles the blogpost visits
-	 *
-	 * @param \GeorgRinger\News\Domain\Model\News $news
-	 * @return void
-	 */
-	public function detailActionSlot(\GeorgRinger\News\Domain\Model\News $news = null) {
+    /**
+     * Handles the blogpost visits
+     *
+     * @param \GeorgRinger\News\Domain\Model\News $news
+     * @return void
+     */
+    public function detailActionSlot(\GeorgRinger\News\Domain\Model\News $news = null)
+    {
         $CrawlerDetect = new CrawlerDetect;
         $sessionKey = $this->extensionName . '_visits_news';
-		$excludedIps = $this->settings['excludedIpsForVisits'];
-		$this->isExcludedIp = in_array($GLOBALS['_SERVER']['REMOTE_ADDR'], GeneralUtility::trimExplode(',', $excludedIps, true));
-		$viewedNewsArray = $this->feSession->get($sessionKey);
-        
-		// Increases view count, updates news object, remembers object UID in session for unique views
-		if ((!is_array($viewedNewsArray) || (is_array($viewedNewsArray) && !in_array($news->getUid(), $viewedNewsArray))) && !$this->isExcludedIp && !$CrawlerDetect->isCrawler()) {
-			$viewedNewsArray[] = $news->getUid();
+        $excludedIps = $this->settings['excludedIpsForVisits'];
+        $this->isExcludedIp = in_array($GLOBALS['_SERVER']['REMOTE_ADDR'], GeneralUtility::trimExplode(',', $excludedIps, true));
+        $viewedNewsArray = $this->feSession->get($sessionKey);
 
-			/** @var \Ecom\EcomToolbox\Domain\Model\News $news */
-			$news->setEcomBlogpostVisits($news->getEcomBlogpostVisits() + 1);
-			$this->newsRepository->update($news);
+        // Increases view count, updates news object, remembers object UID in session for unique views
+        if ((!is_array($viewedNewsArray) || (is_array($viewedNewsArray) && !in_array($news->getUid(), $viewedNewsArray))) && !$this->isExcludedIp && !$CrawlerDetect->isCrawler()
+        ) {
+            $viewedNewsArray[] = $news->getUid();
 
-			$this->feSession->store($sessionKey, $viewedNewsArray);
-		}
-	}
+            /** @var \Ecom\EcomToolbox\Domain\Model\News $news */
+            $news->setEcomBlogpostVisits($news->getEcomBlogpostVisits() + 1);
+            $this->newsRepository->update($news);
+
+            $this->feSession->store($sessionKey, $viewedNewsArray);
+        }
+    }
 }

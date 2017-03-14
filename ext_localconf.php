@@ -5,8 +5,11 @@ if ( !defined('TYPO3_MODE') ) {
 
 // Register Extend News
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'ecom_toolbox';
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Repository/NewsRepository'][] = 'ecom_toolbox';
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/Link'][] = 'ecom_toolbox';
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/FileReference'][] = 'ecom_toolbox';
+// Extend news Controller
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Controller/NewsController'][] = 'ecom_toolbox';
 
 // Extend GoogleSitemap for indexing languages of landingpage in a single sitemap
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['dd_googlesitemap']['sitemap']['ecom_lp'] = 'Ecom\EcomToolbox\Utility\SitemapUtility->generateSitemap';
