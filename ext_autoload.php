@@ -8,6 +8,7 @@
         'TYPO3\CMS\Fluid\ViewHelpers\Ecom\Format\RegularExpressionViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/Format/RegularExpressionViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\Format\TimeViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/Format/TimeViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\System\TimestampViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/System/TimestampViewHelper.php',
+        'TYPO3\CMS\Fluid\ViewHelpers\Ecom\Uri\PWTeaserFilterUrlsViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/Uri/PWTeaserFilterUrlsViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\CalculationViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/CalculationViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\CheckBitViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/CheckBitViewHelper.php',
 		'TYPO3\CMS\Fluid\ViewHelpers\Ecom\DetectMobileViewHelper' => $extensionClassesPath . 'ViewHelpers/Ecom/DetectMobileViewHelper.php',
